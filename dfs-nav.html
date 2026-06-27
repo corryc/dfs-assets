@@ -1,25 +1,83 @@
-<!-- DFS Global Nav + Footer — loaded via dfs-nav-loader.js -->
-<!-- Update this file to update nav/footer across all blog posts instantly -->
+<!-- DFS Global Nav + Footer - loaded via dfs-nav-loader.js -->
+<!-- Update this file to update nav/footer across ALL pages instantly -->
+<!-- Phone: 0419 891 983 | CTA: Book Free Call -> /contact-us -->
 
-<nav class="dfs-nav" id="dfs-nav">
-  <a href="https://www.digitalfinancesolutions.com.au" class="dfs-nav-logo">
-    <span class="dfs-nav-brand">Digital Finance Solutions</span>
-    <span class="dfs-nav-sub">Melbourne Mortgage Broker</span>
+<style>
+:root{--navy:#0d1b2e;--blue:#0052cc;--blue-hover:#003d99;--mid:#3d4f6b;--light:#6b7c99;--border:#dde3ed;--font:'Manrope','Inter',sans-serif;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#fff;border-bottom:1px solid var(--border);padding:0 40px;height:68px;display:flex;align-items:center;justify-content:space-between;font-family:var(--font);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+.nav-logo img{height:36px;width:auto;display:block;}
+.nav-logo-text{display:flex;flex-direction:column;gap:1px;}
+.nav-logo-text span:first-child{font-size:15px;font-weight:800;color:var(--navy);line-height:1.2;}
+.nav-logo-text span:last-child{font-size:11px;font-weight:500;color:var(--light);letter-spacing:0.04em;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-link{font-size:14px;font-weight:600;color:var(--mid);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
+.nav-link:hover{color:var(--blue);}
+.nav-dropdown{position:relative;}
+.nav-dropdown-toggle{font-size:14px;font-weight:600;color:var(--mid);cursor:pointer;display:flex;align-items:center;gap:4px;background:none;border:none;padding:0;font-family:var(--font);transition:color 0.2s;white-space:nowrap;}
+.nav-dropdown-toggle:hover{color:var(--blue);}
+.nav-dropdown-toggle svg{width:12px;height:12px;transition:transform 0.2s;flex-shrink:0;}
+.nav-dropdown:hover .nav-dropdown-toggle svg{transform:rotate(180deg);}
+.nav-drop-panel{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px;box-shadow:0 8px 32px rgba(0,0,0,0.10);z-index:10000;}
+.nav-dropdown:hover .nav-drop-panel{display:flex;}
+.nav-drop-panel.two-col{gap:4px;min-width:460px;}
+.nav-drop-col{display:flex;flex-direction:column;gap:2px;flex:1;}
+.nav-drop-panel a{display:block;padding:9px 14px;font-size:14px;font-weight:500;color:var(--mid);text-decoration:none;border-radius:6px;transition:background 0.15s,color 0.15s;white-space:nowrap;}
+.nav-drop-panel a:hover{background:#e8f0ff;color:var(--blue);}
+.nav-drop-panel.one-col{flex-direction:column;min-width:200px;}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.nav-phone{font-size:14px;font-weight:700;color:var(--navy);text-decoration:none;white-space:nowrap;transition:color 0.2s;}
+.nav-phone:hover{color:var(--blue);}
+.nav-cta{background:var(--blue);color:#fff;padding:10px 22px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;font-family:var(--font);white-space:nowrap;transition:background 0.2s;}
+.nav-cta:hover{background:var(--blue-hover);}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all 0.3s;}
+.mobile-nav{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:#fff;z-index:9998;overflow-y:auto;padding:24px 20px;flex-direction:column;gap:4px;font-family:var(--font);}
+.mobile-nav.open{display:flex;}
+.mobile-nav-section{font-size:11px;font-weight:700;color:var(--light);letter-spacing:0.08em;text-transform:uppercase;padding:16px 12px 6px;}
+.mobile-nav a{display:block;padding:12px 12px;font-size:15px;font-weight:600;color:var(--mid);text-decoration:none;border-radius:8px;transition:background 0.15s,color 0.15s;}
+.mobile-nav a:hover,.mobile-nav a:active{background:#e8f0ff;color:var(--blue);}
+.mobile-nav-cta{margin-top:16px;background:var(--blue);color:#fff !important;text-align:center;border-radius:8px;}
+.mobile-nav-phone{font-size:16px;font-weight:700;color:var(--navy) !important;border:2px solid var(--border);text-align:center;border-radius:8px;margin-top:8px;}
+body{padding-top:68px;}
+.dfs-footer{background:var(--navy);padding:48px 40px 32px;font-family:var(--font);}
+.dfs-footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.dfs-footer-brand{display:flex;flex-direction:column;gap:6px;}
+.dfs-footer-brand strong{font-size:16px;font-weight:800;color:#fff;}
+.dfs-footer-brand span{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.5;}
+.dfs-footer-links{display:flex;flex-direction:column;gap:10px;}
+.dfs-footer-links a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+.dfs-footer-links a:hover{color:#fff;}
+.dfs-footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;font-size:12px;color:rgba(255,255,255,0.3);line-height:1.7;}
+@media(max-width:900px){.nav-links{display:none;}.nav-phone{display:none;}.nav-cta{display:none;}.nav-hamburger{display:flex;}.nav{padding:0 20px;}.dfs-footer{padding:40px 24px 28px;}.dfs-footer-inner{grid-template-columns:1fr;gap:28px;}}
+</style>
+
+<nav class="nav" id="dfs-nav">
+  <a href="https://www.digitalfinancesolutions.com.au" class="nav-logo">
+    <img src="https://cdn.prod.website-files.com/61fc660e6a44456c36c97404/61fc660e6a4445dec6c974a5_Digital-Finance-Logo.svg" alt="Digital Finance Solutions" onerror="this.style.display='none'">
+    <div class="nav-logo-text"><span>Digital Finance Solutions</span><span>Melbourne Mortgage Broker</span></div>
   </a>
-  <div class="dfs-nav-links">
-    <div class="dfs-nav-dropdown">
-      <span class="dfs-nav-item">Services ▾</span>
-      <div class="dfs-nav-drop-menu">
-        <a href="https://www.digitalfinancesolutions.com.au/expert-mortgage-brokers">Home Loans</a>
-        <a href="https://www.digitalfinancesolutions.com.au/refinance">Refinancing</a>
-        <a href="https://www.digitalfinancesolutions.com.au/self-employed-home-loan-eastern-suburbs">Self Employed & Tradies</a>
-        <a href="https://www.digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne">Doctors — No LMI</a>
-        <a href="https://www.digitalfinancesolutions.com.au/debt-consolidation">Debt Consolidation</a>
+  <div class="nav-links">
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-toggle">Services <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg></button>
+      <div class="nav-drop-panel two-col">
+        <div class="nav-drop-col">
+          <a href="https://www.digitalfinancesolutions.com.au/expert-mortgage-brokers">Home Loans</a>
+          <a href="https://www.digitalfinancesolutions.com.au/refinance">Refinancing</a>
+          <a href="https://www.digitalfinancesolutions.com.au/investment-property-loans">Investment Property</a>
+          <a href="https://www.digitalfinancesolutions.com.au/debt-consolidation">Debt Consolidation</a>
+        </div>
+        <div class="nav-drop-col">
+          <a href="https://www.digitalfinancesolutions.com.au/self-employed-home-loan-eastern-suburbs">Self Employed</a>
+          <a href="https://www.digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne">Doctors - No LMI</a>
+          <a href="https://www.digitalfinancesolutions.com.au/car-loans">Car Loans</a>
+          <a href="https://www.digitalfinancesolutions.com.au/personal-loans">Personal Loans</a>
+        </div>
       </div>
     </div>
-    <div class="dfs-nav-dropdown">
-      <span class="dfs-nav-item">Suburbs ▾</span>
-      <div class="dfs-nav-drop-menu">
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-toggle">Suburbs <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg></button>
+      <div class="nav-drop-panel one-col">
         <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-ringwood">Ringwood</a>
         <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-bayswater">Bayswater</a>
         <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-boronia">Boronia</a>
@@ -28,61 +86,76 @@
         <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-bayswater-north">Bayswater North</a>
       </div>
     </div>
-    <a href="https://www.digitalfinancesolutions.com.au/blog" class="dfs-nav-item">Blog</a>
-    <a href="https://www.digitalfinancesolutions.com.au/about-us" class="dfs-nav-item">About</a>
+    <a href="https://www.digitalfinancesolutions.com.au/blog" class="nav-link">Blog</a>
+    <a href="https://www.digitalfinancesolutions.com.au/about-us" class="nav-link">About</a>
   </div>
-  <a href="https://www.digitalfinancesolutions.com.au/contact-us" class="dfs-nav-cta">Book Free Call</a>
+  <div class="nav-right">
+    <a href="tel:0419891983" class="nav-phone">0419 891 983</a>
+    <a href="https://www.digitalfinancesolutions.com.au/contact-us" class="nav-cta">Book Free Call</a>
+    <button class="nav-hamburger" id="dfsHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
 </nav>
+
+<div class="mobile-nav" id="dfsMobileNav">
+  <div class="mobile-nav-section">Services</div>
+  <a href="https://www.digitalfinancesolutions.com.au/expert-mortgage-brokers">Home Loans</a>
+  <a href="https://www.digitalfinancesolutions.com.au/refinance">Refinancing</a>
+  <a href="https://www.digitalfinancesolutions.com.au/investment-property-loans">Investment Property</a>
+  <a href="https://www.digitalfinancesolutions.com.au/debt-consolidation">Debt Consolidation</a>
+  <a href="https://www.digitalfinancesolutions.com.au/self-employed-home-loan-eastern-suburbs">Self Employed</a>
+  <a href="https://www.digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne">Doctors - No LMI</a>
+  <a href="https://www.digitalfinancesolutions.com.au/car-loans">Car Loans</a>
+  <a href="https://www.digitalfinancesolutions.com.au/personal-loans">Personal Loans</a>
+  <div class="mobile-nav-section">Suburbs</div>
+  <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-ringwood">Ringwood</a>
+  <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-bayswater">Bayswater</a>
+  <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-boronia">Boronia</a>
+  <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-wantirna">Wantirna</a>
+  <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-heathmont">Heathmont</a>
+  <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-bayswater-north">Bayswater North</a>
+  <div class="mobile-nav-section">Company</div>
+  <a href="https://www.digitalfinancesolutions.com.au/blog">Blog</a>
+  <a href="https://www.digitalfinancesolutions.com.au/about-us">About</a>
+  <a href="tel:0419891983" class="mobile-nav-phone">0419 891 983</a>
+  <a href="https://www.digitalfinancesolutions.com.au/contact-us" class="mobile-nav-cta">Book Free Call</a>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('dfsHamburger');
+  var menu=document.getElementById('dfsMobileNav');
+  if(!btn||!menu)return;
+  btn.addEventListener('click',function(){
+    menu.classList.toggle('open');
+    var s=btn.querySelectorAll('span');
+    var o=menu.classList.contains('open');
+    s[0].style.transform=o?'translateY(7px) rotate(45deg)':'';
+    s[1].style.opacity=o?'0':'';
+    s[2].style.transform=o?'translateY(-7px) rotate(-45deg)':'';
+  });
+})();
+</script>
 
 <footer class="dfs-footer" id="dfs-footer">
   <div class="dfs-footer-inner">
     <div class="dfs-footer-brand">
       <strong>Digital Finance Solutions</strong>
-      <span>Melbourne Mortgage Broker — Eastern Suburbs Specialist</span>
+      <span>Melbourne Mortgage Broker<br>Eastern Suburbs Specialist</span>
     </div>
     <div class="dfs-footer-links">
+      <a href="https://www.digitalfinancesolutions.com.au/expert-mortgage-brokers">Home Loans</a>
+      <a href="https://www.digitalfinancesolutions.com.au/refinance">Refinancing</a>
+      <a href="https://www.digitalfinancesolutions.com.au/investment-property-loans">Investment Property</a>
+      <a href="https://www.digitalfinancesolutions.com.au/debt-consolidation">Debt Consolidation</a>
       <a href="https://www.digitalfinancesolutions.com.au/about-us">About</a>
       <a href="https://www.digitalfinancesolutions.com.au/blog">Blog</a>
-      <a href="https://www.digitalfinancesolutions.com.au/refinance">Refinance</a>
-      <a href="https://www.digitalfinancesolutions.com.au/self-employed-home-loan-eastern-suburbs">Self Employed</a>
-      <a href="https://www.digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne">Doctors</a>
       <a href="https://www.digitalfinancesolutions.com.au/contact-us">Contact</a>
-      <a href="https://www.digitalfinancesolutions.com.au/privacy-policy">Credit Guide</a>
+      <a href="https://www.digitalfinancesolutions.com.au/privacy-policy">Privacy / Credit Guide</a>
     </div>
-    <div class="dfs-footer-legal">
-      Credit Representative 532405 of Beagle Finance Pty Ltd (ACL 391237) | Digital Finance Solutions | ©2026 All rights reserved.
+    <div class="dfs-footer-bottom">
+      <strong style="color:rgba(255,255,255,0.6);">Digital Finance Solutions</strong> is a Credit Representative (532405) of Beagle Finance Pty Ltd (ACL 391237).<br>
+      General advice only - any information provided does not consider your personal financial situation or needs.<br>
+      &copy;2026 Digital Finance Solutions. All rights reserved.
     </div>
   </div>
 </footer>
-
-<style>
-/* DFS NAV */
-.dfs-nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#fff;border-bottom:1px solid #dde3ed;padding:0 40px;height:68px;display:flex;align-items:center;justify-content:space-between;font-family:'Manrope','Inter',sans-serif}
-.dfs-nav-logo{display:flex;flex-direction:column;text-decoration:none;gap:1px}
-.dfs-nav-brand{font-size:15px;font-weight:800;color:#0d1b2e;line-height:1.2}
-.dfs-nav-sub{font-size:11px;font-weight:500;color:#6b7c99;letter-spacing:0.04em}
-.dfs-nav-links{display:flex;align-items:center;gap:28px}
-.dfs-nav-item{font-size:14px;font-weight:600;color:#3d4f6b;cursor:pointer;text-decoration:none;transition:color 0.2s}
-.dfs-nav-item:hover{color:#0052cc}
-.dfs-nav-dropdown{position:relative}
-.dfs-nav-drop-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;background:#fff;border:1px solid #dde3ed;border-radius:10px;padding:8px;min-width:220px;box-shadow:0 8px 32px rgba(0,0,0,0.1);z-index:10000}
-.dfs-nav-dropdown:hover .dfs-nav-drop-menu{display:block}
-.dfs-nav-drop-menu a{display:block;padding:10px 14px;font-size:14px;font-weight:500;color:#3d4f6b;text-decoration:none;border-radius:6px;transition:background 0.15s,color 0.15s}
-.dfs-nav-drop-menu a:hover{background:#e8f0ff;color:#0052cc}
-.dfs-nav-cta{background:#0052cc;color:#fff;padding:10px 22px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;transition:background 0.2s;font-family:'Manrope','Inter',sans-serif;white-space:nowrap}
-.dfs-nav-cta:hover{background:#003d99}
-/* Push content below fixed nav */
-body{padding-top:68px}
-/* DFS FOOTER */
-.dfs-footer{background:#0d1b2e;padding:40px;margin-top:0;font-family:'Manrope','Inter',sans-serif}
-.dfs-footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
-.dfs-footer-brand{display:flex;flex-direction:column;gap:4px}
-.dfs-footer-brand strong{font-size:15px;font-weight:700;color:#fff}
-.dfs-footer-brand span{font-size:13px;color:rgba(255,255,255,0.5)}
-.dfs-footer-links{display:flex;gap:20px;flex-wrap:wrap}
-.dfs-footer-links a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s}
-.dfs-footer-links a:hover{color:#fff}
-.dfs-footer-legal{font-size:12px;color:rgba(255,255,255,0.3);line-height:1.6}
-/* Mobile */
-@media(max-width:768px){.dfs-nav{padding:0 16px}.dfs-nav-links{display:none}.dfs-nav-sub{display:none}.dfs-footer{padding:32px 24px}}
-</style>
