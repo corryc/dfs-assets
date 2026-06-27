@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Signs You're Paying Too Much on Your Mortgage | Digital Finance Solutions</title>
+<meta name="description" content="Most Melbourne borrowers don't know they're overpaying. Here are five clear signs your mortgage rate is costing you more than it should — and what to do about it.">
+
+<!-- Manrope — ONLY font used across all DFS pages -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<style>
+/* ── DFS Design System ─────────────────────────────────────── */
+:root {
+  --white:        #ffffff;
+  --off-white:    #f5f7fa;
+  --light-grey:   #eef1f6;
+  --border:       #dde3ed;
+  --text-dark:    #0d1b2e;
+  --text-mid:     #3d4f6b;
+  --text-light:   #6b7c99;
+  --navy:         #0d1b2e;
+  --blue:         #0052cc;
+  --blue-dark:    #003d99;
+  --blue-light:   #e8f0ff;
+  --teal:         #00a896;
+  --teal-light:   #e6f7f5;
+  --gold:         #d4a017;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAVIGATION ─────────────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  height: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-logo img { height: 36px; width: auto; }
+
+.nav-logo-text {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.nav-logo-text span {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-mid);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: color 0.18s, background 0.18s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-links a:hover { color: var(--blue); background: var(--blue-light); }
+
+.nav-dropdown { position: relative; }
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px;
+  min-width: 200px;
+  box-shadow: 0 8px 32px rgba(13,27,46,0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  list-style: none;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown-menu li a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-mid);
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: block;
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu li a:hover { color: var(--blue); background: var(--blue-light); }
+
+.chevron {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.2s;
+}
+
+.nav-dropdown:hover .chevron { transform: rotate(180deg); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.nav-phone {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.nav-phone:hover { color: var(--blue); }
+
+.btn-nav {
+  background: var(--blue);
+  color: var(--white);
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.18s, transform 0.15s;
+  display: inline-block;
+}
+
+.btn-nav:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+}
+
+/* Mobile nav */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--text-dark);
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--white);
+  z-index: 999;
+  overflow-y: auto;
+  padding: 24px 24px 40px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav.open { transform: translateX(0); }
+
+.mobile-nav-links { list-style: none; }
+
+.mobile-nav-links li + li { border-top: 1px solid var(--light-grey); }
+
+.mobile-nav-links a {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 14px 0;
+}
+
+.mobile-nav-links .sub-links { padding-left: 16px; }
+
+.mobile-nav-links .sub-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-mid);
+  padding: 8px 0;
+}
+
+.mobile-nav-cta {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-nav-cta a {
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.mobile-nav-cta .btn-primary { background: var(--blue); color: var(--white); }
+.mobile-nav-cta .btn-phone { color: var(--blue); border: 2px solid var(--blue-light); background: var(--blue-light); }
+
+@media (max-width: 900px) {
+  .nav-links, .nav-right { display: none; }
+  .nav-hamburger { display: flex; }
+  .mobile-nav { display: block; }
+}
+
+/* ── BLOG HERO ───────────────────────────────────────────────── */
+.blog-hero {
+  background: var(--navy);
+  padding: 72px 32px 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,82,204,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.blog-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 40%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,168,150,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.blog-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.blog-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,82,204,0.2);
+  border: 1px solid rgba(0,82,204,0.35);
+  color: #7eb3ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.blog-category-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.blog-hero h1 {
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.blog-hero h1 .accent {
+  color: #7eb3ff;
+}
+
+.blog-hero-sub {
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.65;
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.blog-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+}
+
+.blog-meta-item svg {
+  width: 15px;
+  height: 15px;
+  stroke: rgba(255,255,255,0.4);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.blog-meta-divider {
+  width: 3px;
+  height: 3px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+}
+
+/* ── STATS BAR ───────────────────────────────────────────────── */
+.stats-bar {
+  background: var(--blue);
+  padding: 0 32px;
+}
+
+.stats-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  divide-x: 1px solid rgba(255,255,255,0.15);
+}
+
+.stat-item {
+  padding: 22px 32px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-number {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── MAIN LAYOUT ─────────────────────────────────────────────── */
+.blog-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── ARTICLE CONTENT ─────────────────────────────────────────── */
+.article {
+  min-width: 0;
+}
+
+/* Intro box */
+.intro-box {
+  background: var(--blue-light);
+  border-left: 4px solid var(--blue);
+  border-radius: 0 10px 10px 0;
+  padding: 24px 28px;
+  margin-bottom: 48px;
+}
+
+.intro-box p {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Signs / sections */
+.sign-block {
+  margin-bottom: 56px;
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.sign-number-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.sign-number {
+  width: 44px;
+  height: 44px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 800;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+
+.sign-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sign-block h2 {
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.sign-block p {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.sign-block p:last-child { margin-bottom: 0; }
+
+/* Highlight callout inside sign */
+.callout {
+  background: var(--teal-light);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.callout p {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* Benchmark grid */
+.benchmark-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.benchmark-card {
+  background: var(--off-white);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.benchmark-type {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.benchmark-range {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.benchmark-note {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Check list */
+.check-list {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-mid);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--light-grey);
+  line-height: 1.5;
+}
+
+.check-list li:last-child { border-bottom: none; }
+
+.check-icon {
+  width: 20px;
+  height: 20px;
+  background: var(--teal-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.check-icon svg {
+  width: 11px;
+  height: 11px;
+  stroke: var(--teal);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Warning callout */
+.warning-box {
+  background: #fff8e6;
+  border: 1.5px solid #f5c842;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.warning-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  stroke: #c08c00;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.warning-box p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7a5500;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Section divider */
+.section-divider {
+  border: none;
+  border-top: 1.5px solid var(--light-grey);
+  margin: 48px 0;
+}
+
+/* Article CTA block */
+.article-cta {
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 40px 36px;
+  text-align: center;
+  margin-top: 56px;
+}
+
+.article-cta h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+
+.article-cta p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.article-cta .btn-primary {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 2px 8px rgba(0,82,204,0.3);
+}
+
+.article-cta .btn-primary:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0,82,204,0.35);
+}
+
+.article-cta-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 14px;
+}
+
+/* Disclaimer */
+.disclaimer {
+  margin-top: 48px;
+  padding: 20px 24px;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.disclaimer strong {
+  color: var(--text-mid);
+  font-weight: 700;
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────────────── */
+.sidebar {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* CTA card */
+.sidebar-cta {
+  background: var(--blue);
+  border-radius: 14px;
+  padding: 32px 28px;
+  color: var(--white);
+}
+
+.sidebar-cta-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 10px;
+}
+
+.sidebar-cta h3 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.sidebar-cta p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+.sidebar-cta .btn-white {
+  display: block;
+  background: var(--white);
+  color: var(--blue);
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.18s, transform 0.15s;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-cta .btn-white:hover {
+  background: var(--off-white);
+  transform: translateY(-1px);
+}
+
+.sidebar-cta-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  margin-top: 14px;
+}
+
+.sidebar-cta-phone:hover { color: var(--white); }
+
+.sidebar-cta-phone svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* Quick check card */
+.sidebar-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 26px 24px;
+}
+
+.sidebar-card-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-card-title-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--teal);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sidebar-check-list {
+  list-style: none;
+}
+
+.sidebar-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.5;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--light-grey);
+  font-weight: 500;
+}
+
+.sidebar-check-list li:last-child { border-bottom: none; }
+
+.sidebar-check-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stats card */
+.sidebar-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.sidebar-stat {
+  background: var(--off-white);
+  border-radius: 10px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.sidebar-stat-num {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.sidebar-stat-num.blue { color: var(--blue); }
+.sidebar-stat-num.teal { color: var(--teal); }
+
+.sidebar-stat-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+}
+
+/* ── CLOSING CTA SECTION ─────────────────────────────────────── */
+.closing-cta {
+  background: var(--blue);
+  padding: 80px 32px;
+  text-align: center;
+}
+
+.closing-cta-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.closing-cta-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 16px;
+}
+
+.closing-cta h2 {
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.closing-cta p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 32px;
+  line-height: 1.65;
+}
+
+.closing-cta-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-white-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.4);
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: border-color 0.18s, background 0.18s, transform 0.15s;
+}
+
+.btn-white-outline:hover {
+  border-color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-1px);
+}
+
+.btn-white-solid {
+  display: inline-block;
+  background: var(--white);
+  color: var(--blue);
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.15s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.btn-white-solid:hover {
+  background: var(--off-white);
+  transform: translateY(-1px);
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.footer {
+  background: var(--navy);
+  padding: 56px 32px 32px;
+  color: rgba(255,255,255,0.55);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  margin-top: 12px;
+  max-width: 240px;
+}
+
+.footer-col h4 {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.footer-col ul { list-style: none; }
+
+.footer-col ul li + li { margin-top: 8px; }
+
+.footer-col ul li a {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.footer-col ul li a:hover { color: var(--white); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-disclaimer {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.7;
+  flex: 1;
+  min-width: 280px;
+}
+
+.footer-acl {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  white-space: nowrap;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .blog-body {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .sidebar {
+    position: static;
+    order: -1;
+  }
+
+  .sidebar-cta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .sidebar-cta .btn-white { margin-top: 0; }
+
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .blog-hero { padding: 48px 20px 40px; }
+  .blog-body { padding: 40px 20px; }
+  .stats-bar { padding: 0 20px; }
+  .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
+  .benchmark-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .sidebar-cta { grid-template-columns: 1fr; }
+  .closing-cta { padding: 56px 20px; }
+  .closing-cta-buttons { flex-direction: column; align-items: center; }
+
+  .nav-inner { padding: 0 20px; }
+  .footer { padding: 40px 20px 24px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+
+    <a href="https://www.digitalfinancesolutions.com.au" class="nav-logo" aria-label="Digital Finance Solutions home">
+      <img src="https://cdn.prod.website-files.com/61fc660e6a44456c36c97404/61fc660e6a4445dec6c974a5_Digital-Finance-Logo.svg" alt="Digital Finance Solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-text" style="display:none">Digital Finance<span>Solutions</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="#" aria-haspopup="true">
+          Services
+          <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <ul class="nav-dropdown-menu" role="menu">
+          <li><a href="https://www.digitalfinancesolutions.com.au/home-loans" role="menuitem">Home Loans</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/refinancing" role="menuitem">Refinancing</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/investment-loans" role="menuitem">Investment Loans</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/first-home-buyers" role="menuitem">First Home Buyers</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/professional-home-loans" role="menuitem">Professional Loans</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <a href="#" aria-haspopup="true">
+          Suburbs
+          <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <ul class="nav-dropdown-menu" role="menu">
+          <li><a href="https://www.digitalfinancesolutions.com.au/ringwood-mortgage-broker" role="menuitem">Ringwood</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/croydon-mortgage-broker" role="menuitem">Croydon</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/maroondah-mortgage-broker" role="menuitem">Maroondah</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/box-hill-mortgage-broker" role="menuitem">Box Hill</a></li>
+        </ul>
+      </li>
+      <li><a href="https://www.digitalfinancesolutions.com.au/about">About</a></li>
+      <li><a href="https://www.digitalfinancesolutions.com.au/blog">Blog</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="tel:0419891983" class="nav-phone">0419 891 983</a>
+      <a href="https://www.digitalfinancesolutions.com.au/book-a-call" class="btn-nav">Book Free Call</a>
+    </div>
+
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile menu">
+  <ul class="mobile-nav-links">
+    <li>
+      <a href="https://www.digitalfinancesolutions.com.au/home-loans">Home Loans</a>
+    </li>
+    <li>
+      <a href="https://www.digitalfinancesolutions.com.au/refinancing">Refinancing</a>
+    </li>
+    <li>
+      <a href="https://www.digitalfinancesolutions.com.au/investment-loans">Investment Loans</a>
+    </li>
+    <li>
+      <a href="https://www.digitalfinancesolutions.com.au/first-home-buyers">First Home Buyers</a>
+    </li>
+    <li>
+      <a href="https://www.digitalfinancesolutions.com.au/professional-home-loans">Professional Loans</a>
+    </li>
+    <li>
+      <a href="https://www.digitalfinancesolutions.com.au/about">About</a>
+    </li>
+    <li>
+      <a href="https://www.digitalfinancesolutions.com.au/blog">Blog</a>
+    </li>
+  </ul>
+  <div class="mobile-nav-cta">
+    <a href="https://www.digitalfinancesolutions.com.au/book-a-call" class="btn-primary">Book Free Call</a>
+    <a href="tel:0419891983" class="btn-phone">Call 0419 891 983</a>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     BLOG HERO
+══════════════════════════════════════════════════════════ -->
+<section class="blog-hero" aria-label="Article header">
+  <div class="blog-hero-inner">
+
+    <div class="blog-category" id="heroCat">
+      <span class="blog-category-dot" aria-hidden="true"></span>
+      Mortgage Strategy
+    </div>
+
+    <h1 id="heroH1">
+      5 Signs You're Paying <span class="accent">Too Much</span> on Your Mortgage
+    </h1>
+
+    <p class="blog-hero-sub" id="heroSub">
+      Most Melbourne borrowers have no idea they're overpaying — because nobody tells them. Here are five clear signals your rate is costing you more than it should, and what to do about it.
+    </p>
+
+    <div class="blog-meta" id="heroMeta">
+      <div class="blog-meta-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        6 min read
+      </div>
+      <div class="blog-meta-divider" aria-hidden="true"></div>
+      <div class="blog-meta-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Corry Cincotta
+      </div>
+      <div class="blog-meta-divider" aria-hidden="true"></div>
+      <div class="blog-meta-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Mortgage Broker, Melbourne
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     STATS BAR
+══════════════════════════════════════════════════════════ -->
+<div class="stats-bar" aria-label="Key figures">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-number" id="stat1">$50K+</div>
+      <div class="stat-label">Potential saving over loan life</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" id="stat2">30+</div>
+      <div class="stat-label">Lenders compared free</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" id="stat3">15 min</div>
+      <div class="stat-label">Health check, no obligation</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" id="stat4">$0</div>
+      <div class="stat-label">Broker fee to you</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     BODY — ARTICLE + SIDEBAR
+══════════════════════════════════════════════════════════ -->
+<div class="blog-body">
+
+  <!-- ── ARTICLE ─────────────────────────────────────── -->
+  <main class="article" id="articleMain" role="main">
+
+    <div class="intro-box" id="introBox">
+      <p>Your mortgage rate isn't locked in — it's negotiable, and most borrowers who refinance save between $200 and $800 per month. These five signs will tell you whether it's time to act.</p>
+    </div>
+
+    <!-- SIGN 1 -->
+    <div class="sign-block" id="sign1">
+      <div class="sign-number-row">
+        <div class="sign-number" aria-hidden="true">1</div>
+        <div class="sign-eyebrow">Sign One</div>
+      </div>
+      <h2>Your Rate Hasn't Changed in More Than 2 Years</h2>
+      <p>The lending market moves constantly. Lenders launch sharper rates to attract new customers — but they rarely drop your rate automatically. If you haven't reviewed or renegotiated in the last two years, your lender has almost certainly moved on without you.</p>
+      <p>When the RBA lifts rates, your rate goes up almost immediately. When the RBA cuts, your variable rate should come down — but not always by as much. This asymmetry is built into how lenders operate.</p>
+
+      <div class="callout">
+        <p>A borrower who last reviewed two years ago may be sitting 0.5–1.0% above where the market is today. On a $700,000 loan, that's $290–$580 per month.</p>
+      </div>
+
+      <p>What to do: Get a market comparison from a broker. It costs nothing, takes 15 minutes, and gives you a clear picture of what you should be paying versus what you are paying.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SIGN 2 -->
+    <div class="sign-block" id="sign2">
+      <div class="sign-number-row">
+        <div class="sign-number" aria-hidden="true">2</div>
+        <div class="sign-eyebrow">Sign Two</div>
+      </div>
+      <h2>You're on Your Lender's Standard Variable Rate</h2>
+      <p>The standard variable rate (SVR) is the default rate your lender reverts you to once an introductory or fixed period ends. It's almost always the highest rate on the lender's book — existing customers receive it; new customers receive something better.</p>
+
+      <div class="warning-box" role="note" aria-label="Important note">
+        <svg class="warning-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <p>If your last loan documents showed a fixed rate or a discounted introductory rate, and you've never renegotiated since that period ended, you are almost certainly on an SVR. Check your latest bank statement — it'll be on there.</p>
+      </div>
+
+      <p>This is the most common reason borrowers overpay. The fix is to either negotiate a discount directly with your lender (sometimes possible) or refinance to a more competitive product. A broker can do both.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SIGN 3 -->
+    <div class="sign-block" id="sign3">
+      <div class="sign-number-row">
+        <div class="sign-number" aria-hidden="true">3</div>
+        <div class="sign-eyebrow">Sign Three</div>
+      </div>
+      <h2>Your LVR Has Improved But Your Rate Hasn't Moved</h2>
+      <p>Lenders price risk. The more equity you hold relative to the property value, the less risk you represent — and that should translate into a lower rate. This is called loan-to-value ratio (LVR) tiering.</p>
+
+      <div class="benchmark-grid" aria-label="LVR rate tiers — indicative benchmarks only">
+        <div class="benchmark-card">
+          <div class="benchmark-type">LVR Below 60%</div>
+          <div class="benchmark-range">Lowest tier</div>
+          <div class="benchmark-note">Best available pricing</div>
+        </div>
+        <div class="benchmark-card">
+          <div class="benchmark-type">LVR 60–80%</div>
+          <div class="benchmark-range">Mid tier</div>
+          <div class="benchmark-note">Competitive range</div>
+        </div>
+        <div class="benchmark-card">
+          <div class="benchmark-type">LVR Above 80%</div>
+          <div class="benchmark-range">Higher tier</div>
+          <div class="benchmark-note">LMI may apply</div>
+        </div>
+      </div>
+
+      <p style="font-size:12px; color: var(--text-light); margin-top: -10px; font-style: italic;">Rate ranges are indicative market benchmarks only — not advertised product rates. Contact us for rates applicable to your situation.</p>
+
+      <p>If you bought with a 10% deposit and are now sitting at 65–70% LVR after several years of repayments and capital growth, you likely qualify for a meaningfully sharper rate — but your lender won't automatically reprice you. You have to ask, or move.</p>
+
+      <ul class="check-list" aria-label="Signs your LVR has improved">
+        <li>
+          <span class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Your property has grown in value since purchase
+        </li>
+        <li>
+          <span class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          You've made 3+ years of principal repayments
+        </li>
+        <li>
+          <span class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          You've made extra repayments or used an offset account
+        </li>
+        <li>
+          <span class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          You started with LMI and now have more than 20% equity
+        </li>
+      </ul>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SIGN 4 -->
+    <div class="sign-block" id="sign4">
+      <div class="sign-number-row">
+        <div class="sign-number" aria-hidden="true">4</div>
+        <div class="sign-eyebrow">Sign Four</div>
+      </div>
+      <h2>You Have Features You're Paying For But Not Using</h2>
+      <p>Offset accounts, redraw facilities, and package bundles all come with a price — usually built into a slightly higher rate. If you're on a $400 annual package fee with an offset account you've never loaded with savings, you're paying for something that isn't helping you.</p>
+
+      <p>This works the other way too: if you have a large offset balance or consistently park cash in offset, a package loan with offset could be saving you significantly on interest — and a bare-bones basic loan would cost you more overall despite the lower advertised rate.</p>
+
+      <div class="callout">
+        <p>Feature matching matters as much as rate matching. A 0.1% higher rate with a working offset can outperform a 0.1% lower rate without one — depending on your savings behaviour.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SIGN 5 -->
+    <div class="sign-block" id="sign5">
+      <div class="sign-number-row">
+        <div class="sign-number" aria-hidden="true">5</div>
+        <div class="sign-eyebrow">Sign Five</div>
+      </div>
+      <h2>A Friend or Colleague Just Refinanced and Saved</h2>
+      <p>This sounds informal — but it's actually a valid signal. If someone with a comparable loan size, property type, and income has just refinanced and is now paying noticeably less, the gap between your rate and what's available in the market has likely grown wide enough to act.</p>
+
+      <p>The loan market is competitive and conditions change. When multiple people around you are finding better deals, the window where your current rate was reasonable has probably passed.</p>
+
+      <ul class="check-list" aria-label="Quick self-assessment">
+        <li>
+          <span class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Do you know your exact current interest rate right now?
+        </li>
+        <li>
+          <span class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Have you compared it to the current market in the last 12 months?
+        </li>
+        <li>
+          <span class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Do you know your current LVR and which tier it puts you in?
+        </li>
+        <li>
+          <span class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Has your financial situation improved since you took the loan?
+        </li>
+      </ul>
+
+      <p>If you answered no to any of these, a free mortgage health check is worth 15 minutes of your time.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ARTICLE CTA -->
+    <div class="article-cta" id="articleCta">
+      <h3>Find Out What You Should Be Paying</h3>
+      <p>A free mortgage health check takes 15 minutes. We compare your current rate against 30+ lenders and tell you exactly whether you're paying too much — and what you could save.</p>
+      <a href="https://www.digitalfinancesolutions.com.au/book-a-call" class="btn-primary">Book Your Free Health Check</a>
+      <p class="article-cta-sub">No obligation. Broker fee: $0.</p>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer" role="contentinfo" aria-label="Important disclaimer">
+      <strong>General Information Only.</strong> The information in this article is general in nature and does not constitute financial or credit advice. Rate ranges referenced are indicative market benchmarks only — not advertised product rates. Your circumstances, credit history, and the lender's assessment will determine the rate available to you. Before making any financial decisions, consider seeking professional financial and legal advice. Digital Finance Solutions is a Credit Representative (532405) of Beagle Finance Pty Ltd (ACL 391237).
+    </div>
+
+  </main>
+
+
+  <!-- ── SIDEBAR ──────────────────────────────────────── -->
+  <aside class="sidebar" aria-label="Article sidebar">
+
+    <!-- Primary CTA -->
+    <div class="sidebar-cta" id="sidebarCta">
+      <div class="sidebar-cta-eyebrow">Free · No Obligation</div>
+      <h3>Is Your Rate Still Competitive?</h3>
+      <p>A 15-minute mortgage health check with Corry. We compare 30+ lenders and give you a straight answer.</p>
+      <a href="https://www.digitalfinancesolutions.com.au/book-a-call" class="btn-white">Book Free Health Check</a>
+      <a href="tel:0419891983" class="sidebar-cta-phone">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.72 3.5 2 2 0 0 1 3.7 1.3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6.29 6.29l1.26-1.26a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        0419 891 983
+      </a>
+    </div>
+
+    <!-- Quick check -->
+    <div class="sidebar-card" id="sidebarCheck">
+      <div class="sidebar-card-title">
+        <span class="sidebar-card-title-dot" aria-hidden="true"></span>
+        Signs You're Overpaying — Quick Check
+      </div>
+      <ul class="sidebar-check-list" role="list">
+        <li>
+          <span class="sidebar-check-dot" aria-hidden="true"></span>
+          No rate review in 2+ years
+        </li>
+        <li>
+          <span class="sidebar-check-dot" aria-hidden="true"></span>
+          On the standard variable rate
+        </li>
+        <li>
+          <span class="sidebar-check-dot" aria-hidden="true"></span>
+          LVR improved, rate hasn't moved
+        </li>
+        <li>
+          <span class="sidebar-check-dot" aria-hidden="true"></span>
+          Paying for features you don't use
+        </li>
+        <li>
+          <span class="sidebar-check-dot" aria-hidden="true"></span>
+          Others near you have refinanced
+        </li>
+      </ul>
+    </div>
+
+    <!-- Stats -->
+    <div class="sidebar-card" id="sidebarStats">
+      <div class="sidebar-card-title">
+        <span class="sidebar-card-title-dot" aria-hidden="true"></span>
+        Why Review Matters
+      </div>
+      <div class="sidebar-stat-grid">
+        <div class="sidebar-stat">
+          <div class="sidebar-stat-num blue">30+</div>
+          <div class="sidebar-stat-lbl">Lenders</div>
+        </div>
+        <div class="sidebar-stat">
+          <div class="sidebar-stat-num teal">$0</div>
+          <div class="sidebar-stat-lbl">Broker fee</div>
+        </div>
+        <div class="sidebar-stat">
+          <div class="sidebar-stat-num">15 min</div>
+          <div class="sidebar-stat-lbl">Health check</div>
+        </div>
+        <div class="sidebar-stat">
+          <div class="sidebar-stat-num blue">Free</div>
+          <div class="sidebar-stat-lbl">Comparison</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related posts -->
+    <div class="sidebar-card" id="sidebarRelated">
+      <div class="sidebar-card-title">
+        <span class="sidebar-card-title-dot" aria-hidden="true"></span>
+        Related Articles
+      </div>
+      <ul class="sidebar-check-list" role="list">
+        <li>
+          <span class="sidebar-check-dot" aria-hidden="true"></span>
+          <a href="what-happens-home-loan-health-check.html" style="color: var(--blue); text-decoration: none; font-weight: 600; font-size: 13px;">What happens in a home loan health check?</a>
+        </li>
+        <li>
+          <span class="sidebar-check-dot" aria-hidden="true"></span>
+          <a href="how-much-can-doctor-borrow-home-loan.html" style="color: var(--blue); text-decoration: none; font-weight: 600; font-size: 13px;">How much can a doctor borrow on a home loan?</a>
+        </li>
+        <li>
+          <span class="sidebar-check-dot" aria-hidden="true"></span>
+          <a href="dentists-no-lmi-home-loan.html" style="color: var(--blue); text-decoration: none; font-weight: 600; font-size: 13px;">Dentists: Buy with 90–95% LVR, no LMI</a>
+        </li>
+        <li>
+          <span class="sidebar-check-dot" aria-hidden="true"></span>
+          <a href="buying-house-ringwood-2026.html" style="color: var(--blue); text-decoration: none; font-weight: 600; font-size: 13px;">Buying a house in Ringwood</a>
+        </li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /blog-body -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     CLOSING CTA
+══════════════════════════════════════════════════════════ -->
+<section class="closing-cta" aria-label="Call to action">
+  <div class="closing-cta-inner" id="closingCta">
+    <div class="closing-cta-eyebrow">Mortgage Broker · Melbourne</div>
+    <h2>Ready to Find Out What You Should Be Paying?</h2>
+    <p>We compare your current rate against 30+ lenders — and tell you the truth. No sales pitch, no obligation.</p>
+    <div class="closing-cta-buttons">
+      <a href="https://www.digitalfinancesolutions.com.au/book-a-call" class="btn-white-solid">Book Free Call</a>
+      <a href="tel:0419891983" class="btn-white-outline">Call 0419 891 983</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <img src="https://cdn.prod.website-files.com/61fc660e6a44456c36c97404/61fc660e6a4445dec6c974a5_Digital-Finance-Logo.svg" alt="Digital Finance Solutions" height="32" style="filter: brightness(0) invert(1); opacity: 0.7;">
+        <p>Melbourne mortgage broker helping professionals and families get better rates and smarter home loans.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="https://www.digitalfinancesolutions.com.au/home-loans">Home Loans</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/refinancing">Refinancing</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/investment-loans">Investment Loans</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/first-home-buyers">First Home Buyers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Suburbs</h4>
+        <ul>
+          <li><a href="https://www.digitalfinancesolutions.com.au/ringwood-mortgage-broker">Ringwood</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/croydon-mortgage-broker">Croydon</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/maroondah-mortgage-broker">Maroondah</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/box-hill-mortgage-broker">Box Hill</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://www.digitalfinancesolutions.com.au/about">About</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/blog">Blog</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/book-a-call">Book a Call</a></li>
+          <li><a href="tel:0419891983">0419 891 983</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        Digital Finance Solutions is a Credit Representative (532405) of Beagle Finance Pty Ltd ACL 391237. The information on this website is general in nature and does not constitute financial advice. Please consider your personal circumstances before making any financial decisions.
+      </p>
+      <span class="footer-acl">© 2024 Digital Finance Solutions</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════════════════ -->
+<script>
+/* ── Mobile nav ─────────────────────────────────────── */
+const hamburger = document.getElementById('hamburgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+let navOpen = false;
+
+hamburger.addEventListener('click', () => {
+  navOpen = !navOpen;
+  mobileNav.classList.toggle('open', navOpen);
+  hamburger.setAttribute('aria-expanded', navOpen);
+  document.body.style.overflow = navOpen ? 'hidden' : '';
+});
+
+/* ── GSAP Animations ─────────────────────────────────── */
+gsap.registerPlugin(ScrollTrigger);
+
+/* Hero — CSS-first stagger (no flash) */
+const heroItems = ['#heroCat', '#heroH1', '#heroSub', '#heroMeta'];
+heroItems.forEach((sel, i) => {
+  const el = document.querySelector(sel);
+  if (!el) return;
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(22px)';
+  gsap.to(el, {
+    opacity: 1,
+    y: 0,
+    duration: 0.65,
+    ease: 'power2.out',
+    delay: 0.08 + i * 0.12
+  });
+});
+
+/* Stats bar — count up on enter */
+['#stat1','#stat2','#stat3','#stat4'].forEach((id) => {
+  const el = document.querySelector(id);
+  if (!el) return;
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+    opacity: 0,
+    y: 14,
+    duration: 0.5,
+    ease: 'power2.out'
+  });
+});
+
+/* Intro box */
+gsap.from('#introBox', {
+  scrollTrigger: { trigger: '#introBox', start: 'top 88%', once: true },
+  opacity: 0,
+  x: -20,
+  duration: 0.6,
+  ease: 'power2.out'
+});
+
+/* Sign blocks — scroll-triggered reveal */
+const signs = ['#sign1','#sign2','#sign3','#sign4','#sign5'];
+signs.forEach((id, i) => {
+  const el = document.querySelector(id);
+  if (!el) return;
+  gsap.to(el, {
+    scrollTrigger: { trigger: el, start: 'top 84%', once: true },
+    opacity: 1,
+    y: 0,
+    duration: 0.65,
+    ease: 'power2.out',
+    delay: 0.04 * i
+  });
+});
+
+/* Sidebar items */
+['#sidebarCta','#sidebarCheck','#sidebarStats','#sidebarRelated'].forEach((id, i) => {
+  const el = document.querySelector(id);
+  if (!el) return;
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+    opacity: 0,
+    y: 18,
+    duration: 0.55,
+    ease: 'power2.out',
+    delay: 0.06 * i
+  });
+});
+
+/* Article CTA */
+gsap.from('#articleCta', {
+  scrollTrigger: { trigger: '#articleCta', start: 'top 88%', once: true },
+  opacity: 0,
+  y: 24,
+  duration: 0.65,
+  ease: 'power2.out'
+});
+
+/* Closing CTA */
+gsap.from('#closingCta', {
+  scrollTrigger: { trigger: '#closingCta', start: 'top 85%', once: true },
+  opacity: 0,
+  y: 28,
+  duration: 0.7,
+  ease: 'power2.out'
+});
+</script>
+
+</body>
+</html>
