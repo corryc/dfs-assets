@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can Doctors Get a Home Loan With No LMI? | Digital Finance Solutions</title>
+<meta name="description" content="Most lenders will waive LMI for doctors buying with as little as a 5% deposit. Here's how the policy works, who qualifies, and what to watch out for.">
+
+<!-- Manrope — only font used across DFS pages -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<style>
+/* ── DFS Design System ─────────────────────────────── */
+:root {
+  --white:       #ffffff;
+  --off-white:   #f5f7fa;
+  --light-grey:  #eef1f6;
+  --border:      #dde3ed;
+  --text-dark:   #0d1b2e;
+  --text-mid:    #3d4f6b;
+  --text-light:  #6b7c99;
+  --navy:        #0d1b2e;
+  --blue:        #0052cc;
+  --blue-dark:   #003d99;
+  --blue-light:  #e8f0ff;
+  --teal:        #00a896;
+  --teal-light:  #e6f7f5;
+  --gold:        #d4a017;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAVIGATION ────────────────────────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 1000;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  height: 72px;
+  display: flex; align-items: center;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 32px;
+  width: 100%; display: flex; align-items: center;
+  justify-content: space-between; gap: 32px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; flex-shrink: 0;
+}
+.nav-logo img { height: 36px; width: auto; }
+.nav-logo-text {
+  font-size: 15px; font-weight: 800; color: var(--navy);
+  letter-spacing: -0.01em; line-height: 1.2;
+}
+.nav-logo-text span {
+  display: block; font-size: 11px; font-weight: 600;
+  color: var(--text-light); letter-spacing: 0.04em; text-transform: uppercase;
+}
+.nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+.nav-links a {
+  font-size: 14px; font-weight: 600; color: var(--text-mid);
+  text-decoration: none; padding: 8px 14px; border-radius: 6px;
+  transition: color 0.18s, background 0.18s; white-space: nowrap;
+  display: flex; align-items: center; gap: 4px;
+}
+.nav-links a:hover { color: var(--blue); background: var(--blue-light); }
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; padding: 8px; min-width: 200px;
+  box-shadow: 0 8px 32px rgba(13,27,46,0.12);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s; list-style: none;
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.nav-dropdown-menu li a {
+  font-size: 14px; font-weight: 500; color: var(--text-mid);
+  padding: 8px 12px; border-radius: 6px; display: block; white-space: nowrap;
+}
+.nav-dropdown-menu li a:hover { color: var(--blue); background: var(--blue-light); }
+.chevron {
+  width: 14px; height: 14px; stroke: currentColor; fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform 0.2s;
+}
+.nav-dropdown:hover .chevron { transform: rotate(180deg); }
+.nav-right { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+.nav-phone {
+  font-size: 14px; font-weight: 700; color: var(--text-dark);
+  text-decoration: none; letter-spacing: -0.01em;
+}
+.nav-phone:hover { color: var(--blue); }
+.btn-nav {
+  background: var(--blue); color: var(--white);
+  font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 700;
+  padding: 10px 22px; border-radius: 6px; border: none; cursor: pointer;
+  text-decoration: none; white-space: nowrap;
+  transition: background 0.18s, transform 0.15s; display: inline-block;
+}
+.btn-nav:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+/* Mobile nav */
+.nav-hamburger {
+  display: none; background: none; border: none;
+  cursor: pointer; padding: 8px; color: var(--text-dark);
+}
+.mobile-nav {
+  display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+  background: var(--white); z-index: 999; overflow-y: auto;
+  padding: 24px 24px 40px;
+  transform: translateX(100%); transition: transform 0.3s ease;
+}
+.mobile-nav.open { transform: translateX(0); }
+.mobile-nav-links { list-style: none; }
+.mobile-nav-links li + li { border-top: 1px solid var(--light-grey); }
+.mobile-nav-links a {
+  display: block; font-size: 16px; font-weight: 600;
+  color: var(--text-dark); text-decoration: none; padding: 14px 0;
+}
+.mobile-nav-cta { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.mobile-nav-cta a {
+  display: block; text-align: center; font-size: 15px; font-weight: 700;
+  padding: 14px; border-radius: 6px; text-decoration: none;
+}
+.mobile-nav-cta .btn-primary { background: var(--blue); color: var(--white); }
+.mobile-nav-cta .btn-phone { color: var(--blue); border: 2px solid var(--blue-light); background: var(--blue-light); }
+
+@media (max-width: 900px) {
+  .nav-links, .nav-right { display: none; }
+  .nav-hamburger { display: flex; }
+  .mobile-nav { display: block; }
+}
+
+/* ── BLOG HERO ──────────────────────────────────────── */
+.blog-hero {
+  background: var(--navy);
+  padding: 72px 32px 64px;
+  position: relative; overflow: hidden;
+}
+.blog-hero::before {
+  content: ''; position: absolute; top: -120px; right: -80px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0,82,204,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.blog-hero::after {
+  content: ''; position: absolute; bottom: -60px; left: 40%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(0,168,150,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.blog-hero-inner {
+  max-width: 800px; margin: 0 auto; position: relative; z-index: 1;
+}
+.blog-category {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(0,82,204,0.2); border: 1px solid rgba(0,82,204,0.35);
+  color: #7eb3ff; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 24px;
+}
+.blog-category-dot {
+  width: 6px; height: 6px; background: var(--teal);
+  border-radius: 50%; flex-shrink: 0;
+}
+.blog-hero h1 {
+  font-size: clamp(28px, 4vw, 46px); font-weight: 800;
+  color: var(--white); letter-spacing: -0.03em; line-height: 1.15;
+  margin-bottom: 20px;
+}
+.blog-hero h1 .accent { color: #7eb3ff; }
+.blog-hero-sub {
+  font-size: 17px; font-weight: 400;
+  color: rgba(255,255,255,0.72); line-height: 1.65;
+  max-width: 640px; margin-bottom: 32px;
+}
+.blog-meta {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.blog-meta-item {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.55);
+}
+.blog-meta-item svg {
+  width: 15px; height: 15px; stroke: rgba(255,255,255,0.4); fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0;
+}
+.blog-meta-divider {
+  width: 3px; height: 3px; background: rgba(255,255,255,0.25); border-radius: 50%;
+}
+
+/* ── MAIN LAYOUT ────────────────────────────────────── */
+.blog-body {
+  max-width: 1200px; margin: 0 auto; padding: 64px 32px;
+  display: grid; grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 56px; align-items: start;
+}
+
+/* ── ARTICLE ────────────────────────────────────────── */
+.article { min-width: 0; }
+
+/* Intro box */
+.intro-box {
+  background: var(--blue-light);
+  border-left: 4px solid var(--blue);
+  border-radius: 0 10px 10px 0;
+  padding: 22px 26px; margin-bottom: 44px;
+}
+.intro-box p {
+  font-size: 16px; font-weight: 500;
+  color: var(--text-dark); line-height: 1.65; margin: 0;
+}
+
+/* Body sections */
+.section-block {
+  margin-bottom: 48px;
+  opacity: 0; transform: translateY(24px);
+}
+.section-block h2 {
+  font-size: clamp(20px, 2.5vw, 26px); font-weight: 800;
+  color: var(--text-dark); letter-spacing: -0.025em; line-height: 1.2;
+  margin-bottom: 14px;
+}
+.section-block p {
+  font-size: 16px; color: var(--text-mid); line-height: 1.75; margin-bottom: 14px;
+}
+.section-block p:last-child { margin-bottom: 0; }
+
+/* Section divider */
+.section-divider {
+  border: none; border-top: 1.5px solid var(--light-grey); margin: 40px 0;
+}
+
+/* Callout */
+.callout {
+  background: var(--teal-light);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px; margin: 18px 0;
+}
+.callout p {
+  font-size: 15px; font-weight: 600; color: var(--text-dark); margin: 0;
+}
+
+/* Check list */
+.check-list { list-style: none; margin: 18px 0; }
+.check-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 15px; color: var(--text-mid);
+  padding: 9px 0; border-bottom: 1px solid var(--light-grey);
+  line-height: 1.5; font-weight: 500;
+}
+.check-list li:last-child { border-bottom: none; }
+.check-icon {
+  width: 20px; height: 20px; background: var(--teal-light);
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+.check-icon svg {
+  width: 11px; height: 11px; stroke: var(--teal); fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* Qualifying professions table */
+.profession-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 10px; margin: 20px 0;
+}
+.profession-tag {
+  background: var(--off-white); border: 1.5px solid var(--border);
+  border-radius: 8px; padding: 12px 14px;
+  font-size: 13px; font-weight: 700; color: var(--text-dark);
+  text-align: center;
+}
+.profession-tag.highlight {
+  background: var(--blue-light); border-color: rgba(0,82,204,0.25);
+  color: var(--blue);
+}
+
+/* Internal link block */
+.internal-link-block {
+  background: var(--off-white);
+  border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 24px 26px;
+  margin: 32px 0;
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.internal-link-icon {
+  width: 40px; height: 40px; background: var(--blue-light);
+  border-radius: 10px; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0;
+}
+.internal-link-icon svg {
+  width: 18px; height: 18px; stroke: var(--blue); fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.internal-link-content h4 {
+  font-size: 14px; font-weight: 800; color: var(--text-dark);
+  letter-spacing: -0.01em; margin-bottom: 4px;
+}
+.internal-link-content p {
+  font-size: 13px; color: var(--text-mid); line-height: 1.5; margin-bottom: 10px;
+}
+.internal-link-content a {
+  font-size: 13px; font-weight: 700; color: var(--blue);
+  text-decoration: none;
+}
+.internal-link-content a:hover { text-decoration: underline; }
+
+/* Article CTA block */
+.article-cta {
+  background: var(--navy); border-radius: 16px;
+  padding: 40px 36px; text-align: center; margin-top: 48px;
+}
+.article-cta h3 {
+  font-size: 22px; font-weight: 800; color: var(--white);
+  letter-spacing: -0.025em; margin-bottom: 10px;
+}
+.article-cta p {
+  font-size: 15px; color: rgba(255,255,255,0.65);
+  margin-bottom: 24px; line-height: 1.6;
+}
+.btn-primary {
+  display: inline-block; background: var(--blue); color: var(--white);
+  font-family: 'Manrope', sans-serif; font-size: 15px; font-weight: 700;
+  padding: 14px 32px; border-radius: 6px; text-decoration: none; border: none;
+  cursor: pointer; transition: background 0.18s, transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 2px 8px rgba(0,82,204,0.3);
+}
+.btn-primary:hover {
+  background: var(--blue-dark); transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0,82,204,0.35);
+}
+.article-cta-sub {
+  font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 14px;
+}
+
+/* Disclaimer */
+.disclaimer {
+  margin-top: 40px; padding: 18px 22px;
+  background: var(--off-white); border: 1px solid var(--border);
+  border-radius: 10px; font-size: 12px; color: var(--text-light); line-height: 1.7;
+}
+.disclaimer strong { color: var(--text-mid); font-weight: 700; }
+
+/* ── SIDEBAR ─────────────────────────────────────────── */
+.sidebar {
+  position: sticky; top: 96px;
+  display: flex; flex-direction: column; gap: 22px;
+}
+
+/* Primary CTA card */
+.sidebar-cta {
+  background: var(--blue); border-radius: 14px; padding: 28px 24px; color: var(--white);
+}
+.sidebar-cta-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 10px;
+}
+.sidebar-cta h3 {
+  font-size: 19px; font-weight: 800; letter-spacing: -0.025em;
+  line-height: 1.2; margin-bottom: 12px;
+}
+.sidebar-cta p {
+  font-size: 13px; color: rgba(255,255,255,0.72); margin-bottom: 20px; line-height: 1.6;
+}
+.btn-white {
+  display: block; background: var(--white); color: var(--blue);
+  font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 700;
+  padding: 12px 18px; border-radius: 6px; text-decoration: none;
+  text-align: center; transition: background 0.18s, transform 0.15s;
+  border: none; cursor: pointer;
+}
+.btn-white:hover { background: var(--off-white); transform: translateY(-1px); }
+.sidebar-cta-phone {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.7);
+  text-decoration: none; margin-top: 12px;
+}
+.sidebar-cta-phone:hover { color: var(--white); }
+.sidebar-cta-phone svg {
+  width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2;
+}
+
+/* Info cards */
+.sidebar-card {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 22px 20px;
+}
+.sidebar-card-title {
+  font-size: 13px; font-weight: 800; color: var(--text-dark);
+  letter-spacing: -0.01em; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.sidebar-card-title-dot {
+  width: 7px; height: 7px; background: var(--teal);
+  border-radius: 50%; flex-shrink: 0;
+}
+.sidebar-list { list-style: none; }
+.sidebar-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; color: var(--text-mid); line-height: 1.5;
+  padding: 8px 0; border-bottom: 1px solid var(--light-grey); font-weight: 500;
+}
+.sidebar-list li:last-child { border-bottom: none; }
+.sidebar-dot {
+  width: 6px; height: 6px; background: var(--teal);
+  border-radius: 50%; flex-shrink: 0; margin-top: 6px;
+}
+
+/* ── CLOSING CTA ────────────────────────────────────── */
+.closing-cta {
+  background: var(--blue); padding: 80px 32px; text-align: center;
+}
+.closing-cta-inner { max-width: 640px; margin: 0 auto; }
+.closing-cta-eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6); margin-bottom: 16px;
+}
+.closing-cta h2 {
+  font-size: clamp(26px, 3.5vw, 38px); font-weight: 800;
+  color: var(--white); letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 14px;
+}
+.closing-cta p {
+  font-size: 16px; color: rgba(255,255,255,0.72); margin-bottom: 30px; line-height: 1.65;
+}
+.closing-cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-white-outline {
+  display: inline-block; background: transparent; color: var(--white);
+  border: 2px solid rgba(255,255,255,0.4); font-family: 'Manrope', sans-serif;
+  font-size: 15px; font-weight: 700; padding: 14px 28px; border-radius: 6px;
+  text-decoration: none; transition: border-color 0.18s, background 0.18s, transform 0.15s;
+}
+.btn-white-outline:hover {
+  border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.1);
+  transform: translateY(-1px);
+}
+.btn-white-solid {
+  display: inline-block; background: var(--white); color: var(--blue);
+  font-family: 'Manrope', sans-serif; font-size: 15px; font-weight: 700;
+  padding: 14px 28px; border-radius: 6px; text-decoration: none;
+  transition: background 0.18s, transform 0.15s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+.btn-white-solid:hover { background: var(--off-white); transform: translateY(-1px); }
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.footer { background: var(--navy); padding: 56px 32px 32px; color: rgba(255,255,255,0.55); }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-top {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px; margin-bottom: 48px;
+}
+.footer-brand p {
+  font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7;
+  margin-top: 12px; max-width: 240px;
+}
+.footer-col h4 {
+  font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.4);
+  letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li + li { margin-top: 8px; }
+.footer-col ul li a {
+  font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.65);
+  text-decoration: none; transition: color 0.18s;
+}
+.footer-col ul li a:hover { color: var(--white); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px;
+  display: flex; align-items: flex-start; gap: 24px; flex-wrap: wrap;
+}
+.footer-disclaimer {
+  font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.7;
+  flex: 1; min-width: 280px;
+}
+.footer-acl { font-size: 11px; color: rgba(255,255,255,0.25); white-space: nowrap; }
+
+/* ── RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 960px) {
+  .blog-body { grid-template-columns: 1fr; gap: 40px; }
+  .sidebar { position: static; order: -1; }
+  .sidebar-cta {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; align-items: center;
+  }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 600px) {
+  .blog-hero { padding: 48px 20px 40px; }
+  .blog-body { padding: 40px 20px; }
+  .profession-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: 1fr; }
+  .sidebar-cta { grid-template-columns: 1fr; }
+  .closing-cta { padding: 56px 20px; }
+  .closing-cta-buttons { flex-direction: column; align-items: center; }
+  .nav-inner { padding: 0 20px; }
+  .footer { padding: 40px 20px 24px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+
+    <a href="https://www.digitalfinancesolutions.com.au" class="nav-logo" aria-label="Digital Finance Solutions home">
+      <img src="https://cdn.prod.website-files.com/61fc660e6a44456c36c97404/61fc660e6a4445dec6c974a5_Digital-Finance-Logo.svg" alt="Digital Finance Solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-text" style="display:none">Digital Finance<span>Solutions</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="#" aria-haspopup="true">
+          Services
+          <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <ul class="nav-dropdown-menu" role="menu">
+          <li><a href="https://www.digitalfinancesolutions.com.au/home-loans">Home Loans</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/refinancing">Refinancing</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/investment-loans">Investment Loans</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/first-home-buyers">First Home Buyers</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/professional-home-loans">Professional Loans</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <a href="#" aria-haspopup="true">
+          Suburbs
+          <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <ul class="nav-dropdown-menu" role="menu">
+          <li><a href="https://www.digitalfinancesolutions.com.au/ringwood-mortgage-broker">Ringwood</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/croydon-mortgage-broker">Croydon</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/maroondah-mortgage-broker">Maroondah</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/box-hill-mortgage-broker">Box Hill</a></li>
+        </ul>
+      </li>
+      <li><a href="https://www.digitalfinancesolutions.com.au/about">About</a></li>
+      <li><a href="https://www.digitalfinancesolutions.com.au/blog">Blog</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="tel:0419891983" class="nav-phone">0419 891 983</a>
+      <a href="https://www.digitalfinancesolutions.com.au/book-a-call" class="btn-nav">Book Free Call</a>
+    </div>
+
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile menu">
+  <ul class="mobile-nav-links">
+    <li><a href="https://www.digitalfinancesolutions.com.au/home-loans">Home Loans</a></li>
+    <li><a href="https://www.digitalfinancesolutions.com.au/refinancing">Refinancing</a></li>
+    <li><a href="https://www.digitalfinancesolutions.com.au/investment-loans">Investment Loans</a></li>
+    <li><a href="https://www.digitalfinancesolutions.com.au/first-home-buyers">First Home Buyers</a></li>
+    <li><a href="https://www.digitalfinancesolutions.com.au/professional-home-loans">Professional Loans</a></li>
+    <li><a href="https://www.digitalfinancesolutions.com.au/about">About</a></li>
+    <li><a href="https://www.digitalfinancesolutions.com.au/blog">Blog</a></li>
+  </ul>
+  <div class="mobile-nav-cta">
+    <a href="https://www.digitalfinancesolutions.com.au/book-a-call" class="btn-primary">Book Free Call</a>
+    <a href="tel:0419891983" class="btn-phone">Call 0419 891 983</a>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     BLOG HERO
+══════════════════════════════════════════════ -->
+<!-- TEMPLATE NOTE: Replace category, h1, subtitle, read time -->
+<section class="blog-hero" aria-label="Article header">
+  <div class="blog-hero-inner">
+
+    <div class="blog-category" id="heroCat">
+      <span class="blog-category-dot" aria-hidden="true"></span>
+      Doctor Home Loans <!-- TEMPLATE: category label -->
+    </div>
+
+    <h1 id="heroH1">
+      Can Doctors Get a Home Loan <span class="accent">With No LMI?</span>
+      <!-- TEMPLATE: H1 — wrap the key differentiator in .accent -->
+    </h1>
+
+    <p class="blog-hero-sub" id="heroSub">
+      Most lenders will waive LMI for doctors buying with as little as a 5% deposit. Here's how the policy works, which professions qualify, and what to watch out for.
+      <!-- TEMPLATE: 1–2 sentence sub — tell them what they'll get from reading -->
+    </p>
+
+    <div class="blog-meta" id="heroMeta">
+      <div class="blog-meta-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        5 min read <!-- TEMPLATE: adjust read time -->
+      </div>
+      <div class="blog-meta-divider" aria-hidden="true"></div>
+      <div class="blog-meta-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Digital Finance Solutions
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     BODY — ARTICLE + SIDEBAR
+══════════════════════════════════════════════ -->
+<div class="blog-body">
+
+  <!-- ── ARTICLE ───────────────────────────── -->
+  <main class="article" id="articleMain" role="main">
+
+    <!-- Intro box: one punchy paragraph that earns the click -->
+    <div class="intro-box" id="introBox">
+      <p>Lenders mortgage insurance can add $20,000–$40,000 to the cost of buying a home — the exact amount depends on your lender, loan size, and LVR. For doctors, most major lenders will waive it entirely, even at 90–95% LVR, subject to eligibility. This article explains exactly who qualifies, how to access it, and why you should still use a broker even when the policy looks straightforward.</p>
+      <!-- TEMPLATE: make this punchy — what's the main promise of the article? -->
+    </div>
+
+
+    <!-- ── SECTION 1 ──────────────────────── -->
+    <div class="section-block" id="s1">
+      <h2>What Is LMI and Why Does It Exist?</h2>
+      <!-- TEMPLATE: background / context section — optional, cut if audience already knows -->
+      <p>Lenders mortgage insurance protects the lender — not you — if you default and the property sells for less than the outstanding loan balance. It's typically required when you borrow more than 80% of the property's value.</p>
+      <p>The premium is capitalised onto your loan, meaning you pay interest on it for the life of the loan. On a $1,000,000 purchase with a 10% deposit, LMI can add $25,000–$35,000 to your total cost.</p>
+
+      <div class="callout">
+        <p>LMI benefits the bank. You pay the premium but the policy pays out to the lender if things go wrong. Waiving it is a genuine saving — not a marketing line.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+
+    <!-- ── SECTION 2 ──────────────────────── -->
+    <div class="section-block" id="s2">
+      <h2>Why Do Lenders Waive LMI for Doctors?</h2>
+      <!-- TEMPLATE: the "why" section — explains the mechanism behind the answer -->
+      <p>Lenders view medical professionals as low-risk borrowers. The profession has a near-zero unemployment rate, high and stable income, strong asset accumulation, and historically very low mortgage default rates.</p>
+      <p>Rather than charge a premium that protects against a risk they don't really expect to materialise, many lenders have created specific policies that waive LMI for doctors and other healthcare professionals — often up to 90% LVR, and in some cases up to 95%.</p>
+      <p>The competition for high-income professional borrowers is also intense. LMI waivers are partly a commercial decision to attract doctors early in their careers, when loan sizes will be significant and refinancing loyalty tends to be high.</p>
+    </div>
+
+    <hr class="section-divider">
+
+
+    <!-- ── SECTION 3 ──────────────────────── -->
+    <div class="section-block" id="s3">
+      <h2>Which Professions Qualify?</h2>
+      <!-- TEMPLATE: qualifying criteria section — use the profession grid or a check-list -->
+      <p>Policies vary by lender. Most include registered medical practitioners broadly, while some extend to other healthcare professionals. The most common qualifying professions are:</p>
+
+      <div class="profession-grid" aria-label="Qualifying professions — common examples">
+        <div class="profession-tag highlight">General Practitioner</div>
+        <div class="profession-tag highlight">Specialist Physician</div>
+        <div class="profession-tag highlight">Surgeon</div>
+        <div class="profession-tag highlight">Anaesthetist</div>
+        <div class="profession-tag highlight">Psychiatrist</div>
+        <div class="profession-tag highlight">Radiologist</div>
+        <div class="profession-tag">Dentist</div>
+        <div class="profession-tag">Pharmacist</div>
+        <div class="profession-tag">Veterinarian</div>
+      </div>
+      <!-- TEMPLATE: adjust profession tags for the cluster; use .highlight for the primary targets -->
+
+      <p style="font-size:12px; color:var(--text-light); font-style:italic; margin-top:-4px;">Qualifying professions and LVR caps vary by lender. The above reflects common policy coverage — not a guarantee. A broker confirms your eligibility before you apply.</p>
+
+      <p>Some lenders require you to be fully registered with AHPRA. Others also accept junior doctors, interns, and medical registrars — recognising that income will grow significantly even if it's currently at a training rate.</p>
+
+      <ul class="check-list" aria-label="Common eligibility requirements">
+        <li>
+          <span class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Registered with AHPRA (or equivalent professional body)
+        </li>
+        <li>
+          <span class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Loan used for owner-occupied or investment residential property
+        </li>
+        <li>
+          <span class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Minimum deposit of 5–10% (varies by lender)
+        </li>
+        <li>
+          <span class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          Loan size typically $500,000 or above (some lenders)
+        </li>
+      </ul>
+    </div>
+
+    <hr class="section-divider">
+
+
+    <!-- ── SECTION 4 ──────────────────────── -->
+    <div class="section-block" id="s4">
+      <h2>What to Watch Out For</h2>
+      <!-- TEMPLATE: caution / nuance section — builds trust, prevents bad outcomes -->
+      <p>The LMI waiver gets attention, but the rate and loan structure matter just as much. A lender offering LMI waiver but a higher rate than competitors can cost more over the loan term than paying the LMI upfront with a cheaper lender.</p>
+      <p>There are also lenders who cap the LMI waiver at 85% LVR despite advertising it at 90%, or apply it only to certain property types. Reading the fine print across 5–10 lenders yourself takes hours. A broker does this as a matter of course.</p>
+
+      <div class="callout">
+        <p>The best deal for a doctor borrower isn't always the one with the loudest LMI waiver headline. Rate, features, offset, and repayment flexibility all factor in — it requires comparing the full cost of each loan, not just the waiver condition.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+
+    <!-- ── INTERNAL LINK BLOCK ───────────────
+         TEMPLATE: This is the main conversion moment in a supporting blog.
+         Link to the landing page this blog is designed to support.
+         Varies per post — change the destination, heading, and body copy. -->
+    <div class="internal-link-block" id="internalLink">
+      <div class="internal-link-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </div>
+      <div class="internal-link-content">
+        <h4>Doctor Home Loan — No LMI Specialist Page</h4>
+        <p>See the full breakdown of which lenders currently offer the sharpest rates with LMI waiver for Melbourne doctors, plus what borrowing capacity looks like at a registrar vs. consultant income level.</p>
+        <a href="https://www.digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne">
+          Explore doctor home loan options &rarr;
+          <!-- TEMPLATE: update href and link text to match the supporting landing page -->
+        </a>
+      </div>
+    </div>
+
+
+    <!-- ── ARTICLE CTA ───────────────────── -->
+    <div class="article-cta" id="articleCta">
+      <h3>Ready to Buy Without Paying LMI?</h3>
+      <!-- TEMPLATE: adjust CTA headline to match the article's topic -->
+      <p>Book a free 15-minute call. We confirm your eligibility, find the lender with the best combination of LMI waiver and rate, and handle the application from start to settlement.</p>
+      <a href="https://www.digitalfinancesolutions.com.au/book-a-call" class="btn-primary">Book Free Call</a>
+      <p class="article-cta-sub">No obligation. Broker fee: $0.</p>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer" role="contentinfo">
+      <strong>General Information Only.</strong> The information in this article is general in nature and does not constitute financial or credit advice. LMI waiver eligibility, LVR caps, and qualifying professions vary by lender and are subject to change. Before making any financial decisions, consider seeking professional advice. Digital Finance Solutions is a Credit Representative (532405) of Beagle Finance Pty Ltd (ACL 391237).
+    </div>
+
+  </main>
+
+
+  <!-- ── SIDEBAR ──────────────────────────── -->
+  <aside class="sidebar" aria-label="Article sidebar">
+
+    <!-- Primary CTA — stays consistent across all supporting blogs -->
+    <div class="sidebar-cta" id="sidebarCta">
+      <div class="sidebar-cta-eyebrow">Free · No Obligation</div>
+      <h3>Talk to a Doctor Loan Specialist</h3>
+      <!-- TEMPLATE: adjust h3 to match the article's audience -->
+      <p>15 minutes. We confirm your eligibility and find the best rate with LMI waiver.</p>
+      <a href="https://www.digitalfinancesolutions.com.au/book-a-call" class="btn-white">Book Free Call</a>
+      <a href="tel:0419891983" class="sidebar-cta-phone">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.72 3.5 2 2 0 0 1 3.7 1.3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6.29 6.29l1.26-1.26a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        0419 891 983
+      </a>
+    </div>
+
+    <!-- Quick reference — TEMPLATE: tailor bullet points to the article topic -->
+    <div class="sidebar-card" id="sidebarRef">
+      <div class="sidebar-card-title">
+        <span class="sidebar-card-title-dot" aria-hidden="true"></span>
+        Doctor LMI Waiver — At a Glance
+        <!-- TEMPLATE: change title to match article -->
+      </div>
+      <ul class="sidebar-list" role="list">
+        <li><span class="sidebar-dot" aria-hidden="true"></span>LMI waiver available at 5–10% deposit — subject to lender eligibility</li>
+        <li><span class="sidebar-dot" aria-hidden="true"></span>Most lenders go to 90% LVR</li>
+        <li><span class="sidebar-dot" aria-hidden="true"></span>Some lenders reach 95% LVR</li>
+        <li><span class="sidebar-dot" aria-hidden="true"></span>AHPRA registration required</li>
+        <li><span class="sidebar-dot" aria-hidden="true"></span>Registrars and interns often included</li>
+        <li><span class="sidebar-dot" aria-hidden="true"></span>Rates should still be competitive</li>
+      </ul>
+    </div>
+
+    <!-- Related posts — TEMPLATE: update links to match this post's cluster -->
+    <div class="sidebar-card" id="sidebarRelated">
+      <div class="sidebar-card-title">
+        <span class="sidebar-card-title-dot" aria-hidden="true"></span>
+        Related Articles
+      </div>
+      <ul class="sidebar-list" role="list">
+        <li>
+          <span class="sidebar-dot" aria-hidden="true"></span>
+          <a href="how-much-can-doctor-borrow-home-loan.html" style="color:var(--blue);text-decoration:none;font-weight:600;font-size:13px;">How much can a doctor borrow?</a>
+        </li>
+        <li>
+          <span class="sidebar-dot" aria-hidden="true"></span>
+          <a href="dentists-no-lmi-home-loan.html" style="color:var(--blue);text-decoration:none;font-weight:600;font-size:13px;">Dentists: No LMI at 90–95% LVR</a>
+        </li>
+        <li>
+          <span class="sidebar-dot" aria-hidden="true"></span>
+          <a href="what-happens-home-loan-health-check.html" style="color:var(--blue);text-decoration:none;font-weight:600;font-size:13px;">What happens in a loan health check?</a>
+        </li>
+        <li>
+          <span class="sidebar-dot" aria-hidden="true"></span>
+          <a href="signs-paying-too-much-mortgage.html" style="color:var(--blue);text-decoration:none;font-weight:600;font-size:13px;">5 signs you're paying too much</a>
+        </li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /blog-body -->
+
+
+<!-- ══════════════════════════════════════════════
+     CLOSING CTA
+══════════════════════════════════════════════ -->
+<section class="closing-cta" aria-label="Call to action">
+  <div class="closing-cta-inner" id="closingCta">
+    <div class="closing-cta-eyebrow">Doctor Home Loans · Melbourne</div>
+    <!-- TEMPLATE: update eyebrow to match cluster -->
+    <h2>LMI Waiver Available at 5–10% Deposit — Subject to Eligibility</h2>
+    <!-- TEMPLATE: closing CTA headline — restate the core value proposition -->
+    <p>We handle the lender comparison, eligibility check, and application. You focus on settling into your new home.</p>
+    <div class="closing-cta-buttons">
+      <a href="https://www.digitalfinancesolutions.com.au/book-a-call" class="btn-white-solid">Book Free Call</a>
+      <a href="tel:0419891983" class="btn-white-outline">Call 0419 891 983</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <img src="https://cdn.prod.website-files.com/61fc660e6a44456c36c97404/61fc660e6a4445dec6c974a5_Digital-Finance-Logo.svg" alt="Digital Finance Solutions" height="32" style="filter:brightness(0) invert(1);opacity:0.7;">
+        <p>Melbourne mortgage broker helping professionals and families get better rates and smarter home loans.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="https://www.digitalfinancesolutions.com.au/home-loans">Home Loans</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/refinancing">Refinancing</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/investment-loans">Investment Loans</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/first-home-buyers">First Home Buyers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Suburbs</h4>
+        <ul>
+          <li><a href="https://www.digitalfinancesolutions.com.au/ringwood-mortgage-broker">Ringwood</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/croydon-mortgage-broker">Croydon</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/maroondah-mortgage-broker">Maroondah</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/box-hill-mortgage-broker">Box Hill</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://www.digitalfinancesolutions.com.au/about">About</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/blog">Blog</a></li>
+          <li><a href="https://www.digitalfinancesolutions.com.au/book-a-call">Book a Call</a></li>
+          <li><a href="tel:0419891983">0419 891 983</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        Digital Finance Solutions is a Credit Representative (532405) of Beagle Finance Pty Ltd ACL 391237. The information on this website is general in nature and does not constitute financial advice. Please consider your personal circumstances before making any financial decisions.
+      </p>
+      <span class="footer-acl">© 2026 Digital Finance Solutions</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════ -->
+<script>
+/* ── Mobile nav ─────────────────────────── */
+const hamburger = document.getElementById('hamburgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+let navOpen = false;
+
+hamburger.addEventListener('click', () => {
+  navOpen = !navOpen;
+  mobileNav.classList.toggle('open', navOpen);
+  hamburger.setAttribute('aria-expanded', navOpen);
+  document.body.style.overflow = navOpen ? 'hidden' : '';
+});
+
+/* ── GSAP Animations ─────────────────────── */
+gsap.registerPlugin(ScrollTrigger);
+
+/* Hero stagger */
+['#heroCat', '#heroH1', '#heroSub', '#heroMeta'].forEach((sel, i) => {
+  const el = document.querySelector(sel);
+  if (!el) return;
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  gsap.to(el, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.08 + i * 0.1 });
+});
+
+/* Intro box */
+gsap.from('#introBox', {
+  scrollTrigger: { trigger: '#introBox', start: 'top 88%', once: true },
+  opacity: 0, x: -18, duration: 0.55, ease: 'power2.out'
+});
+
+/* Section blocks */
+['#s1','#s2','#s3','#s4'].forEach((id, i) => {
+  const el = document.querySelector(id);
+  if (!el) return;
+  gsap.to(el, {
+    scrollTrigger: { trigger: el, start: 'top 84%', once: true },
+    opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.03 * i
+  });
+});
+
+/* Internal link block */
+gsap.from('#internalLink', {
+  scrollTrigger: { trigger: '#internalLink', start: 'top 86%', once: true },
+  opacity: 0, y: 16, duration: 0.55, ease: 'power2.out'
+});
+
+/* Article CTA */
+gsap.from('#articleCta', {
+  scrollTrigger: { trigger: '#articleCta', start: 'top 88%', once: true },
+  opacity: 0, y: 20, duration: 0.6, ease: 'power2.out'
+});
+
+/* Sidebar */
+['#sidebarCta','#sidebarRef','#sidebarRelated'].forEach((id, i) => {
+  const el = document.querySelector(id);
+  if (!el) return;
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+    opacity: 0, y: 16, duration: 0.5, ease: 'power2.out', delay: 0.06 * i
+  });
+});
+
+/* Closing CTA */
+gsap.from('#closingCta', {
+  scrollTrigger: { trigger: '#closingCta', start: 'top 85%', once: true },
+  opacity: 0, y: 24, duration: 0.65, ease: 'power2.out'
+});
+</script>
+
+</body>
+</html>

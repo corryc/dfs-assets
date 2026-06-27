@@ -1,0 +1,72 @@
+LANDING PAGE SNAPSHOT
+Scraped: 2026-06-26
+URL: https://www.digitalfinancesolutions.com.au/home-loan-health-check
+SEO Title: Home Loan Health Check Melbourne | Annual Mortgage Review | DFS
+Meta Description: Annual home loan health check. We compare your current mortgage against 30+ lenders — identify savings, refinance opportunities, and better terms. Free assessment.
+Note: Full styled HTML lives in Webflow. This is a content snapshot for reference/backup.
+
+---
+
+HEADING: Home Loan Health Check — Is Your Mortgage Working Hardest for You?
+
+SUBTITLE: Your home loan doesn't stay competitive. Rates change, features improve, and better lenders emerge. A health check compares your current mortgage against 30+ lenders to find savings, better terms, or a more flexible structure — with no fee to you.
+
+CTAs: Book Your Free Review | Call 0419 891 983
+
+TRUST SIGNALS: Free assessment | No broker fee | Same-day response
+
+---
+
+SECTION 1 — What is a home loan health check?
+A home loan health check is an annual review of your mortgage by a broker who has access to 30+ lenders. We compare your current loan (rate, features, fees) against alternative options to identify whether you could save money, access better features, or restructure your loan to suit your situation better.
+
+Unlike comparing rates online yourself, a health check gives you:
+- Access to lenders' best rates (not advertised rates)
+- Personalized assessment based on your income type (self-employed, salary, investments, etc.)
+- Fee analysis — many borrowers miss hidden fees or expensive features
+- Exit cost factoring — we calculate whether refinancing savings exceed break costs
+
+---
+
+SECTION 2 — Real savings example: $800K home loan
+A borrower with an $800,000 mortgage refinances from 5.8% to 5.3% (0.5% rate reduction):
+- Monthly Saving: $333/mo
+- Annual Saving: $3,996/year
+- 30-Year Saving: $119,880
+
+---
+
+SECTION 3 — What happens during a health check?
+- Initial call (15–20 minutes): Basic loan details provided. No full documents yet.
+- Assessment (24–48 hours): Compare against 30+ lenders.
+- Recommendation call (20–30 minutes): 2–3 options presented.
+- No obligation: No cost if you choose not to refinance.
+
+---
+
+SECTION 4 — Who should get a health check?
+- Been with same lender 3+ years
+- On a variable rate
+- Circumstances have changed
+- Paying a high annual fee
+- Unsure whether loan structure still fits
+
+---
+
+CLOSING: Your mortgage should work for you, not against you.
+CTA: Book Your Health Check →
+
+---
+
+FAQ:
+Q: What is a home loan health check? A: Annual review comparing loan against 30+ lenders.
+Q: How much can I save? A: Typical savings $50–$300+ per month when refinancing.
+Q: Is it free? A: Yes — initial health check and recommendation are free.
+Q: What happens during one? A: Review current mortgage, assess situation, compare 30+ lenders, present options.
+Q: How long does it take? A: Assessment 24–48 hours. Refinance approval 2–4 weeks.
+Q: Do I need documents upfront? A: No. Loan statement helpful but not required.
+Q: Will it affect my credit score? A: Initial review doesn't trigger credit checks.
+
+---
+
+FOOTER: Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence No. 391237). ©2024 Digital Finance Solutions.

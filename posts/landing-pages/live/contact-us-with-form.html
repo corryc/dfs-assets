@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Digital Finance Solutions | Talk to Our Mortgage Brokers</title>
+<meta name="description" content="Talk to our experienced mortgage brokers. We have banking and lender experience. Same-day response. Melbourne eastern suburbs. Free consultation.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://corryc.github.io/dfs-assets/dfs-styles.css" rel="stylesheet">
+<style>
+  :root {
+    --navy: #001a4d;
+    --blue: #0052cc;
+    --teal: #00a896;
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-mid: #666666;
+    --border: #e6e6e6;
+    --bg-light: #f9f9f9;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Manrope', sans-serif; color: var(--text-dark); line-height: 1.6; background: var(--white); }
+
+  /* NAV */
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px; background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 700; color: var(--text-dark); font-size: 15px; }
+  .nav-logo img { height: 40px; }
+  .nav-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+  .nav-logo-text span { font-size: 11px; font-weight: 500; color: var(--text-mid); }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .nav-phone { font-size: 14px; font-weight: 600; color: var(--text-dark); text-decoration: none; }
+  .btn-primary { background: var(--blue); color: var(--white); padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,82,204,0.25); }
+
+  /* HERO */
+  .hero { padding: 96px 40px; background: var(--white); max-width: 1400px; margin: 0 auto; }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(32px, 4vw, 48px); font-weight: 800; color: var(--text-dark); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 24px 0; }
+  .hero h1 mark { background: none; color: var(--teal); font-style: normal; }
+  .hero-sub { font-size: 18px; color: var(--text-mid); line-height: 1.75; margin-bottom: 32px; max-width: 540px; }
+
+  /* CONTACT SECTION */
+  .contact-wrap { display: grid; grid-template-columns: 1fr 340px; gap: 64px; align-items: start; padding: 96px 40px; background: var(--white); max-width: 1400px; margin: 0 auto; }
+  .contact-left { }
+  .form-container { margin-bottom: 40px; }
+  .form-container iframe { width: 100%; height: 650px; border: none; border-radius: 8px; }
+
+  /* SIDEBAR */
+  .contact-sidebar { position: sticky; top: 96px; }
+  .sidebar-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 14px; padding: 32px; margin-bottom: 24px; }
+  .sidebar-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+  .sidebar-title { font-size: 17px; font-weight: 800; color: var(--text-dark); margin-bottom: 16px; }
+  .sidebar-text { font-size: 14px; color: var(--text-mid); line-height: 1.75; margin-bottom: 20px; }
+  .sidebar-item { display: flex; gap: 12px; margin-bottom: 16px; font-size: 14px; }
+  .sidebar-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--teal); font-weight: 700; }
+  .sidebar-link { color: var(--blue); text-decoration: none; font-weight: 700; transition: color 0.2s; }
+  .sidebar-link:hover { color: var(--teal); }
+
+  /* CREDENTIALS */
+  .credentials { font-size: 12px; color: var(--text-mid); line-height: 1.7; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 16px; }
+
+  /* FAQ SECTION */
+  .faq-section { padding: 96px 40px; background: var(--white); max-width: 1200px; margin: 0 auto; }
+  .faq-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
+  .faq-title { font-size: 32px; font-weight: 800; color: var(--text-dark); margin-bottom: 40px; margin-top: 0; }
+  .faq-item { padding: 28px 0; border-bottom: 1px solid var(--border); }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q { font-size: 16px; font-weight: 700; color: var(--text-dark); cursor: pointer; margin-bottom: 12px; }
+  .faq-a { font-size: 15px; color: var(--text-mid); line-height: 1.75; margin: 0; }
+
+  /* FOOTER */
+  .footer { background: var(--navy); color: var(--white); padding: 48px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; }
+  .footer-brand { font-weight: 700; font-size: 16px; }
+  .footer-legal { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { color: var(--white); text-decoration: none; font-size: 14px; font-weight: 600; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--teal); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .contact-wrap { grid-template-columns: 1fr; gap: 48px; padding: 64px 24px; }
+    .nav { flex-direction: column; gap: 16px; padding: 16px 24px; }
+    .nav-right { width: 100%; justify-content: center; gap: 12px; }
+    .btn-primary { width: 100%; }
+    .contact-sidebar { position: static; }
+    .form-container iframe { height: 800px; }
+    .footer { flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://www.digitalfinancesolutions.com.au" class="nav-logo">
+    <img src="https://cdn.prod.website-files.com/61fc660e6a44456c36c97404/61fc660e6a4445dec6c974a5_Digital-Finance-Logo.svg" alt="Digital Finance Solutions" onerror="this.style.display='none'">
+    <div class="nav-logo-text">Digital Finance Solutions<span>Melbourne Mortgage Broker</span></div>
+  </a>
+  <div class="nav-right">
+    <a href="tel:0419891983" class="nav-phone">0419 891 983</a>
+    <a href="https://www.digitalfinancesolutions.com.au/contact-us" class="btn-primary">Book Free Call</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">Get in touch</div>
+  <h1>Talk to Our <mark>Experienced Mortgage Brokers</mark></h1>
+  <p class="hero-sub">Our team brings banking experience and lender insight. We know the ins and outs of how lenders work — which is why we get better outcomes for our clients. Same-day response. Free consultation.</p>
+</section>
+
+<!-- CONTACT FORM + SIDEBAR -->
+<div class="contact-wrap">
+  <div class="contact-left">
+    <div class="form-container">
+      <iframe src="https://wef.salestrekker.com?logoUrl=https://public-salestrekker-mag.s3-ap-southeast-2.amazonaws.com/logos/29232551-5425-48a6-beee-188949487f16.png&p=https://www.mortgageaustralia.com.au/wp-content/uploads/2016/02/PrivacySecurityPolicy1.pdf&n=New%20web%20form%20Short%20Form&o=Digital%20Finance%20Solutions&e=corry@digitalfinancesolutions.com.au&t=undefined&label=821a7744-b405-449c-83bd-4ddd03207413&primary=%23047857&background=%23F9FAFB&text=%23059669&error=%23DC2626&simple=true&hasCallToAction=false&u=https://mag.salestrekker.com/api/v1/access/referral/&k=9cfb70f6-f18b-4383-b028-c9f737b11075"></iframe>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="contact-sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-label">Quick Response</div>
+      <div class="sidebar-title">Same-Day Response</div>
+      <div class="sidebar-text">Submit your details and we'll be in touch within 24 hours — usually much faster.</div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-label">Who We Are</div>
+      <div class="sidebar-title">Banking + Lender Insight</div>
+      <div class="sidebar-text">Our brokers have worked in banking and for lenders. We understand how they think and what they need to approve your loan.</div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-label">Contact Info</div>
+      <div class="sidebar-item">
+        <div class="sidebar-icon">📞</div>
+        <div><a href="tel:0419891983" class="sidebar-link">0419 891 983</a></div>
+      </div>
+
+      <div class="sidebar-item">
+        <div class="sidebar-icon">📍</div>
+        <div>Melbourne Eastern Suburbs</div>
+      </div>
+      <div class="credentials">
+        Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence No. 391237).
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-label">Frequently asked</div>
+  <h2 class="faq-title">Contact & Consultation Questions</h2>
+  <div class="faq-item">
+    <div class="faq-q">How quickly will I hear back?</div>
+    <p class="faq-a">We aim to respond to all enquiries within 24 hours during business days. Most clients hear from us within a few hours.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Is there a cost to talk to a broker?</div>
+    <p class="faq-a">No. Our consultation is free. We're paid by the lender when your loan settles, not by you.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What information do I need to provide?</div>
+    <p class="faq-a">Just basic details to start — your name, contact info, and what you're looking to do (buy, refinance, invest). We'll ask for more detail once we understand your situation.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Do you only work with people in the eastern suburbs?</div>
+    <p class="faq-a">We're based in Melbourne's eastern suburbs, but we work with clients across Victoria. If you're outside this area, get in touch and we'll let you know if we can help.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Can I call instead of using the form?</div>
+    <p class="faq-a">Absolutely. Call 0419 891 983 and we'll chat through your situation right away.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What if I'm not ready to apply yet?</div>
+    <p class="faq-a">No problem. We're here to answer questions and help you understand your options, whether you're ready to move forward now or just exploring.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <div class="footer-brand">Digital Finance Solutions</div>
+    <div class="footer-legal">Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence No. 391237). ©2024 Digital Finance Solutions. All rights reserved.</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://www.digitalfinancesolutions.com.au/">Home</a>
+    <a href="https://www.digitalfinancesolutions.com.au/blog">Blog</a>
+    <a href="https://www.digitalfinancesolutions.com.au/self-employed-home-loan-eastern-suburbs">Self Employed</a>
+    <a href="https://www.digitalfinancesolutions.com.au/contact-us">Contact</a>
+  </div>
+</footer>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from(".faq-item", { scrollTrigger: { trigger: ".faq-section", start: "top 70%" }, opacity: 0, y: 16, duration: 0.5, stagger: 0.05, ease: "power2.out" });
+</script>
+
+</body>
+</html>
