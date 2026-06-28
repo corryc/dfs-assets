@@ -1,86 +1,211 @@
-<!-- DFS Global Nav + Footer - loaded via dfs-nav-loader.js -->
+<!-- DFS Global Nav + Footer — loaded via dfs-nav-loader.js -->
 <!-- Update this file to update nav/footer across ALL pages instantly -->
-<!-- Phone: 0419 891 983 | CTA: Book Free Call -> /contact-us -->
+<!-- Phone: 0419 891 983 | CTA: Book Free Call → /contact-us -->
 
 <style>
-:root{--navy:#0d1b2e;--blue:#0052cc;--blue-hover:#003d99;--mid:#3d4f6b;--light:#6b7c99;--border:#dde3ed;--font:'Manrope','Inter',sans-serif;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:#fff;border-bottom:1px solid var(--border);padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;font-family:var(--font);}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
-.nav-logo img{height:40px;width:auto;display:block;}
-.nav-logo-text{display:flex;flex-direction:column;gap:2px;}
-.nav-logo-text span:first-child{font-size:14px;font-weight:800;color:var(--navy);line-height:1.1;}
-.nav-logo-text span:last-child{font-size:10px;font-weight:600;color:var(--light);letter-spacing:0.05em;margin-top:2px;}
-.nav-links{display:flex;align-items:center;gap:28px;}
-.nav-link{font-size:14px;font-weight:600;color:var(--mid);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
+/* ── DFS NAV ──────────────────────────────────────────────── */
+:root{
+  --navy:#0d1b2e;
+  --blue:#0052cc;
+  --blue-hover:#003d99;
+  --mid:#3d4f6b;
+  --light:#6b7c99;
+  --border:#dde3ed;
+  --font:'Manrope','Inter',sans-serif;
+}
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:9999;
+  background:#fff;border-bottom:1px solid var(--border);
+  padding:0 40px;height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  font-family:var(--font);
+}
+/* Logo */
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;flex-shrink:0;
+}
+.nav-logo img{height:36px;width:auto;display:block;}
+/* Centre links */
+.nav-links{
+  display:flex;align-items:center;gap:28px;
+}
+.nav-link{
+  font-size:14px;font-weight:600;color:var(--mid);
+  text-decoration:none;transition:color 0.2s;white-space:nowrap;
+}
 .nav-link:hover{color:var(--blue);}
+/* Dropdown */
 .nav-dropdown{position:relative;}
-.nav-dropdown-toggle{font-size:14px;font-weight:600;color:var(--mid);cursor:pointer;display:flex;align-items:center;gap:4px;background:none;border:none;padding:0;font-family:var(--font);transition:color 0.2s;white-space:nowrap;}
+.nav-dropdown-toggle{
+  font-size:14px;font-weight:600;color:var(--mid);
+  cursor:pointer;display:flex;align-items:center;gap:4px;
+  background:none;border:none;padding:0;font-family:var(--font);
+  transition:color 0.2s;white-space:nowrap;
+}
 .nav-dropdown-toggle:hover{color:var(--blue);}
-.nav-dropdown-toggle svg{width:12px;height:12px;transition:transform 0.2s;flex-shrink:0;}
+.nav-dropdown-toggle svg{
+  width:12px;height:12px;transition:transform 0.2s;flex-shrink:0;
+}
 .nav-dropdown:hover .nav-dropdown-toggle svg{transform:rotate(180deg);}
-.nav-drop-panel{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px;box-shadow:0 8px 32px rgba(0,0,0,0.10);z-index:10000;}
+.nav-drop-panel{
+  display:none;position:absolute;top:calc(100% + 8px);left:0;
+  background:#fff;border:1px solid var(--border);border-radius:10px;
+  padding:12px;box-shadow:0 8px 32px rgba(0,0,0,0.10);z-index:10000;
+}
 .nav-dropdown:hover .nav-drop-panel{display:flex;}
+/* Two-column Services panel */
 .nav-drop-panel.two-col{gap:4px;min-width:460px;}
 .nav-drop-col{display:flex;flex-direction:column;gap:2px;flex:1;}
-.nav-drop-panel a{display:block;padding:9px 14px;font-size:14px;font-weight:500;color:var(--mid);text-decoration:none;border-radius:6px;transition:background 0.15s,color 0.15s;white-space:nowrap;}
-.nav-drop-panel a:hover{background:#e8f0ff;color:var(--blue);}
+.nav-drop-panel a{
+  display:block;padding:9px 14px;font-size:14px;font-weight:500;
+  color:var(--mid);text-decoration:none;border-radius:6px;
+  transition:background 0.15s,color 0.15s;white-space:nowrap;
+}
+.nav-drop-panel a:hover{border-color:#b8c6e0;background:#fff;}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+      border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,82,204,.1);background:#fff;}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:#b0b9ca;}
+    .form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a6478' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:40px;cursor:pointer;}
+    .form-group textarea{resize:vertical;min-height:108px;line-height:1.65;}
 .nav-drop-panel.one-col{flex-direction:column;min-width:200px;}
+/* Right side */
 .nav-right{display:flex;align-items:center;gap:16px;}
-.nav-phone{font-size:14px;font-weight:700;color:var(--navy);text-decoration:none;white-space:nowrap;transition:color 0.2s;}
+.nav-phone{
+  font-size:14px;font-weight:700;color:var(--navy);
+  text-decoration:none;white-space:nowrap;
+  transition:color 0.2s;
+}
 .nav-phone:hover{color:var(--blue);}
-.nav-cta{background:var(--blue);color:#fff;padding:13px 32px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;font-family:var(--font);white-space:nowrap;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(0,82,204,0.25);letter-spacing:0.02em;}
-.nav-cta:hover{background:var(--blue-hover);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,82,204,0.35);}
-.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px;}
-.nav-hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all 0.3s;}
-.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.nav-hamburger.open span:nth-child(2){opacity:0;}
-.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:#fff;z-index:9998;overflow-y:auto;padding:24px 20px;flex-direction:column;gap:4px;font-family:var(--font);}
+.nav-cta{
+  background:var(--blue);color:#fff;
+  padding:10px 22px;border-radius:6px;
+  font-size:14px;font-weight:700;text-decoration:none;
+  font-family:var(--font);white-space:nowrap;
+  transition:background 0.2s;
+}
+.nav-cta:hover{background:var(--blue-hover);}
+/* Hamburger */
+.nav-hamburger{
+  display:none;background:none;border:none;cursor:pointer;
+  padding:6px;flex-direction:column;gap:5px;
+}
+.nav-hamburger span{
+  display:block;width:22px;height:2px;
+  background:var(--navy);border-radius:2px;
+  transition:all 0.3s;
+}
+/* Mobile nav */
+.mobile-nav{
+  display:none;position:fixed;top:68px;left:0;right:0;bottom:0;
+  background:#fff;z-index:9998;overflow-y:auto;
+  padding:24px 20px;flex-direction:column;gap:4px;
+  font-family:var(--font);
+}
 .mobile-nav.open{display:flex;}
-.mobile-nav-section{font-size:10px;font-weight:800;color:var(--light);letter-spacing:0.1em;text-transform:uppercase;padding:18px 12px 8px;}
-.mobile-nav a{display:block;padding:12px 12px;font-size:15px;font-weight:600;color:var(--mid);text-decoration:none;border-radius:8px;transition:background 0.15s,color 0.15s;}
+.mobile-nav-section{
+  font-size:11px;font-weight:700;color:var(--light);
+  letter-spacing:0.08em;text-transform:uppercase;
+  padding:16px 12px 6px;
+}
+.mobile-nav a{
+  display:block;padding:12px 12px;font-size:15px;font-weight:600;
+  color:var(--mid);text-decoration:none;border-radius:8px;
+  transition:background 0.15s,color 0.15s;
+}
 .mobile-nav a:hover,.mobile-nav a:active{background:#e8f0ff;color:var(--blue);}
-.mobile-nav-cta{margin-top:16px;background:var(--blue);color:#fff !important;text-align:center;border-radius:8px;padding:13px 32px;font-weight:700;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;}
-.mobile-nav-cta:hover{background:var(--blue-hover);}
-.mobile-nav-phone{font-size:16px;font-weight:700;color:var(--navy) !important;border:2px solid var(--border);text-align:center;border-radius:8px;margin-top:8px;padding:12px;}
-body{padding-top:72px;}
-.dfs-footer{background:var(--navy);padding:48px 40px 32px;font-family:var(--font);}
-.dfs-footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.mobile-nav-cta{
+  margin-top:16px;background:var(--blue);color:#fff !important;
+  text-align:center;border-radius:8px;
+}
+.mobile-nav-phone{
+  font-size:16px;font-weight:700;color:var(--navy) !important;
+  border:2px solid var(--border);text-align:center;border-radius:8px;
+  margin-top:8px;
+}
+
+/* Push body below fixed nav */
+body{padding-top:68px;}
+
+/* ── DFS FOOTER ─────────────────────────────────────────── */
+.dfs-footer{
+  background:var(--navy);padding:48px 40px 32px;
+  font-family:var(--font);
+}
+.dfs-footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;
+}
 .dfs-footer-brand{display:flex;flex-direction:column;gap:6px;}
 .dfs-footer-brand strong{font-size:16px;font-weight:800;color:#fff;}
 .dfs-footer-brand span{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.5;}
 .dfs-footer-links{display:flex;flex-direction:column;gap:10px;}
-.dfs-footer-links a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
+.dfs-footer-links a{
+  font-size:13px;color:rgba(255,255,255,0.5);
+  text-decoration:none;transition:color 0.2s;
+}
 .dfs-footer-links a:hover{color:#fff;}
-.dfs-footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;font-size:12px;color:rgba(255,255,255,0.3);line-height:1.7;}
-@media(max-width:900px){.nav-links{display:none;}.nav-phone{display:none;}.nav-cta{display:none;}.nav-hamburger{display:flex;}.nav{padding:0 20px;height:68px;}.nav-logo-text span:first-child{font-size:13px;}.nav-logo-text span:last-child{font-size:9px;}.dfs-footer{padding:40px 24px 28px;}.dfs-footer-inner{grid-template-columns:1fr;gap:28px;}}
+.dfs-footer-bottom{
+  grid-column:1/-1;
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:20px;
+  font-size:12px;color:rgba(255,255,255,0.3);line-height:1.7;
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────── */
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .nav-phone{display:none;}
+  .nav-cta{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav{padding:0 20px;}
+  .dfs-footer{padding:40px 24px 28px;}
+  .dfs-footer-inner{grid-template-columns:1fr;gap:28px;}
+}
 </style>
 
+<!-- ── NAV ───────────────────────────────────────────────── -->
 <nav class="nav" id="dfs-nav">
+
+  <!-- Logo -->
   <a href="https://www.digitalfinancesolutions.com.au" class="nav-logo">
-    <img src="https://cdn.prod.website-files.com/61fc660e6a44456c36c97404/61fc660e6a4445dec6c974a5_Digital-Finance-Logo.svg" alt="Digital Finance Solutions" onerror="this.style.display='none'">
-    <div class="nav-logo-text"><span>Digital Finance Solutions</span><span>Melbourne Mortgage Broker</span></div>
+    <img
+      src="https://cdn.prod.website-files.com/61fc660e6a44456c36c97404/61fc660e6a4445dec6c974a5_Digital-Finance-Logo.svg"
+      alt="Digital Finance Solutions"
+      onerror="this.style.display='none'">
   </a>
+
+  <!-- Desktop centre links -->
   <div class="nav-links">
+
+    <!-- Services dropdown (2 col) -->
     <div class="nav-dropdown">
-      <button class="nav-dropdown-toggle">Services <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg></button>
+      <button class="nav-dropdown-toggle">
+        Services
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+      </button>
       <div class="nav-drop-panel two-col">
         <div class="nav-drop-col">
-          <a href="https://www.digitalfinancesolutions.com.au/expert-mortgage-brokers">Home Loans</a>
+          <a href="https://www.digitalfinancesolutions.com.au/expert-mortgage-brokers">Home Loan��a>
           <a href="https://www.digitalfinancesolutions.com.au/refinance">Refinancing</a>
           <a href="https://www.digitalfinancesolutions.com.au/investment-property-loans">Investment Property</a>
           <a href="https://www.digitalfinancesolutions.com.au/debt-consolidation">Debt Consolidation</a>
         </div>
         <div class="nav-drop-col">
           <a href="https://www.digitalfinancesolutions.com.au/self-employed-home-loan-eastern-suburbs">Self Employed</a>
-          <a href="https://www.digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne">Doctors - No LMI</a>
+          <a href="https://www.digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne">Doctors — No LMI</a>
           <a href="https://www.digitalfinancesolutions.com.au/car-loans">Car Loans</a>
           <a href="https://www.digitalfinancesolutions.com.au/personal-loans">Personal Loans</a>
         </div>
       </div>
     </div>
+
+    <!-- Suburbs dropdown -->
     <div class="nav-dropdown">
-      <button class="nav-dropdown-toggle">Suburbs <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg></button>
+      <button class="nav-dropdown-toggle">
+        Suburbs
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+      </button>
       <div class="nav-drop-panel one-col">
         <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-ringwood">Ringwood</a>
         <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-bayswater">Bayswater</a>
@@ -90,16 +215,24 @@ body{padding-top:72px;}
         <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-bayswater-north">Bayswater North</a>
       </div>
     </div>
+
     <a href="https://www.digitalfinancesolutions.com.au/blog" class="nav-link">Blog</a>
     <a href="https://www.digitalfinancesolutions.com.au/about-us" class="nav-link">About</a>
+
   </div>
+
+  <!-- Right -->
   <div class="nav-right">
     <a href="tel:0419891983" class="nav-phone">0419 891 983</a>
     <a href="https://www.digitalfinancesolutions.com.au/contact-us" class="nav-cta">Book Free Call</a>
-    <button class="nav-hamburger" id="dfsHamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <button class="nav-hamburger" id="dfsHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+
 </nav>
 
+<!-- ── MOBILE NAV ──────────────────────────────────────────── -->
 <div class="mobile-nav" id="dfsMobileNav">
   <div class="mobile-nav-section">Services</div>
   <a href="https://www.digitalfinancesolutions.com.au/expert-mortgage-brokers">Home Loans</a>
@@ -107,9 +240,10 @@ body{padding-top:72px;}
   <a href="https://www.digitalfinancesolutions.com.au/investment-property-loans">Investment Property</a>
   <a href="https://www.digitalfinancesolutions.com.au/debt-consolidation">Debt Consolidation</a>
   <a href="https://www.digitalfinancesolutions.com.au/self-employed-home-loan-eastern-suburbs">Self Employed</a>
-  <a href="https://www.digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne">Doctors - No LMI</a>
+  <a href="https://www.digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne">Doctors — No LMI</a>
   <a href="https://www.digitalfinancesolutions.com.au/car-loans">Car Loans</a>
   <a href="https://www.digitalfinancesolutions.com.au/personal-loans">Personal Loans</a>
+
   <div class="mobile-nav-section">Suburbs</div>
   <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-ringwood">Ringwood</a>
   <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-bayswater">Bayswater</a>
@@ -117,35 +251,41 @@ body{padding-top:72px;}
   <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-wantirna">Wantirna</a>
   <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-heathmont">Heathmont</a>
   <a href="https://www.digitalfinancesolutions.com.au/mortgage-broker-bayswater-north">Bayswater North</a>
+
   <div class="mobile-nav-section">Company</div>
   <a href="https://www.digitalfinancesolutions.com.au/blog">Blog</a>
   <a href="https://www.digitalfinancesolutions.com.au/about-us">About</a>
+
   <a href="tel:0419891983" class="mobile-nav-phone">0419 891 983</a>
   <a href="https://www.digitalfinancesolutions.com.au/contact-us" class="mobile-nav-cta">Book Free Call</a>
 </div>
 
+<!-- Hamburger script -->
 <script>
 (function(){
-  var btn=document.getElementById('dfsHamburger');
-  var menu=document.getElementById('dfsMobileNav');
-  if(!btn||!menu)return;
-  btn.addEventListener('click',function(){
+  var btn = document.getElementById('dfsHamburger');
+  var menu = document.getElementById('dfsMobileNav');
+  if(!btn||!menu) return;
+  btn.addEventListener('click', function(){
     menu.classList.toggle('open');
-    var s=btn.querySelectorAll('span');
-    var o=menu.classList.contains('open');
-    s[0].style.transform=o?'translateY(7px) rotate(45deg)':'';
-    s[1].style.opacity=o?'0':'';
-    s[2].style.transform=o?'translateY(-7px) rotate(-45deg)':'';
+    var spans = btn.querySelectorAll('span');
+    var open = menu.classList.contains('open');
+    spans[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+    spans[1].style.opacity  = open ? '0' : '';
+    spans[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
   });
 })();
 </script>
 
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
 <footer class="dfs-footer" id="dfs-footer">
   <div class="dfs-footer-inner">
+
     <div class="dfs-footer-brand">
       <strong>Digital Finance Solutions</strong>
       <span>Melbourne Mortgage Broker<br>Eastern Suburbs Specialist</span>
     </div>
+
     <div class="dfs-footer-links">
       <a href="https://www.digitalfinancesolutions.com.au/expert-mortgage-brokers">Home Loans</a>
       <a href="https://www.digitalfinancesolutions.com.au/refinance">Refinancing</a>
@@ -156,10 +296,12 @@ body{padding-top:72px;}
       <a href="https://www.digitalfinancesolutions.com.au/contact-us">Contact</a>
       <a href="https://www.digitalfinancesolutions.com.au/privacy-policy">Privacy / Credit Guide</a>
     </div>
+
     <div class="dfs-footer-bottom">
       <strong style="color:rgba(255,255,255,0.6);">Digital Finance Solutions</strong> is a Credit Representative (532405) of Beagle Finance Pty Ltd (ACL 391237).<br>
-      General advice only - any information provided does not consider your personal financial situation or needs.<br>
+      General advice only — any information provided does not consider your personal financial situation or needs. Please consider whether any advice is appropriate for you.<br>
       &copy;2026 Digital Finance Solutions. All rights reserved.
     </div>
+
   </div>
 </footer>
