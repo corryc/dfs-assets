@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Digital Finance Solutions — Mortgage Broker Melbourne</title>
-  <meta name="description" content="Get in touch with Digital Finance Solutions. Book a free call with our Melbourne mortgage broker — no obligation. Call 0419 891 983 or send us a message.">
+  <meta name="description" content="Get in touch with Digital Finance Solutions. Book a free call with our Melbourne mortgage broker — No obligation. Send us a message and we'll respond same day.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.digitalfinancesolutions.com.au/contact-us">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,188 +27,158 @@
   </script>
 
   <style>
-    /* ── Hero ── */
-    .contact-hero{padding:120px 80px 64px;background:var(--navy);color:#fff;text-align:center;}
-    .contact-hero h1{font-size:clamp(36px,5vw,56px);font-weight:800;margin-bottom:16px;line-height:1.1;}
-    .contact-hero p{font-size:18px;opacity:.85;max-width:560px;margin:0 auto;line-height:1.7;}
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes scaleIn { from { opacity:0; transform:scale(0.96); } to { opacity:1; transform:scale(1); } }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .anim-up { opacity:0; animation:fadeUp 0.65s ease forwards; }
+    .anim-in { opacity:0; animation:fadeIn 0.5s ease forwards; }
+    .d1{animation-delay:.05s} .d2{animation-delay:.15s} .d3{animation-delay:.25s} .d4{animation-delay:.38s} .d5{animation-delay:.52s}
 
-    /* ── Layout ── */
-    .contact-body{padding:72px 80px 80px;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;max-width:1140px;margin:0 auto;}
+    .contact-hero{padding:136px 80px 72px;background:var(--navy);color:#fff;text-align:center;position:relative;overflow:hidden;}
+    .contact-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,82,204,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,82,204,.07) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+    .contact-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,var(--navy));pointer-events:none;}
+    .hero-inner{position:relative;z-index:2;}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(77,216,204,.9);border:1px solid rgba(77,216,204,.25);border-radius:100px;padding:6px 16px;margin-bottom:24px;}
+    .hero-eyebrow span{width:6px;height:6px;background:#4dd8cc;border-radius:50%;display:inline-block;}
+    .contact-hero h1{font-size:clamp(38px,5.5vw,60px);font-weight:800;color:#fff;line-height:1.08;letter-spacing:-.025em;margin-bottom:18px;}
+    .contact-hero h1 em{font-style:normal;color:#4dd8cc;}
+    .contact-hero p{font-size:18px;color:rgba(255,255,255,.72);max-width:520px;margin:0 auto 40px;line-height:1.75;}
+    .hero-trust{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;}
+    .hero-trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.6);}
+    .hero-trust-item svg{width:15px;height:15px;stroke:#4dd8cc;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+    .hero-divider{width:1px;height:14px;background:rgba(255,255,255,.15);}
 
-    /* ── Left col ── */
-    .contact-col h2{font-size:26px;font-weight:800;color:var(--navy);margin-bottom:8px;}
-    .contact-col .sub{font-size:15px;color:#5a6478;margin-bottom:36px;line-height:1.6;}
+    .contact-body{padding:72px 80px 88px;display:grid;grid-template-columns:1fr 1.15fr;gap:64px;max-width:1160px;margin:0 auto;}
 
-    .contact-option{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;padding:20px 22px;background:#f5f7fa;border-radius:14px;border:1px solid #dde3ed;}
-    .contact-option-icon{width:42px;height:42px;border-radius:10px;background:#e8f0ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .contact-option-icon svg{width:18px;height:18px;stroke:#0052cc;}
-    .contact-option-body h3{font-size:14px;font-weight:700;color:#0d1b2e;margin-bottom:3px;}
-    .contact-option-body p{font-size:13px;color:#5a6478;margin:0;}
-    .contact-option-body a{color:#0052cc;text-decoration:none;font-weight:600;}
-    .contact-option-body a:hover{text-decoration:underline;}
+    .contact-col-left h2{font-size:28px;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:10px;line-height:1.2;}
+    .contact-col-left .sub{font-size:15px;color:var(--text-light);margin-bottom:32px;line-height:1.65;}
+    .hours-card{display:flex;align-items:flex-start;gap:16px;padding:20px 22px;background:var(--off-white);border:1.5px solid var(--border);border-radius:14px;margin-bottom:32px;transition:border-color .2s,box-shadow .2s;}
+    .hours-card:hover{border-color:rgba(0,82,204,.3);box-shadow:0 4px 16px rgba(0,82,204,.06);}
+    .hours-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .hours-icon svg{width:19px;height:19px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+    .hours-body h3{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+    .hours-body p{font-size:13px;color:var(--text-light);line-height:1.6;}
+    .col-divider{height:1px;background:var(--border);margin:0 0 28px;}
+    .what-next-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:20px;}
+    .step-row{display:flex;gap:16px;margin-bottom:22px;align-items:flex-start;}
+    .step-row:last-child{margin-bottom:0;}
+    .step-num{width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;box-shadow:0 2px 8px rgba(0,82,204,.3);}
+    .step-content h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom);}
+    .step-content h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:3px;line-height:1.35;}
+    .step-content p{font-size:13px;color:var(--text-light);line-height:1.6;margin:0;}
 
-    .hours-table{width:100%;border-collapse:collapse;margin-top:8px;}
-    .hours-table td{padding:9px 0;font-size:14px;color:#5a6478;border-bottom:1px solid #dde3ed;}
-    .hours-table td:first-child{font-weight:600;color:#0d1b2e;}
-    .hours-table tr:last-child td{border-bottom:none;}
-
-    .what-next{margin-top:36px;}
-    .what-next h3{font-size:17px;font-weight:700;color:#0d1b2e;margin-bottom:18px;}
-    .expect-item{display:flex;gap:14px;margin-bottom:16px;}
-    .expect-num{width:26px;height:26px;border-radius:50%;background:#0052cc;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
-    .expect-body h4{font-size:14px;font-weight:700;color:#0d1b2e;margin-bottom:2px;}
-    .expect-body p{font-size:13px;color:#5a6478;margin:0;line-height:1.5;}
-
-    /* ── Form col ── */
-    .form-card{background:#fff;border-radius:20px;border:1px solid #dde3ed;padding:40px;box-shadow:0 4px 24px rgba(13,27,46,.07);}
-    .form-card h2{font-size:22px;font-weight:800;color:#0d1b2e;margin-bottom:6px;}
-    .form-card .form-sub{font-size:14px;color:#5a6478;margin-bottom:28px;line-height:1.5;}
+    .form-card{background:#fff;border-radius:20px;border:1.5px solid var(--border);padding:44px 40px;box-shadow:0 2px 4px rgba(13,27,46,.04),0 8px 32px rgba(13,27,46,.08),0 24px 64px rgba(0,82,204,.05);position:relative;}
+    .form-card::before{content:'';position:absolute;top:0;left:40px;right:40px;height:3px;background:linear-gradient(90deg,var(--blue) 0%,#4dd8cc 100%);border-radius:0 0 3px 3px;}
+    .form-card-header{margin-bottom:28px;}
+    .form-card-header h2{font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:6px;line-height:1.2;}
+    .form-card-header p{font-size:14px;color:var(--text-light);line-height:1.55;}
 
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
     .form-group{margin-bottom:18px;}
-    .form-group label{display:block;font-size:13px;font-weight:600;color:#0d1b2e;margin-bottom:6px;}
-    .form-group label .req{color:#0052cc;}
-    .form-group input,
-    .form-group select,
-    .form-group textarea{
-      width:100%;
-      padding:13px 16px;
-      border:1.5px solid #dde3ed;
-      border-radius:10px;
-      font-family:'Manrope',sans-serif;
-      font-size:14px;
-      color:#0d1b2e;
-      background:#fff;
-      outline:none;
-      transition:border-color .15s,box-shadow .15s;
-      box-sizing:border-box;
-      appearance:none;
-      -webkit-appearance:none;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus{
-      border-color:#0052cc;
-      box-shadow:0 0 0 3px rgba(0,82,204,.1);
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder{color:#aab2c0;}
-    .form-group select{
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a6478' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-      background-repeat:no-repeat;
-      background-position:right 16px center;
-      padding-right:40px;
-      cursor:pointer;
-    }
-    .form-group textarea{resize:vertical;min-height:110px;line-height:1.6;}
+    .form-group label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:7px;letter-spacing:.01em;}
+    .form-group label .req{color:var(--blue);}
+    .form-group label .opt{font-weight:500;color:var(--text-light);font-size:11px;margin-left:4px;}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 15px;border:1.5px solid var(--border);border-radius:10px;font-family:'Manrope',sans-serif;font-size:14px;color:var(--navy);background:var(--off-white);outline:none;transition:border-color .15s,box-shadow .15s,background .15s;box-sizing:border-box;appearance:none;-webkit-appearance:none;}
+    .form-group input:hover,.form-group select:hover,.form-group textarea:hover{border-color:#b8c6e0;background:#fff;}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,82,204,.1);background:#fff;}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:#b0b9ca;}
+    .form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a6478' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:40px;cursor:pointer;}
+    .form-group textarea{resize:vertical;min-height:108px;line-height:1.65;}
 
-    .form-submit{
-      width:100%;
-      padding:15px;
-      background:#0052cc;
-      color:#fff;
-      border:none;
-      border-radius:10px;
-      font-family:'Manrope',sans-serif;
-      font-size:15px;
-      font-weight:700;
-      cursor:pointer;
-      transition:background .15s,transform .15s,box-shadow .15s;
-      margin-top:6px;
-    }
-    .form-submit:hover{background:#003d99;transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,82,204,.3);}
+    .form-submit{width:100%;padding:15px;background:var(--blue);color:#fff;border:none;border-radius:10px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:background .15s,transform .15s,box-shadow .15s;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:8px;letter-spacing:.01em;}
+    .form-submit svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;transition:transform .15s;}
+    .form-submit:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,82,204,.35);}
+    .form-submit:hover svg{transform:translateX(2px);}
     .form-submit:active{transform:translateY(0);}
-    .form-submit:disabled{background:#aab2c0;cursor:not-allowed;transform:none;box-shadow:none;}
+    .form-submit:disabled{background:#b0b9ca;cursor:not-allowed;transform:none;box-shadow:none;}
+    .form-privacy{font-size:11.5px;color:#9aa5b8;margin-top:14px;line-height:1.55;text-align:center;}
 
-    .form-success{display:none;text-align:center;padding:32px 20px;}
-    .form-success .tick{width:56px;height:56px;background:#e6f7f5;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
-    .form-success .tick svg{width:26px;height:26px;stroke:#00a896;}
-    .form-success h3{font-size:20px;font-weight:800;color:#0d1b2e;margin-bottom:8px;}
-    .form-success p{font-size:14px;color:#5a6478;line-height:1.6;}
+    .form-success{display:none;text-align:center;padding:40px 20px;animation:scaleIn .4s ease forwards;}
+    .success-tick{width:64px;height:64px;background:var(--teal-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 0 0 8px rgba(0,168,150,.08);}
+    .success-tick svg{width:28px;height:28px;stroke:var(--teal);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+    .form-success h3{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-.02em;}
+    .form-success p{font-size:15px;color:var(--text-light);line-height:1.65;max-width:340px;margin:0 auto;}
 
-    .form-privacy{font-size:12px;color:#8a94a6;margin-top:14px;line-height:1.5;text-align:center;}
+    .disclaimer-bar{background:var(--off-white);border-top:1px solid var(--border);padding:20px 80px;}
+    .disclaimer-bar p{font-size:12px;color:var(--text-light);line-height:1.65;max-width:900px;}
 
-    /* ── Responsive ── */
     @media(max-width:1024px){
       .contact-body{grid-template-columns:1fr;gap:48px;padding:56px 40px 64px;}
-      .contact-hero{padding:100px 40px 48px;}
+      .contact-hero{padding:110px 40px 60px;}
       .form-row{grid-template-columns:1fr;}
+      .disclaimer-bar{padding:20px 40px;}
     }
     @media(max-width:640px){
-      .contact-hero{padding:80px 24px 40px;}
+      .contact-hero{padding:96px 24px 48px;}
       .contact-body{padding:40px 24px 56px;}
-      .form-card{padding:28px 22px;}
+      .form-card{padding:32px 24px;}
+      .disclaimer-bar{padding:16px 24px;}
+      .hero-trust{gap:14px;}
+      .hero-divider{display:none;}
     }
   </style>
 </head>
 <body>
 
 <div class="contact-hero">
-  <div class="section-label" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.25);">Get in Touch</div>
-  <h1>Let's Talk About<br>Your Home Loan</h1>
-  <p>No obligation. No jargon. Just straight answers about your finance options from a broker who knows the Melbourne market.</p>
+  <div class="hero-inner">
+    <div class="hero-eyebrow anim-up d1"><span></span>Get in Touch</div>
+    <h1 class="anim-up d2">Let's Talk About<br>Your <em>Home Loan</em></h1>
+    <p class="anim-up d3">No obligation. No jargon. Just straight answers about your finance options from a broker who knows the Melbourne market.</p>
+    <div class="hero-trust anim-up d4">
+      <div class="hero-trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>No obligation</div>
+      <div class="hero-divider"></div>
+      <div class="hero-trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Same-day response</div>
+      <div class="hero-divider"></div>
+      <div class="hero-trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>30+ lenders</div>
+    </div>
+  </div>
 </div>
 
 <div class="contact-body">
+  <div class="contact-col-left">
+    <h2 class="anim-up d2">We'll Be In Touch</h2>
+    <p class="sub anim-up d3">Fill in the form and we'll respond within one business day — usually same day.</p>
 
-  <!-- Left: contact options + what to expect -->
-  <div class="contact-col">
-    <h2>We'll Be In Touch</h2>
-    <p class="sub">Fill in the form and we'll respond within one business day — usually same day.</p>
-
-    <div class="contact-option">
-      <div class="contact-option-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-        </svg>
+    <div class="hours-card anim-up d3">
+      <div class="hours-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       </div>
-      <div class="contact-option-body">
+      <div class="hours-body">
         <h3>Business Hours</h3>
-        <p>Mon–Fri 9am–6pm · Sat 10am–3pm · Sun by appointment</p>
+        <p>Mon–Fri &nbsp;9am–6pm<br>Sat &nbsp;10am–3pm<br>Sun &nbsp;By appointment</p>
       </div>
     </div>
 
-    <div class="what-next">
-      <h3>What Happens Next</h3>
-      <div class="expect-item">
-        <div class="expect-num">1</div>
-        <div class="expect-body">
-          <h4>We Review Your Situation</h4>
-          <p>We'll ask about your goals, income, deposit, and any existing debts — so we come prepared.</p>
-        </div>
-      </div>
-      <div class="expect-item">
-        <div class="expect-num">2</div>
-        <div class="expect-body">
-          <h4>We Compare Lenders</h4>
-          <p>We search our panel of 30+ lenders to identify products that may suit your circumstances.</p>
-        </div>
-      </div>
-      <div class="expect-item">
-        <div class="expect-num">3</div>
-        <div class="expect-body">
-          <h4>We Explain Your Options</h4>
-          <p>Plain English — rates, features, trade-offs — so you can make an informed decision.</p>
-        </div>
-      </div>
-      <div class="expect-item">
-        <div class="expect-num">4</div>
-        <div class="expect-body">
-          <h4>We Handle the Paperwork</h4>
-          <p>If you'd like to proceed, we manage the application from start to settlement.</p>
-        </div>
-      </div>
+    <div class="col-divider anim-in d3"></div>
+    <div class="what-next-label anim-up d3">What Happens Next</div>
+
+    <div class="step-row anim-up d3">
+      <div class="step-num">1</div>
+      <div class="step-content"><h4>We Review Your Situation</h4><p>We'll ask about your goals, income, deposit, and any existing debts — so we come prepared.</p></div>
+    </div>
+    <div class="step-row anim-up d4">
+      <div class="step-num">2</div>
+      <div class="step-content"><h4>We Compare Lenders</h4><p>We search our panel of 30+ lenders to identify products that may suit your circumstances.</p></div>
+    </div>
+    <div class="step-row anim-up d4">
+      <div class="step-num">3</div>
+      <div class="step-content"><h4>We Explain Your Options</h4><p>Plain English — rates, features, trade-offs — so you can make an informed decision.</p></div>
+    </div>
+    <div class="step-row anim-up d5">
+      <div class="step-num">4</div>
+      <div class="step-content"><h4>We Handle the Paperwork</h4><p>If you'd like to proceed, we manage the application from start to settlement.</p></div>
     </div>
   </div>
 
-  <!-- Right: native-styled Google Form -->
-  <div class="contact-col">
+  <div class="contact-col-right anim-up d3">
     <div class="form-card">
-
       <div id="form-wrap">
-        <h2>Send Us a Message</h2>
-        <p class="form-sub">Fill in the form and we'll be in touch within one business day.</p>
-
+        <div class="form-card-header">
+          <h2>Send Us a Message</h2>
+          <p>We'll be in touch within one business day — usually same day.</p>
+        </div>
         <form id="dfs-contact-form" novalidate>
           <div class="form-row">
             <div class="form-group">
@@ -216,16 +186,14 @@
               <input type="text" id="fc-name" name="entry.1014088693" placeholder="e.g. Jane Smith" required autocomplete="name">
             </div>
             <div class="form-group">
-              <label for="fc-phone">Phone Number</label>
+              <label for="fc-phone">Phone Number <span class="opt">(optional)</span></label>
               <input type="tel" id="fc-phone" name="entry.1175502712" placeholder="e.g. 0412 345 678" autocomplete="tel">
             </div>
           </div>
-
           <div class="form-group">
             <label for="fc-email">Email Address <span class="req">*</span></label>
             <input type="email" id="fc-email" name="entry.1104170609" placeholder="e.g. jane@example.com" required autocomplete="email">
           </div>
-
           <div class="form-group">
             <label for="fc-purpose">What brings you in? <span class="req">*</span></label>
             <select id="fc-purpose" name="entry.1724131975" required>
@@ -238,31 +206,27 @@
               <option value="Other">Other</option>
             </select>
           </div>
-
           <div class="form-group">
-            <label for="fc-message">Tell us more</label>
-            <textarea id="fc-message" name="entry.917006660" placeholder="Anything else you'd like us to know — your timeframe, loan size, or specific questions…"></textarea>
+            <label for="fc-message">Tell us more <span class="opt">(optional)</span></label>
+            <textarea id="fc-message" name="entry.917006660" placeholder="Your timeframe, loan size, or any specific questions…"></textarea>
           </div>
-
-          <button type="submit" class="form-submit" id="fc-submit">Send Message</button>
-
+          <button type="submit" class="form-submit" id="fc-submit">
+            Send Message
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
           <p class="form-privacy">Your details are kept private and never shared. By submitting you agree to be contacted by Digital Finance Solutions regarding your enquiry.</p>
         </form>
       </div>
 
       <div class="form-success" id="form-success">
-        <div class="tick">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
+        <div class="success-tick">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
         <h3>Message Received</h3>
         <p>Thanks for getting in touch. We'll be in contact within one business day — usually same day.</p>
       </div>
-
     </div>
   </div>
-
 </div>
 
 <div class="disclaimer-bar">
@@ -271,43 +235,38 @@
 
 <script>
 (function(){
-  const FORM_ACTION = 'https://docs.google.com/forms/u/2/d/e/1FAIpQLSecYLWifaaNwnUyzK0E_Kao3iywdFVV6YIuMXq493fCq-ZuPQ/formResponse';
+  var FORM_ACTION='https://docs.google.com/forms/u/2/d/e/1FAIpQLSecYLWifaaNwnUyzK0E_Kao3iywdFVV6YIuMXq493fCq-ZuPQ/formResponse';
+  var form=document.getElementById('dfs-contact-form');
+  var btn=document.getElementById('fc-submit');
+  var wrap=document.getElementById('form-wrap');
+  var success=document.getElementById('form-success');
 
-  const form = document.getElementById('dfs-contact-form');
-  const btn  = document.getElementById('fc-submit');
-  const wrap = document.getElementById('form-wrap');
-  const success = document.getElementById('form-success');
-
-  form.addEventListener('submit', async function(e){
+  form.addEventListener('submit',async function(e){
     e.preventDefault();
-
-    // Basic validation
-    const name  = form.querySelector('#fc-name').value.trim();
-    const email = form.querySelector('#fc-email').value.trim();
-    const purpose = form.querySelector('#fc-purpose').value;
-    if(!name || !email || !purpose){
-      alert('Please fill in your name, email and what brings you in.');
+    var name=form.querySelector('#fc-name').value.trim();
+    var email=form.querySelector('#fc-email').value.trim();
+    var purpose=form.querySelector('#fc-purpose').value;
+    if(!name||!email||!purpose){
+      [['#fc-name',name],['#fc-email',email],['#fc-purpose',purpose]].forEach(function(pair){
+        if(!pair[1]){
+          var el=form.querySelector(pair[0]);
+          el.style.borderColor='#e24b4a';
+          el.style.boxShadow='0 0 0 3px rgba(226,75,74,.12)';
+          setTimeout(function(){el.style.borderColor='';el.style.boxShadow='';},2200);
+        }
+      });
       return;
     }
+    btn.disabled=true;
+    btn.textContent='Sending…';
+    var data=new FormData(form);
+    try{await fetch(FORM_ACTION,{method:'POST',mode:'no-cors',body:data});}catch(err){}
+    wrap.style.display='none';
+    success.style.display='block';
+  });
 
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-
-    const data = new FormData(form);
-
-    try {
-      await fetch(FORM_ACTION, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: data
-      });
-    } catch(err){
-      // no-cors means we can't read the response — submission still goes through
-    }
-
-    // Show success regardless (Google Forms accepts silently)
-    wrap.style.display = 'none';
-    success.style.display = 'block';
+  form.querySelectorAll('input,select,textarea').forEach(function(el){
+    el.addEventListener('input',function(){this.style.borderColor='';this.style.boxShadow='';});
   });
 })();
 </script>
