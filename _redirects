@@ -1,0 +1,12 @@
+# DFS Netlify Redirects
+# Netlify processes rules top-to-bottom, first match wins.
+# Format: /source  /destination  status
+
+# ── BLOCK: Internal component files ──────────────────────────────────────────
+/dfs-nav.html                   /404.html  404
+/dfs-homepage.html              /404.html  404
+
+# ── BLOCK: Archive content ───────────────────────────────────────────────────
+/posts/blog/archive/*           /404.html  404
+/posts/landing-pages/archive/*  /404.html  404
+/posts/landing-pages/2026-*     /404.html  404
