@@ -92,7 +92,17 @@ footer{background:var(--navy);padding:36px 24px}
 .foot-links a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none}
 .foot-links a:hover{color:#fff}
 @media(max-width:860px){.cards{grid-template-columns:1fr 1fr}}
-@media(max-width:580px){.cards{grid-template-columns:1fr}.frm-row{grid-template-columns:1fr}.form-card{padding:28px 20px}.hero{padding:96px 20px 48px}}</style>
+@media(max-width:580px){.cards{grid-template-columns:1fr}.frm-row{grid-template-columns:1fr}.form-card{padding:28px 20px}.hero{padding:96px 20px 48px}}.hero-form{background:#fff;border-radius:16px;padding:28px;margin-top:28px;box-shadow:0 20px 50px rgba(0,0,0,.25);max-width:420px}
+.hero-form .form-heading{font-size:19px;font-weight:800;color:#0d1b2e;margin-bottom:6px;font-family:"Manrope",sans-serif}
+.hero-form .form-sub{font-size:13px;color:#6b7c99;margin-bottom:18px;line-height:1.5}
+.hero-form .form-group{margin-bottom:14px}
+.hero-form .form-label{display:block;font-size:12px;font-weight:700;color:#3d4f6b;margin-bottom:5px}
+.hero-form .form-input,.hero-form .form-select{width:100%;padding:12px 14px;border:1.5px solid #dde3ed;border-radius:8px;font-family:"Manrope",sans-serif;font-size:14px;color:#0d1b2e;background:#fff;box-sizing:border-box}
+.hero-form .form-input:focus,.hero-form .form-select:focus{outline:none;border-color:#0052cc}
+.hero-form .form-submit{width:100%;background:#0052cc;color:#fff;font-family:"Manrope",sans-serif;font-size:15px;font-weight:700;padding:14px;border:none;border-radius:8px;cursor:pointer;margin-top:4px}
+.hero-form .form-submit:hover{background:#003d99}
+@media(max-width:640px){.hero-form{max-width:100%}}
+</style>
 </head>
 <body><nav class="nav">
 <div class="nav-in">
@@ -119,6 +129,16 @@ footer{background:var(--navy);padding:36px 24px}
 <div class="trust-item"><div class="chk"><svg viewBox="0 0 11 11" fill="none"><polyline points="2,6 4.5,8.5 9,3" stroke="#00a896" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Same-day response</div>
 <div class="trust-item"><div class="chk"><svg viewBox="0 0 11 11" fill="none"><polyline points="2,6 4.5,8.5 9,3" stroke="#00a896" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>30+ lenders compared</div>
 </div>
+<form name="boronia-hero-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="hero-form" action="/thank-you">
+<input type="hidden" name="form-name" value="boronia-hero-enquiry">
+<p style="display:none"><label>Leave this field blank: <input name="bot-field"></label></p>
+<p class="form-heading">See if you are on the best deal</p>
+<p class="form-sub">We compare 30+ lenders and get back to you same business day.</p>
+<div class="form-group"><label class="form-label" for="hf-name-boronia">Your name</label><input type="text" id="hf-name-boronia" name="name" placeholder="First name" required autocomplete="name" class="form-input"></div>
+<div class="form-group"><label class="form-label" for="hf-phone-boronia">Phone number</label><input type="tel" id="hf-phone-boronia" name="phone" placeholder="04xx xxx xxx" required autocomplete="tel" class="form-input"></div>
+<div class="form-group"><label class="form-label" for="hf-goal-boronia">What are you looking for?</label><select id="hf-goal-boronia" name="enquiry_type" required class="form-input form-select"><option value="" disabled selected>Select one...</option><option>Home loan - buying</option><option>Refinancing</option><option>Investment property</option><option>First home buyer</option><option>Other</option></select></div>
+<button type="submit" class="form-submit">Get My Free Comparison &#8594;</button>
+</form>
 </div>
 </section><div class="band">
 <div class="band-in">
