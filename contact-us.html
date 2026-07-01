@@ -179,24 +179,27 @@
           <h2>Send Us a Message</h2>
           <p>We'll be in touch within one business day — usually same day.</p>
         </div>
-        <form id="dfs-contact-form" novalidate>
+        <form id="dfs-contact-form" name="contact-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" novalidate>
+          <input type="hidden" name="form-name" value="contact-enquiry">
+          <input type="hidden" name="subject" data-remove-prefix value="New website contact enquiry (%{submissionId})">
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
           <div class="form-row">
             <div class="form-group">
               <label for="fc-name">Full Name <span class="req">*</span></label>
-              <input type="text" id="fc-name" name="entry.1014088693" placeholder="e.g. Jane Smith" required autocomplete="name">
+              <input type="text" id="fc-name" name="name" placeholder="e.g. Jane Smith" required autocomplete="name">
             </div>
             <div class="form-group">
               <label for="fc-phone">Phone Number <span class="opt">(optional)</span></label>
-              <input type="tel" id="fc-phone" name="entry.1175502712" placeholder="e.g. 0412 345 678" autocomplete="tel">
+              <input type="tel" id="fc-phone" name="phone" placeholder="e.g. 0412 345 678" autocomplete="tel">
             </div>
           </div>
           <div class="form-group">
             <label for="fc-email">Email Address <span class="req">*</span></label>
-            <input type="email" id="fc-email" name="entry.1104170609" placeholder="e.g. jane@example.com" required autocomplete="email">
+            <input type="email" id="fc-email" name="email" placeholder="e.g. jane@example.com" required autocomplete="email">
           </div>
           <div class="form-group">
             <label for="fc-purpose">What brings you in? <span class="req">*</span></label>
-            <select id="fc-purpose" name="entry.1724131975" required>
+            <select id="fc-purpose" name="purpose" required>
               <option value="" disabled selected>Select an option</option>
               <option value="First Home Buyer">First Home Buyer</option>
               <option value="Refinancing">Refinancing</option>
@@ -208,7 +211,7 @@
           </div>
           <div class="form-group">
             <label for="fc-message">Tell us more <span class="opt">(optional)</span></label>
-            <textarea id="fc-message" name="entry.917006660" placeholder="Your timeframe, loan size, or any specific questions…"></textarea>
+            <textarea id="fc-message" name="message" placeholder="Your timeframe, loan size, or any specific questions…"></textarea>
           </div>
           <button type="submit" class="form-submit" id="fc-submit">
             Send Message
@@ -235,7 +238,6 @@
 
 <script>
 (function(){
-  var FORM_ACTION='https://docs.google.com/forms/u/2/d/e/1FAIpQLSecYLWifaaNwnUyzK0E_Kao3iywdFVV6YIuMXq493fCq-ZuPQ/formResponse';
   var form=document.getElementById('dfs-contact-form');
   var btn=document.getElementById('fc-submit');
   var wrap=document.getElementById('form-wrap');
@@ -259,10 +261,21 @@
     }
     btn.disabled=true;
     btn.textContent='Sending…';
-    var data=new FormData(form);
-    try{await fetch(FORM_ACTION,{method:'POST',mode:'no-cors',body:data});}catch(err){}
-    wrap.style.display='none';
-    success.style.display='block';
+    var data=new URLSearchParams(new FormData(form)).toString();
+    try{
+      var response=await fetch('/',{
+        method:'POST',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:data
+      });
+      if(!response.ok) throw new Error('Form submission failed');
+      wrap.style.display='none';
+      success.style.display='block';
+    }catch(err){
+      btn.disabled=false;
+      btn.textContent='Send Message';
+      alert('Sorry, your message could not be sent. Please try again or contact us directly.');
+    }
   });
 
   form.querySelectorAll('input,select,textarea').forEach(function(el){
