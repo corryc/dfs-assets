@@ -159,8 +159,9 @@ footer{background:var(--navy);padding:36px 24px}
 <div class="form-card">
 <h2>Book a Free Consultation</h2>
 <p class="form-sub">Tell us what you're looking for — we'll respond same day.</p>
-<form action="https://formspree.io/f/mwpezapk" method="POST">
-<input type="hidden" name="_next" value="https://www.digitalfinancesolutions.com.au/thank-you">
+<form name="boronia-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+<input type="hidden" name="form-name" value="boronia-enquiry">
+<p style="display:none"><label>Leave this field blank: <input name="bot-field"></label></p>
 <div class="frm-row">
 <div class="fg"><label>First name</label><input type="text" name="first_name" placeholder="Jane" required></div>
 <div class="fg"><label>Last name</label><input type="text" name="last_name" placeholder="Smith" required></div>
