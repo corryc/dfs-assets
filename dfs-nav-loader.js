@@ -18,9 +18,14 @@
       temp.innerHTML = html;
 
       // Inject nav at the very top of the body
-      var nav = temp.querySelector('#dfs-nav');
+      var nav = temp.querySelector('nav.nav');
       var navStyles = temp.querySelector('style');
       if (nav && document.body) {
+        // Remove any existing nav
+        var existing = document.querySelector('nav.nav');
+        if (existing) {
+          existing.remove();
+        }
         // Add styles first
         if (navStyles) {
           var styleEl = document.createElement('style');
@@ -29,11 +34,6 @@
         }
         // Prepend nav
         document.body.insertBefore(nav, document.body.firstChild);
-        // Append footer
-        var footer = temp.querySelector('#dfs-footer');
-        if (footer) {
-          document.body.appendChild(footer);
-        }
       }
     })
     .catch(function(e) {
