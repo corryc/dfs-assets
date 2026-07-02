@@ -4,59 +4,97 @@
   background: var(--navy, #0d1b2e);
   padding: 48px 80px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   font-family: 'Manrope', 'Inter', sans-serif;
-  margin-top: auto;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 200px;
 }
 
 .footer-brand {
   font-size: 14px;
   font-weight: 700;
   color: #fff;
+  margin-bottom: 12px;
+}
+
+.footer-legal {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.6;
+}
+
+.footer-right {
+  flex: 1;
+  min-width: 300px;
 }
 
 .footer-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 32px;
 }
 
 .footer-links a {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .footer-links a:hover {
-  color: #fff;
-}
-
-.footer-legal {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.3);
-  line-height: 1.6;
-  max-width: 600px;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  color: #4dd8cc;
 }
 
 @media (max-width: 900px) {
   .footer {
-    padding: 40px 24px;
+    padding: 40px;
     flex-direction: column;
-    align-items: flex-start;
     gap: 32px;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 32px 24px;
+    gap: 24px;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 16px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
   }
 }
 </style>
 
-
+<footer class="footer">
+  <div class="footer-left">
+    <div class="footer-brand">Digital Finance Solutions</div>
+    <div class="footer-legal">Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence No. 391237)</div>
+  </div>
+  <div class="footer-right">
+    <nav class="footer-links">
+      <a href="https://www.digitalfinancesolutions.com.au/about">About</a>
+      <a href="https://www.digitalfinancesolutions.com.au/blog">Blog</a>
+      <a href="https://www.digitalfinancesolutions.com.au/refinance">Refinance</a>
+      <a href="https://www.digitalfinancesolutions.com.au/self-employed">Self Employed</a>
+      <a href="https://www.digitalfinancesolutions.com.au/doctors">Doctors</a>
+      <a href="https://www.digitalfinancesolutions.com.au/contact-us">Contact</a>
+    </nav>
+  </div>
+</footer>
