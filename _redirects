@@ -13,9 +13,6 @@
 /posts/blog/live/blog-lenders-beyond-tax-return                  /lenders-beyond-tax-return                       200
 /posts/blog/live/blog-self-employed-income-proof                 /self-employed-income-proof                      200
 /posts/blog/live/fixing-equifax-errors-a-step-by-step-guide      /fixing-equifax-errors                           200
-/posts/blog/live/improve-loan-approval-chances-melbourne         /improve-loan-approval-chances-melbourne         200
-/posts/blog/live/mortgage-broker-first-home-buyer-tips           /mortgage-broker-first-home-buyer-tips           200
-/posts/blog/live/pre-approval-worth-the-hassle                   /pre-approval-worth-the-hassle                   200
 
 # ========== CATCH-ALL: All future blogs ==========
 /posts/blog/live/:slug                                           /:slug                                           200
