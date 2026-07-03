@@ -1,184 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- ── Homepage ─────────────────────────────────────────────── -->
+  <!-- Root Pages -->
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- ── Core service pages ────────────────────────────────────── -->
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/expert-mortgage-brokers</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/about-us</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/contact-us</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/refinance</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.digitalfinancesolutions.com.au/contact-us</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.digitalfinancesolutions.com.au/blog</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/expert-mortgage-brokers</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- ── Service sub-pages ─────────────────────────────────────── -->
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/car-loans</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://digitalfinancesolutions.com.au/refinance</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/debt-consolidation</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://digitalfinancesolutions.com.au/car-loans</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/personal-loans</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://digitalfinancesolutions.com.au/debt-consolidation</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://digitalfinancesolutions.com.au/personal-loans</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/self-employed-home-loan-eastern-suburbs</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.digitalfinancesolutions.com.au/about-us</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://digitalfinancesolutions.com.au/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 
-  <!-- ── Suburb landing pages ──────────────────────────────────── -->
+  <!-- Blog Posts -->
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/mortgage-broker-bayswater</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/blog/buying-property-through-a-trust</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/blog/how-much-can-doctor-borrow-home-loan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/mortgage-broker-ringwood</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/blog/signs-paying-too-much-mortgage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/mortgage-broker-wantirna</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.digitalfinancesolutions.com.au/mortgage-broker-boronia</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.digitalfinancesolutions.com.au/mortgage-broker-heathmont</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.digitalfinancesolutions.com.au/mortgage-broker-bayswater-north</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ── Landing pages ─────────────────────────────────────────── -->
-  <url>
-    <loc>https://www.digitalfinancesolutions.com.au/posts/landing-pages/live/refinance-home-loan-melbourne</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/blog/dentists-no-lmi-home-loan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/posts/landing-pages/live/home-loan-health-check</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/blog/what-happens-home-loan-health-check</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/blog/self-employed-income-proof</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/blog/lenders-beyond-tax-return</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/blog/buying-house-ringwood-2026</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/posts/landing-pages/live/low-doc-home-loans-australia</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/blog/fixing-equifax-errors-a-step-by-step-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/blog/improve-loan-approval-chances-melbourne</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/blog/mortgage-broker-first-home-buyer-tips</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/blog/pre-approval-worth-the-hassle</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- ── Blog posts ────────────────────────────────────────────── -->
+  <!-- Landing Pages - Suburb Guides -->
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/posts/blog/live/buying-house-ringwood-2026</loc>
-    <lastmod>2026-06-25</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/mortgage-broker-bayswater</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/posts/blog/live/buying-property-through-a-trust</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/mortgage-broker-bayswater-north</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/posts/blog/live/how-much-can-doctor-borrow-home-loan</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/mortgage-broker-boronia</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/posts/blog/live/2026-06-27-signs-paying-too-much-mortgage</loc>
-    <lastmod>2026-06-27</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/mortgage-broker-heathmont</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/posts/blog/live/dentists-no-lmi-home-loan</loc>
-    <lastmod>2026-06-28</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/mortgage-broker-ringwood</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.digitalfinancesolutions.com.au/posts/blog/live/what-happens-home-loan-health-check</loc>
-    <lastmod>2026-06-29</lastmod>
+    <loc>https://digitalfinancesolutions.com.au/mortgage-broker-wantirna</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.digitalfinancesolutions.com.au/posts/blog/live/blog-lenders-beyond-tax-return</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.digitalfinancesolutions.com.au/posts/blog/live/blog-self-employed-income-proof</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
 
+  <!-- Landing Pages - Specialty -->
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/home-loan-health-check</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/low-doc-home-loans-australia</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/refinance-home-loan-melbourne</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/self-employed-home-loan-eastern-suburbs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/self-employed-under-2-years-home-loan</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/first-home-buyer-guarantee-melbourne</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/2026-budget-trust-cgt-changes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalfinancesolutions.com.au/mortgage-broker-vs-bank-ringwood</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
