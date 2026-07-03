@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://digitalfinancesolutions.com.au/sitemap.xml
