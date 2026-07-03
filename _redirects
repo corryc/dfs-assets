@@ -1,12 +1,30 @@
 # DFS Netlify Redirects
 # Netlify processes rules top-to-bottom, first match wins.
-# Format: /source  /destination  status
+# Format: /source /destination status
 
-# ── BLOCK: Internal component files ──────────────────────────────────────────
-/dfs-nav.html                   /404.html  404
-/dfs-homepage.html              /404.html  404
+# ========== EXISTING BLOGS — Clean Root-Level Slugs ==========
 
-# ── BLOCK: Archive content ───────────────────────────────────────────────────
-/posts/blog/archive/*           /404.html  404
-/posts/landing-pages/archive/*  /404.html  404
-/posts/landing-pages/2026-*     /404.html  404
+/posts/blog/live/buying-house-ringwood-2026                      /buying-house-ringwood-2026                      200
+/posts/blog/live/buying-property-through-a-trust                 /buying-property-through-a-trust                 200
+/posts/blog/live/how-much-can-doctor-borrow-home-loan            /how-much-can-doctor-borrow-home-loan            200
+/posts/blog/live/signs-paying-too-much-mortgage                  /signs-paying-too-much-mortgage                  200
+/posts/blog/live/dentists-no-lmi-home-loan                       /dentists-no-lmi-home-loan                       200
+/posts/blog/live/what-happens-home-loan-health-check             /what-happens-home-loan-health-check             200
+/posts/blog/live/blog-lenders-beyond-tax-return                  /lenders-beyond-tax-return                       200
+/posts/blog/live/blog-self-employed-income-proof                 /self-employed-income-proof                      200
+/posts/blog/live/fixing-equifax-errors-a-step-by-step-guide      /fixing-equifax-errors                           200
+/posts/blog/live/improve-loan-approval-chances-melbourne         /improve-loan-approval-chances-melbourne         200
+/posts/blog/live/mortgage-broker-first-home-buyer-tips           /mortgage-broker-first-home-buyer-tips           200
+/posts/blog/live/pre-approval-worth-the-hassle                   /pre-approval-worth-the-hassle                   200
+
+# ========== CATCH-ALL: All future blogs ==========
+/posts/blog/live/:slug                                           /:slug                                           200
+
+# ========== BLOCK: Internal component files ====================================
+/dfs-nav.html                                                    /404.html                                        404
+/dfs-homepage.html                                               /404.html                                        404
+
+# ========== BLOCK: Archive content ============================================
+/posts/blog/archive/                                             /404.html                                        404
+/posts/landing-pages/archive/                                    /404.html                                        404
+/posts/landing-pages/2026-                                       /404.html                                        404
