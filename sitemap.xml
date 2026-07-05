@@ -143,6 +143,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.digitalfinancesolutions.com.au/signs-paying-too-much-mortgage</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Suburb Pages -->
   <url>
@@ -215,9 +221,15 @@
   </url>
   <url>
     <loc>https://www.digitalfinancesolutions.com.au/low-doc-home-loans-australia</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalfinancesolutions.com.au/house-and-land-packages-melbourne</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.digitalfinancesolutions.com.au/first-home-buyer-guarantee-melbourne</loc>
