@@ -1,5 +1,5 @@
 // DFS WhatsApp Click-to-Chat Loader
-// Injects a floating WhatsApp button in top-right corner of pages
+// Injects a floating WhatsApp button in bottom-right corner of pages
 // Usage: <script src="https://corryc.github.io/dfs-assets/dfs-whatsapp-loader.js"></script>
 
 (function() {
@@ -10,8 +10,8 @@
   styleSheet.textContent = `
     .dfs-whatsapp-fab {
       position: fixed;
-      top: 80px;
-      right: 16px;
+      bottom: 90px;
+      right: 20px;
       width: 56px;
       height: 56px;
       background-color: #25d366;
@@ -22,7 +22,7 @@
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
       transition: all 0.3s ease;
-      z-index: 9999;
+      z-index: 999;
       text-decoration: none;
       border: none;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -66,17 +66,17 @@
     }
 
     /* Mobile responsiveness */
-    @media (max-width: 768px) {
+    @media (max-width: 640px) {
       .dfs-whatsapp-fab {
-        top: 16px;
-        right: 12px;
-        width: 52px;
-        height: 52px;
+        bottom: 80px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
       }
 
       .dfs-whatsapp-fab svg {
-        width: 26px;
-        height: 26px;
+        width: 24px;
+        height: 24px;
       }
 
       .dfs-whatsapp-tooltip {
@@ -84,8 +84,8 @@
       }
     }
 
-    /* Very small screens only */
-    @media (max-width: 320px) {
+    /* Hide on very small screens to avoid overlapping with nav */
+    @media (max-width: 360px) {
       .dfs-whatsapp-fab {
         display: none;
       }
@@ -93,10 +93,10 @@
   `;
   document.head.appendChild(styleSheet);
 
-  // WhatsApp SVG Icon
+  // WhatsApp SVG Icon - Modern design
   const whatsappIcon = `
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.309-3.645 6.71-1.331 9.527.442.571.371 1.571-.823 3.102-1.088 1.454.266 2.89 1.875 3.2 1.604.301 3.225.292 5.205.6h.004c5.522 0 10-4.477 10-10s-4.478-10-10-10z"/>
+      <path fill="white" d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.3L2.5 22l6.3-1.29c1.26.6 2.64.98 4.2.98 5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.41 0-2.73-.36-3.88-.99l-.28-.15-2.89.59.61-2.89-.15-.29C4.5 14.76 4 13.45 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.64-12.67c-.15-.25-.46-.4-.92-.4-.25 0-.92.1-1.31.68-.32.51-.63 1.29-.63 2.65 0 1.44 1.01 3.05 1.15 3.3.03.05.1.15.26.27 1.27 1.27 3.02 1.85 4.73 1.85.37 0 .72-.02 1.05-.07 1.14-.18 1.72-1.43 1.9-2.26.1-.47.1-.77.1-.77s-.08-1.33-.5-1.92c-.33-.47-.75-.73-1.24-.73z"/>
     </svg>
   `;
 
