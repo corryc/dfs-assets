@@ -10,8 +10,8 @@
   styleSheet.textContent = `
     .dfs-whatsapp-fab {
       position: fixed;
-      bottom: 90px;
-      right: 20px;
+      bottom: 100px;
+      right: 16px;
       width: 56px;
       height: 56px;
       background-color: #25d366;
@@ -22,7 +22,7 @@
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
       transition: all 0.3s ease;
-      z-index: 999;
+      z-index: 9999;
       text-decoration: none;
       border: none;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -66,17 +66,17 @@
     }
 
     /* Mobile responsiveness */
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
       .dfs-whatsapp-fab {
         bottom: 80px;
-        right: 16px;
-        width: 48px;
-        height: 48px;
+        right: 12px;
+        width: 52px;
+        height: 52px;
       }
 
       .dfs-whatsapp-fab svg {
-        width: 24px;
-        height: 24px;
+        width: 26px;
+        height: 26px;
       }
 
       .dfs-whatsapp-tooltip {
@@ -84,8 +84,8 @@
       }
     }
 
-    /* Hide on very small screens to avoid overlapping with nav */
-    @media (max-width: 360px) {
+    /* Very small screens only */
+    @media (max-width: 320px) {
       .dfs-whatsapp-fab {
         display: none;
       }
