@@ -1,5 +1,5 @@
 // DFS WhatsApp Click-to-Chat Loader
-// Injects a floating WhatsApp button in bottom-right corner of pages
+// Injects a floating WhatsApp button in top-right corner of pages
 // Usage: <script src="https://corryc.github.io/dfs-assets/dfs-whatsapp-loader.js"></script>
 
 (function() {
@@ -10,7 +10,7 @@
   styleSheet.textContent = `
     .dfs-whatsapp-fab {
       position: fixed;
-      bottom: 100px;
+      top: 80px;
       right: 16px;
       width: 56px;
       height: 56px;
@@ -68,7 +68,7 @@
     /* Mobile responsiveness */
     @media (max-width: 768px) {
       .dfs-whatsapp-fab {
-        bottom: 80px;
+        top: 16px;
         right: 12px;
         width: 52px;
         height: 52px;
