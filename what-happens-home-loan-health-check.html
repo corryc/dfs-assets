@@ -261,7 +261,9 @@ body{font-family:'Manrope',sans-serif;font-size:16px;line-height:1.7;color:var(-
 <div class="dfs-hero-form">
       <h3>Get Your Free Assessment</h3>
       <p class="dfs-form-sub">Takes 2 minutes. No obligation.</p>
-      <form name="what-happens-home-loan-health-check-quick-inquiry" method="POST" netlify>
+      <form name="what-happens-home-loan-health-check-quick-inquiry" method="POST" netlify netlify-honeypot="bot-field" action="/thank-you">
+<p style="display:none"><label>Leave this field blank: <input name="bot-field"></label></p>
+
         <input type="hidden" name="form-name" value="what-happens-home-loan-health-check-quick-inquiry">
         <input type="text" name="name" placeholder="Your name" required>
         <input type="email" name="email" placeholder="Your email" required>
@@ -400,39 +402,22 @@ body{font-family:'Manrope',sans-serif;font-size:16px;line-height:1.7;color:var(-
 <h2 style="color: var(--text-dark); font-size: 24px; margin-bottom: 12px; font-weight: 800;">Ready for your health check?</h2>
 <p style="color: var(--text-mid); margin-bottom: 32px;">Tell us a bit about your loan and we'll get back to you with next steps.</p>
 
-<form name="what_happens_health_check_full" method="POST" data-netlify="true" style="background: #fff; padding: 32px; border-radius: 8px; border: 1px solid var(--border);">
-<input type="hidden" name="form-name" value="what_happens_health_check_full">
-
-<div style="margin-bottom: 20px;">
-<label style="display: block; font-weight: 700; margin-bottom: 8px; color: var(--text-dark); font-size: 14px;">Full name *</label>
-<input type="text" name="full_name" required style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-family: 'Manrope', sans-serif; box-sizing: border-box;">
+<div class="dfs-full-form">
+  <h3>Let's Find Your Best Option</h3>
+  <p class="dfs-form-sub">Complete this and we'll send a detailed comparison within 24 hours.</p>
+  <form name="what-happens-home-loan-health-check-detailed-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+    <input type="hidden" name="form-name" value="what-happens-home-loan-health-check-detailed-enquiry">
+    <p style="display:none"><label>Leave this field blank: <input name="bot-field"></label></p>
+    <div class="dfs-field"><label>Full name *</label><input type="text" name="full_name" required autocomplete="name"></div>
+    <div class="dfs-field"><label>Email address *</label><input type="email" name="email" required autocomplete="email"></div>
+    <div class="dfs-field"><label>Phone number *</label><input type="tel" name="phone" required autocomplete="tel"></div>
+    <div class="dfs-field"><label>Loan type</label><select name="loan_type"><option>Select...</option><option>Home loan (purchase)</option><option>Home loan (refinance)</option><option>Investment property</option><option>Self-employed / low-doc</option><option>Personal loan</option><option>Other</option></select></div>
+    <div class="dfs-field"><label>Best time to call</label><select name="best_time"><option>Select...</option><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Anytime</option></select></div>
+    <div class="dfs-field"><label>Anything else we should know?</label><input type="text" name="notes" placeholder="Optional"></div>
+    <button type="submit">Send My Enquiry</button>
+  </form>
+  <p class="dfs-form-note">We respond within 1 business day, usually sooner.</p>
 </div>
-
-<div style="margin-bottom: 20px;">
-<label style="display: block; font-weight: 700; margin-bottom: 8px; color: var(--text-dark); font-size: 14px;">Email *</label>
-<input type="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-family: 'Manrope', sans-serif; box-sizing: border-box;">
-</div>
-
-<div style="margin-bottom: 20px;">
-<label style="display: block; font-weight: 700; margin-bottom: 8px; color: var(--text-dark); font-size: 14px;">Phone *</label>
-<input type="tel" name="phone" required style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-family: 'Manrope', sans-serif; box-sizing: border-box;">
-</div>
-
-<div style="margin-bottom: 20px;">
-<label style="display: block; font-weight: 700; margin-bottom: 8px; color: var(--text-dark); font-size: 14px;">Loan amount estimate</label>
-<input type="text" name="loan_amount" placeholder="e.g. $450,000" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-family: 'Manrope', sans-serif; box-sizing: border-box;">
-</div>
-
-<div style="margin-bottom: 24px;">
-<label style="display: block; font-weight: 700; margin-bottom: 8px; color: var(--text-dark); font-size: 14px;">Tell us about your situation</label>
-<textarea name="situation" rows="4" placeholder="E.g., 'Haven't reviewed my rate in 3 years'" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-family: 'Manrope', sans-serif; box-sizing: border-box;"></textarea>
-</div>
-
-<button type="submit" style="width: 100%; padding: 13px; background: var(--blue); color: #fff; border: none; border-radius: 7px; cursor: pointer; font-weight: 700; font-size: 15px; font-family: 'Manrope', sans-serif;">Book My Health Check →</button>
-
-<p style="font-size: 12px; color: var(--text-mid); margin-top: 16px;">Fast response. No obligation.</p>
-</div>
-</section>
 
 <script src="https://corryc.github.io/dfs-assets/dfs-footer-loader.js"></script>
 </body>
