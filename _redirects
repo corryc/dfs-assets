@@ -2,6 +2,9 @@
 # Netlify processes rules top-to-bottom, first match wins.
 # Format: /source /destination status
 
+# ========== CANONICAL REDIRECT: www → non-www ==========
+https://www.digitalfinancesolutions.com.au/*  https://digitalfinancesolutions.com.au/:splat  301!
+
 # ========== EXISTING BLOGS — Clean Root-Level Slugs ==========
 
 /posts/blog/live/buying-house-ringwood-2026                      /buying-house-ringwood-2026                      200
