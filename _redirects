@@ -20,6 +20,7 @@ https://www.digitalfinancesolutions.com.au/*  https://digitalfinancesolutions.co
 # ========== LEGACY /blog/ URLS (pre-restructure, still indexed by Google — 301 to preserve rankings) ==========
 
 /blog/buying-property-through-a-trust                            /buying-property-through-a-trust                 301!
+/blog/mortgage-broker-vs-bank-ringwood                            /mortgage-broker-vs-bank-ringwood                301!
 
 # ========== CATCH-ALL: All future blogs ==========
 /posts/blog/live/:slug                                           /:slug                                           200
