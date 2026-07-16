@@ -17,6 +17,10 @@ https://www.digitalfinancesolutions.com.au/*  https://digitalfinancesolutions.co
 /posts/blog/live/blog-self-employed-income-proof                 /self-employed-income-proof                      200
 /posts/blog/live/fixing-equifax-errors-a-step-by-step-guide      /fixing-equifax-errors                           200
 
+# ========== LEGACY /blog/ URLS (pre-restructure, still indexed by Google — 301 to preserve rankings) ==========
+
+/blog/buying-property-through-a-trust                            /buying-property-through-a-trust                 301!
+
 # ========== CATCH-ALL: All future blogs ==========
 /posts/blog/live/:slug                                           /:slug                                           200
 
