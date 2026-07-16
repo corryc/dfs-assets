@@ -21,6 +21,7 @@ https://www.digitalfinancesolutions.com.au/*  https://digitalfinancesolutions.co
 
 /blog/buying-property-through-a-trust                            /buying-property-through-a-trust                 301!
 /blog/mortgage-broker-vs-bank-ringwood                            /mortgage-broker-vs-bank-ringwood                301!
+/blog/refinancing-melbourne-switching-lenders                    /refinance                                       301!
 
 # ========== CATCH-ALL: All future blogs ==========
 /posts/blog/live/:slug                                           /:slug                                           200
