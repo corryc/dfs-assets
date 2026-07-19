@@ -23,6 +23,10 @@ https://www.digitalfinancesolutions.com.au/*  https://digitalfinancesolutions.co
 /blog/mortgage-broker-vs-bank-ringwood                            /mortgage-broker-vs-bank-ringwood                301!
 /blog/refinancing-melbourne-switching-lenders                    /refinance                                       301!
 
+# ========== LEGACY /posts/landing-pages/ URL - stale duplicate, still indexed (found 2026-07-19) ==========
+
+/posts/landing-pages/live/first-home-buyer-guarantee-melbourne   /first-home-buyer-guarantee-melbourne   301!
+
 # ========== CATCH-ALL: All future blogs ==========
 /posts/blog/live/:slug                                           /:slug                                           200
 
