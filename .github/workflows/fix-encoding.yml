@@ -1,0 +1,38 @@
+name: Fix Mojibake Encoding
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fix-encoding:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Scan and repair mojibake encoding
+        run: python3 scripts/fix_mojibake.py
+
+      - name: Commit fix if anything changed
+        run: |
+          git config user.name "encoding-guard-bot"
+          git config user.email "actions@github.com"
+          if ! git diff --quiet; then
+            git add -A
+            git commit -m "auto-fix: repair mojibake encoding + ASCII-ify dashes [skip ci]"
+            git push
+          else
+            echo "Clean - no encoding corruption or non-ASCII dashes found."
+          fi
