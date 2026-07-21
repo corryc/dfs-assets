@@ -29,6 +29,12 @@ MOJIBAKE_CP1252 = re.compile(r'\u00e2.{0,3}')
 MOJIBAKE_LATIN1 = re.compile(r'\u00c3.{0,3}')
 BASE64_CHARS = re.compile(r'^[A-Za-z0-9+/=\s]+$')
 DOCTYPE_RE = re.compile(r'^\s*<(!doctype|html)', re.IGNORECASE)
+# Some legitimate files are intentionally not full HTML documents:
+# - GSC verification files (google*.html) are a bare text token, no tags at all
+# - dfs-nav.html / dfs-footer.html are fragments injected by the loader scripts,
+#   so they start with <nav>, <style>, <footer> etc, never <!DOCTYPE>
+KNOWN_NON_PAGE_FILES = {"dfs-nav.html", "dfs-footer.html"}
+KNOWN_NON_PAGE_PATTERN = re.compile(r'^google[a-z0-9]+\.html$', re.IGNORECASE)
 
 
 def whatwg_cp1252_encode(text: str) -> bytes:
@@ -81,7 +87,13 @@ def ascii_ify_dashes(text: str) -> str:
 
 def looks_like_html(text: str) -> bool:
     stripped = text.lstrip('\ufeff')
-    return bool(DOCTYPE_RE.match(stripped))
+    # Full pages start with a doctype; fragments (nav/footer includes) start
+    # with a real tag somewhere near the top. Either counts as "is HTML" -
+    # the actual bug signature is a file with NO angle brackets anywhere,
+    # because base64 text never contains '<'.
+    if DOCTYPE_RE.match(stripped):
+        return True
+    return '<' in stripped[:500]
 
 
 def try_recover_base64_wrapped(text: str):
@@ -104,6 +116,19 @@ def process_file(path: str):
     """Returns (changed: bool, broken_unrecoverable: bool)."""
     with open(path, encoding='utf-8', errors='replace') as f:
         original = f.read()
+
+    import os
+    filename = os.path.basename(path)
+    if filename in KNOWN_NON_PAGE_FILES or KNOWN_NON_PAGE_PATTERN.match(filename):
+        # Known legitimate non-page file (nav/footer fragment or GSC
+        # verification token) - still worth an ASCII-dash pass, but never
+        # flag as structurally broken.
+        text = ascii_ify_dashes(original)
+        if text != original:
+            with open(path, 'w', encoding='utf-8') as f:
+                f.write(text)
+            return True, False
+        return False, False
 
     text = original
 
