@@ -18,6 +18,27 @@
  */
 
 (function() {
+  // Favicon injection (added 2026-07-21) - runs immediately, doesn't wait on nav fetch
+  if (!document.querySelector('link[rel="icon"]')) {
+    var iconLink = document.createElement('link');
+    iconLink.rel = 'icon';
+    iconLink.type = 'image/x-icon';
+    iconLink.href = 'https://corryc.github.io/dfs-assets/favicon.ico';
+    document.head.appendChild(iconLink);
+
+    var pngLink = document.createElement('link');
+    pngLink.rel = 'icon';
+    pngLink.type = 'image/png';
+    pngLink.setAttribute('sizes', '32x32');
+    pngLink.href = 'https://corryc.github.io/dfs-assets/favicon-32.png';
+    document.head.appendChild(pngLink);
+
+    var appleLink = document.createElement('link');
+    appleLink.rel = 'apple-touch-icon';
+    appleLink.href = 'https://corryc.github.io/dfs-assets/apple-touch-icon.png';
+    document.head.appendChild(appleLink);
+  }
+
   fetch('https://corryc.github.io/dfs-assets/dfs-nav.html')
     .then(function(r) { return r.text(); })
     .then(function(html) {
