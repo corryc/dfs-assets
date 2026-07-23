@@ -1,9 +1,63 @@
 # DFS Work Log
 
 **Last Updated:** 2026-07-24
-**Session:** Full suburb page audit - Ringwood fix + dead page redirect recovery
+**Session:** Compact-keyword page system + skill correction + README overwrite incident
 
 ---
+
+## 2026-07-24 (4) — Compact-Keyword System Pushed, Skill Corrected, README Incident Fixed
+
+### Compact-keyword page system pushed to repo
+- `templates/compact-keyword-template.html` - master template
+- `scripts/generate_compact_pages.py` - CSV-driven generator with validation
+- `data/compact-keywords.csv` - sample data (SMSF loan Boronia)
+- `COMPACT-KEYWORDS.md` - system documentation
+- Commits: db22c27, 6a3783d, a7ed7c5d (README overwrite incident below happened
+  in between these and was corrected)
+
+### dfs-content-production skill corrected (local skill file, not this repo)
+Fixed stale Webflow/GSAP/dated-path references that were causing session
+drift. Now correctly states: Netlify + GitHub only, root-level slugs only,
+compact-keyword pages must use the generator (not hand-authored), no phone
+number in compact-keyword page body/CTAs (on-page form instead).
+
+### Incident: README.md accidentally overwritten, then a second bug introduced during the fix
+1. Pushed `COMPACT-KEYWORDS.md` content to `README.md` by mistake (wrong
+   path, didn't check existing content first) - overwrote the real repo
+   README.
+2. Caught it, fetched the original from git history, and pushed a restore -
+   but manually retyped the base64 content into the tool call by hand
+   instead of passing it through unmodified. That retyping (a) introduced
+   a typo (missing backtick) and (b) apparently broke the push tool's
+   base64 auto-detection, causing double-encoding - the restored file was
+   unreadable (base64-encoded twice).
+3. Root cause: `GITHUB_CREATE_OR_UPDATE_FILE_CONTENTS` auto-detects
+   plain-text vs base64 input; it does not have an explicit `encoding`
+   parameter like `GITHUB_COMMIT_MULTIPLE_FILES` does. Passing pre-encoded
+   base64 through it is fragile - any transcription difference can break
+   the auto-detection and cause double-encoding.
+4. Fixed properly: fetched the pristine original directly from the commit
+   before the incident (via API, not manual retyping) and pushed it as
+   plain text, letting the tool encode it once. Verified: blob SHA now
+   matches the true original exactly (`6b44b22d9ca0153c97d62d8c605c94c48fee3ecb`).
+5. Verified the other 4 new files (template, generator, CSV,
+   COMPACT-KEYWORDS.md) were NOT affected - their original pushes had
+   correctly auto-detected as base64. Confirmed via double-decode test,
+   Python syntax compile check, CSV parse check, and template structure
+   checks (DOCTYPE, nav loader, no phone number, form present, JSON-LD
+   brace balance).
+6. Final commit: 213361a
+
+### Lesson for future sessions
+Do not manually retype or hand-copy base64 (or any large) content between
+tool calls. Fetch and push programmatically within one workbench session
+so content never passes through manual transcription. If a push must use
+pre-encoded content, prefer `GITHUB_COMMIT_MULTIPLE_FILES` (has an
+explicit `encoding` field) over `GITHUB_CREATE_OR_UPDATE_FILE_CONTENTS`
+(auto-detects, less predictable with pre-encoded input).
+
+---
+
 
 ## 2026-07-24 (3) — Suburb Page Audit: Ringwood Fix + Dead Page Redirect
 
