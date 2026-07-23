@@ -1,14 +1,15 @@
+﻿<!-- deploy-cache-bust-blog.html-2026-07-21T22-00 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mortgage & Home Loan Tips Blog | Digital Finance Solutions Melbourne</title>
-<meta name="description" content="Practical home loan guides for Melbourne borrowers — first home buyers, self-employed, doctors, refinancers. Tips from a local eastern suburbs mortgage broker.">
+<meta name="description" content="Practical home loan guides for Melbourne borrowers, first home buyers, self-employed, doctors, refinancers. Tips from a local eastern suburbs mortgage broker.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.digitalfinancesolutions.com.au/blog">
+<link rel="canonical" href="https://digitalfinancesolutions.com.au/blog">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"Mortgage & Home Loan Tips Blog | Digital Finance Solutions","description":"Practical home loan guides for Melbourne borrowers — first home buyers, self-employed, doctors, refinancers.","url":"https://www.digitalfinancesolutions.com.au/blog","publisher":{"@type":"Organization","name":"Digital Finance Solutions","url":"https://www.digitalfinancesolutions.com.au"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.digitalfinancesolutions.com.au"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.digitalfinancesolutions.com.au/blog"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"Mortgage & Home Loan Tips Blog | Digital Finance Solutions","description":"Practical home loan guides for Melbourne borrowers, first home buyers, self-employed, doctors, refinancers.","url":"https://www.digitalfinancesolutions.com.au/blog","publisher":{"@type":"Organization","name":"Digital Finance Solutions","url":"https://www.digitalfinancesolutions.com.au"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.digitalfinancesolutions.com.au"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.digitalfinancesolutions.com.au/blog"}]}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,11 +48,11 @@ body{font-family:'Manrope',sans-serif;color:var(--tx);background:#fff;-webkit-fo
 .cta-bar p{font-size:15px;color:var(--txm);margin-bottom:22px}
 .btn-pri{background:var(--blue);color:#fff;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;padding:13px 28px;border-radius:7px;text-decoration:none;display:inline-block}
 .btn-pri:hover{background:var(--blue-d)}
-footer{background:var(--navy);padding:36px 24px}
-.foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:28px;flex-wrap:wrap}
-.foot-brand{font-size:14px;font-weight:800;color:#fff;margin-bottom:6px}
-.foot-legal{font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;max-width:500px}
-.foot-links{display:flex;gap:18px;flex-wrap:wrap}
+
+
+
+
+
 .foot-links a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none}
 .foot-links a:hover{color:#fff}
 @media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
@@ -60,106 +61,59 @@ footer{background:var(--navy);padding:36px 24px}
 </head>
 <body>
 
-<nav class="nav">
-<div class="nav-in">
-<a href="https://www.digitalfinancesolutions.com.au" class="nav-logo">
-<img src="https://cdn.prod.website-files.com/61fc660e6a44456c36c97404/61fc660e6a4445dec6c974a5_Digital-Finance-Logo.svg" alt="Digital Finance Solutions" onerror="this.style.display='none'">
-<div class="nav-logo-text">Digital Finance Solutions<span>Melbourne Mortgage Broker</span></div>
-</a>
-<div class="nav-r">
-<a href="tel:0419891983" class="nav-tel">0419 891 983</a>
-<a href="https://www.digitalfinancesolutions.com.au/contact-us" class="btn-nav">Book Free Call</a>
-</div>
-</div>
-</nav>
+<script src="https://corryc.github.io/dfs-assets/dfs-nav-loader.js"></script>
+
 
 <section class="hero">
 <div class="hero-in">
 <div class="eyebrow">Blog</div>
 <h1>Home Loan <mark>Guides</mark> for Melbourne Borrowers</h1>
-<p class="hero-sub">Practical tips on home loans, refinancing, and property finance — written by a local eastern suburbs mortgage broker.</p>
+<p class="hero-sub">Practical tips on home loans, refinancing, and property finance, written by a local eastern suburbs mortgage broker.</p>
 </div>
 </section>
 
-<div class="grid">
+<div class="grid" id="blogGrid"></div>
 
-<a href="https://www.digitalfinancesolutions.com.au/buying-property-through-a-trust" class="post">
-<div class="post-tag">Property &amp; Tax</div>
-<h2>Buying Property Through a Trust in 2026</h2>
-<p>How discretionary trusts work for property, what the 2026 Budget changes mean, and when it actually makes sense.</p>
-<div class="post-arrow">Read more →</div>
-</a>
+<script>
+(function() {
+  var grid = document.getElementById('blogGrid');
+  if (!grid) return;
 
-<a href="https://www.digitalfinancesolutions.com.au/how-much-can-doctor-borrow-home-loan" class="post">
-<div class="post-tag">Medical Professionals</div>
-<h2>How Much Can a Doctor Borrow for a Home Loan?</h2>
-<p>Borrowing capacity for doctors, specialists, and dentists — including no-LMI options and how lenders assess income.</p>
-<div class="post-arrow">Read more →</div>
-</a>
+  fetch('https://corryc.github.io/dfs-assets/blog-posts.json')
+    .then(function(r) { return r.json(); })
+    .then(function(posts) {
+      // Fisher-Yates shuffle
+      for (var i = posts.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = posts[i];
+        posts[i] = posts[j];
+        posts[j] = tmp;
+      }
+      var html = posts.map(function(p) {
+        return '<a href="' + p.url + '" class="post">' +
+          '<div class="post-tag">' + p.tag + '</div>' +
+          '<h2>' + p.title + '</h2>' +
+          '<p>' + p.description + '</p>' +
+          '<div class="post-arrow">Read more →</div>' +
+          '</a>';
+      }).join('');
+      grid.innerHTML = html;
+    })
+    .catch(function(e) {
+      console.warn('Blog grid: could not load posts', e);
+    });
+})();
+</script>
 
-<a href="https://www.digitalfinancesolutions.com.au/buying-house-ringwood-2026" class="post">
-<div class="post-tag">Local Market</div>
-<h2>How Much Does It Cost to Buy in Ringwood in 2026?</h2>
-<p>Median prices, deposit requirements, and what first home buyers need to know about the Ringwood market.</p>
-<div class="post-arrow">Read more →</div>
-</a>
-
-<a href="https://www.digitalfinancesolutions.com.au/signs-paying-too-much-mortgage" class="post">
-<div class="post-tag">Refinancing</div>
-<h2>Signs You're Paying Too Much on Your Mortgage</h2>
-<p>Five clear signs your rate is no longer competitive — and what to do about it before rates move again.</p>
-<div class="post-arrow">Read more →</div>
-</a>
-
-<a href="https://www.digitalfinancesolutions.com.au/dentists-no-lmi-home-loan" class="post">
-<div class="post-tag">Medical Professionals</div>
-<h2>Do Dentists Qualify for No-LMI Home Loans?</h2>
-<p>Which lenders waive LMI for dentists, the income thresholds that apply, and how to access the deal.</p>
-<div class="post-arrow">Read more →</div>
-</a>
-
-<a href="https://www.digitalfinancesolutions.com.au/what-happens-home-loan-health-check" class="post">
-<div class="post-tag">Home Loans</div>
-<h2>What Happens in a Home Loan Health Check?</h2>
-<p>What a broker reviews, how long it takes, and what you can realistically save by switching lenders.</p>
-<div class="post-arrow">Read more →</div>
-</a>
-
-<a href="https://www.digitalfinancesolutions.com.au/lenders-beyond-tax-return" class="post">
-<div class="post-tag">Self-Employed</div>
-<h2>Lenders That Go Beyond the Tax Return for Self-Employed Borrowers</h2>
-<p>Which lenders accept bank statements, BAS, or accountant letters — and how to get approved without two years of returns.</p>
-<div class="post-arrow">Read more →</div>
-</a>
-
-<a href="https://www.digitalfinancesolutions.com.au/self-employed-income-proof" class="post">
-<div class="post-tag">Self-Employed</div>
-<h2>How to Prove Income for a Home Loan When You're Self-Employed</h2>
-<p>What documents lenders actually want, what counts as acceptable income proof, and how to prepare your financials.</p>
-<div class="post-arrow">Read more →</div>
-</a>
-
-</div>
 
 <div class="cta-bar">
 <h2>Not sure where to start?</h2>
-<p>Book a free call — we'll work out what's possible for your situation.</p>
-<a href="https://www.digitalfinancesolutions.com.au/contact-us" class="btn-pri">Book Free Consultation</a>
+<p>Book a free call, we'll work out what's possible for your situation.</p>
+<a href="https://digitalfinancesolutions.com.au/contact-us" class="btn-pri">Book Free Consultation</a>
 </div>
 
-<footer>
-<div class="foot-in">
-<div>
-<div class="foot-brand">Digital Finance Solutions</div>
-<div class="foot-legal">Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence No. 391237). General advice only — this content does not constitute financial advice. Your financial situation has not been considered.</div>
-</div>
-<div class="foot-links">
-<a href="https://www.digitalfinancesolutions.com.au">Home</a>
-<a href="https://www.digitalfinancesolutions.com.au/contact-us">Contact</a>
-<a href="https://www.digitalfinancesolutions.com.au/privacy-policy">Privacy</a>
-</div>
-</div>
-</footer>
 
+
+<script src="https://corryc.github.io/dfs-assets/dfs-footer-loader.js"></script>
 </body>
 </html>

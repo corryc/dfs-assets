@@ -2,6 +2,9 @@
 # Netlify processes rules top-to-bottom, first match wins.
 # Format: /source /destination status
 
+# ========== CANONICAL REDIRECT: www → non-www ==========
+https://www.digitalfinancesolutions.com.au/*  https://digitalfinancesolutions.com.au/:splat  301!
+
 # ========== EXISTING BLOGS — Clean Root-Level Slugs ==========
 
 /posts/blog/live/buying-house-ringwood-2026                      /buying-house-ringwood-2026                      200
@@ -13,6 +16,16 @@
 /posts/blog/live/blog-lenders-beyond-tax-return                  /lenders-beyond-tax-return                       200
 /posts/blog/live/blog-self-employed-income-proof                 /self-employed-income-proof                      200
 /posts/blog/live/fixing-equifax-errors-a-step-by-step-guide      /fixing-equifax-errors                           200
+
+# ========== LEGACY /blog/ URLS (pre-restructure, still indexed by Google — 301 to preserve rankings) ==========
+
+/blog/buying-property-through-a-trust                            /buying-property-through-a-trust                 301!
+/blog/mortgage-broker-vs-bank-ringwood                            /mortgage-broker-vs-bank-ringwood                301!
+/blog/refinancing-melbourne-switching-lenders                    /refinance                                       301!
+
+# ========== LEGACY /posts/landing-pages/ URL - stale duplicate, still indexed (found 2026-07-19) ==========
+
+/posts/landing-pages/live/first-home-buyer-guarantee-melbourne   /first-home-buyer-guarantee-melbourne   301!
 
 # ========== CATCH-ALL: All future blogs ==========
 /posts/blog/live/:slug                                           /:slug                                           200

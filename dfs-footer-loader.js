@@ -37,6 +37,12 @@
 
         // Append footer at end of body
         document.body.appendChild(footer);
+
+        // Load WhatsApp button after footer is injected
+        var whatsappScript = document.createElement('script');
+        whatsappScript.src = 'https://corryc.github.io/dfs-assets/dfs-whatsapp-loader.js';
+        whatsappScript.async = true;
+        document.body.appendChild(whatsappScript);
       }
     })
     .catch(function(e) {

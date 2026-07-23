@@ -1,4 +1,4 @@
-<!-- DFS Global Nav — matches main page design exactly -->
+<!-- DFS Global Nav, matches main page design exactly -->
 <style>
 :root {
   --navy: #0d1b2e;
@@ -63,7 +63,7 @@
 }
 
 .nav-links {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 4px;
 }
@@ -258,7 +258,7 @@
 
 /* HAMBURGER */
 .nav-hamburger {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 5px;
   background: none;
@@ -352,17 +352,16 @@ body {
 }
 
 @media (max-width: 900px) {
-  .nav-links { display: none; }
   .nav-phone { display: none; }
-  .nav-hamburger { display: flex; }
   .nav { padding: 0 20px; }
+  .nav-logo-text { display: none; }
 }
 </style>
 
 <!-- MAIN NAV -->
 <nav class="nav" id="mainNav">
   <a href="https://www.digitalfinancesolutions.com.au" class="nav-logo">
-    <img src="https://cdn.prod.website-files.com/61fc660e6a44456c36c97404/61fc660e6a4445dec6c974a5_Digital-Finance-Logo.svg" alt="Digital Finance Solutions" onerror="this.style.display='none'">
+    <img src="https://corryc.github.io/dfs-assets/dfs-logo.png" alt="Digital Finance Solutions" onerror="this.style.display='none'">
     <div class="nav-logo-text">Digital Finance Solutions<span>Melbourne Mortgage Broker</span></div>
   </a>
   <div class="nav-links">
@@ -429,7 +428,7 @@ body {
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#00a896" stroke-width="1.5" stroke-linecap="round"><path d="M7 1a3 3 0 100 6 3 3 0 000-6z"/><path d="M1 13c0-3 2.7-5 6-5s6 2 6 5"/></svg>
               </div>
               <div>
-                <div class="nav-dropdown-item-title">Doctors — No LMI</div>
+                <div class="nav-dropdown-item-title">Doctors, No LMI</div>
                 <div class="nav-dropdown-item-desc">Up to 95% LVR, no LMI</div>
               </div>
             </a>
@@ -532,7 +531,7 @@ body {
       <a href="https://www.digitalfinancesolutions.com.au/expert-mortgage-brokers" class="mobile-nav-item">Home Loans</a>
       <a href="https://www.digitalfinancesolutions.com.au/refinance" class="mobile-nav-item">Refinancing</a>
       <a href="https://www.digitalfinancesolutions.com.au/self-employed-home-loan-eastern-suburbs" class="mobile-nav-item">Self Employed & Tradies</a>
-      <a href="https://www.digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne" class="mobile-nav-item">Doctors — No LMI</a>
+      <a href="https://www.digitalfinancesolutions.com.au/no-lmi-home-loan-doctors-melbourne" class="mobile-nav-item">Doctors, No LMI</a>
       <a href="https://www.digitalfinancesolutions.com.au/expert-mortgage-brokers" class="mobile-nav-item">Investment Property</a>
       <a href="https://www.digitalfinancesolutions.com.au/debt-consolidation" class="mobile-nav-item">Debt Consolidation</a>
     </div>
@@ -575,5 +574,5 @@ body {
       hamburger.classList.remove('open');
     });
   });
-})();
+})()
 </script>
