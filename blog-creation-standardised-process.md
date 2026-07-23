@@ -1,10 +1,10 @@
 # DFS Blog Page Creation Process (Standardised)
 
 **Status:** Established 2026-07-11
-**Last Updated:** 2026-07-23 (SVG icon styling fix added)
+**Last Updated:** 2026-07-23 (Template Locked Complete + Audit Fixes)
 **Purpose:** Ensure all new blog pages meet DFS quality, compliance, and design standards
 
-⚠️ **CRITICAL UPDATE (2026-07-23):** Metadata SVG icons require explicit CSS styling. See Verification checklist below.
+🔒 **LOCKED TEMPLATE (2026-07-23):** All DFS blogs now follow ONE standardised design. No custom variations. See template below for exact spec.
 
 ---
 
@@ -16,74 +16,162 @@
 - Confirm keyword volume, difficulty, search intent
 - Note Semrush date for records
 
-### 2. Design Direction (Frontend-Design Thinking)
-Before coding, commit to ONE aesthetic direction:
-- **Tone options:** refined/luxury, editorial/magazine, progressive, organic, brutalist, playful, minimal
-- **Typography:** Pick distinctive display + body font pair (NOT generic Manrope-only)
-- **Color strategy:** Dominant color + sharp accents (DFS palette: navy, blue, teal)
-- **Spatial composition:** Will you use asymmetry, grid-breaking, diagonal flow, generous negative space?
-- **Visual depth:** Gradients, layered backgrounds, textures, decorative elements?
-- **Micro-interactions:** Page load stagger, hover effects, scroll triggers?
-- **Differentiation:** What's ONE memorable thing about this page's design?
+### 2. Design Direction (LOCKED TEMPLATE — No Variations)
 
-**Document the vision before coding.**
+⚠️ **DFS blogs now use ONE standardised design. Do NOT customize.**
+
+All blogs must follow:
+- **Typography:** Manrope only (weights: 400, 500, 600, 700, 800)
+- **Color palette:** Navy (#0d1b2e), Blue (#0052cc), Teal (#00a896), Amber (#f59e0b)
+- **Layout:** Hero (navy bg) → Article+Sidebar grid → Form → Final CTA band
+- **Metadata:** Clock/document/calendar SVG icons in hero (MUST include CSS styling)
+- **Buttons:** "Book Free Call" (.btn-white-solid) + "Chat on WhatsApp" (.btn-whatsapp #25d366)
+- **Form:** 6 fields (name, email, phone, loan type, amount, notes) with Netlify honeypot
+- **Schema:** Article + FAQPage + BreadcrumbList (3 schema types required)
+
+See **Complete HTML Template** below for exact structure. Copy, paste, fill in content.
 
 ---
 
 ## Build Phase
 
-### 3. HTML Structure (Standardised)
+### 3. Complete HTML Template (LOCKED — Copy & Use)
 
-**Required elements in order:**
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta & SEO -->
   <meta charset="UTF-8">
+  <meta name="page-type" content="blog-post">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Keyword-rich title] | DFS</title>
+  <title>[PAGE TITLE] | DFS</title>
   <meta name="description" content="[150-160 chars, includes keyword, qualified claims]">
-  <link rel="canonical" href="https://digitalfinancesolutions.com.au/[slug]">
-  
-  <!-- Fonts & External CSS -->
+  <meta property="og:title" content="[OG Title]">
+  <meta property="og:description" content="[OG Description]">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "[Headline]",
+        "description": "[Description]",
+        "datePublished": "2026-07-23",
+        "dateModified": "2026-07-23",
+        "author": {"@type": "Organization", "name": "Digital Finance Solutions", "url": "https://www.digitalfinancesolutions.com.au"},
+        "publisher": {"@type": "Organization", "name": "Digital Finance Solutions", "url": "https://www.digitalfinancesolutions.com.au", "logo": {"@type": "ImageObject", "url": "https://cdn.prod.website-files.com/61fc660e6a44456c36c97404/61fc660e6a4445dec6c974a5_Digital-Finance-Logo.svg"}},
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://digitalfinancesolutions.com.au/[slug]"},
+        "articleSection": "Home Loans",
+        "keywords": ["[kw1]", "[kw2]", "[kw3]"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "[Q1]", "acceptedAnswer": {"@type": "Answer", "text": "[A1]"}},
+          {"@type": "Question", "name": "[Q2]", "acceptedAnswer": {"@type": "Answer", "text": "[A2]"}},
+          {"@type": "Question", "name": "[Q3]", "acceptedAnswer": {"@type": "Answer", "text": "[A3]"}}
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://digitalfinancesolutions.com.au/"},
+          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://digitalfinancesolutions.com.au/blog"},
+          {"@type": "ListItem", "position": 3, "name": "[Page Title]", "item": "https://digitalfinancesolutions.com.au/[slug]"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://corryc.github.io/dfs-assets/dfs-styles.css" rel="stylesheet">
-  
-  <!-- NAV LOADER (MANDATORY) -->
+
+  <style>
+  :root {
+    --navy: #0d1b2e; --blue: #0052cc; --blue-dark: #003d99; --blue-light: #e8f0ff;
+    --teal: #00a896; --teal-light: #e6f7f5; --amber: #f59e0b; --amber-light: #fffbeb;
+    --white: #ffffff; --off-white: #f5f7fa; --light-grey: #eef1f6; --border: #dde3ed;
+    --text-dark: #0d1b2e; --text-mid: #3d4f6b; --text-light: #6b7c99;
+  }
+  /* CRITICAL: Include .blog-meta-item svg CSS rule below */
+  .blog-meta-item svg { width: 15px; height: 15px; stroke: rgba(255,255,255,0.4); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  /* Add all other CSS from standardised template here... */
+  @media (max-width: 960px) { .blog-body { grid-template-columns: 1fr; gap: 40px; } .sidebar { position: static; order: -1; } }
+  @media (max-width: 600px) { .blog-hero { padding: 48px 20px 40px; } .blog-body { padding: 40px 20px; } .closing-cta { padding: 56px 20px; } .closing-cta-buttons { flex-direction: column; align-items: center; } }
+  </style>
+
   <script src="https://corryc.github.io/dfs-assets/dfs-nav-loader.js"></script>
-  
-  <!-- Page-specific CSS & JSON-LD -->
-  <style>...</style>
-  <script type="application/ld+json">...</script>
+  <link rel="canonical" href="https://digitalfinancesolutions.com.au/[slug]">
 </head>
 <body>
 
-<!-- HERO SECTION -->
-<div class="blog-hero">
-  <h1>[Main headline]</h1>
-  <p>[Subheading/benefit summary]</p>
-  <div class="cta-group">
-    <button class="btn-primary" onclick="...">Primary CTA</button>
+<!-- HERO SECTION (Navy bg, metadata SVG icons, accent text) -->
+<section class="blog-hero">
+  <div class="blog-hero-inner">
+    <div class="blog-category"><span class="blog-category-dot"></span>[Category]</div>
+    <h1>[Headline with <span class="accent">Accent</span>]</h1>
+    <p class="blog-hero-sub">[Subtitle]</p>
+    <div class="blog-meta">
+      <div class="blog-meta-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>[X] min read</div>
+      <div class="blog-meta-divider" aria-hidden="true"></div>
+      <div class="blog-meta-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Digital Finance Solutions</div>
+      <div class="blog-meta-divider" aria-hidden="true"></div>
+      <div class="blog-meta-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M12 8v4l3 3"/></svg>July 2026</div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- MAIN CONTENT (blog-body container) -->
+<!-- ARTICLE + SIDEBAR LAYOUT -->
 <div class="blog-body">
-  <!-- Sections with h2, p, ul, li -->
-  
-  <!-- Tip cards / Grid sections -->
-  
-  <!-- CTA Bands -->
-  
-  <!-- Forms (hero form 3-field + full form 6-field) -->
-  
-  <!-- FAQ Accordion -->
-  
-  <!-- Compliance note -->
+  <main class="article">
+    <div class="intro-box"><p>[Intro paragraph]</p></div>
+    <!-- Content sections with h2, p, callouts, checklists, pros/cons -->
+    <!-- Internal link block (before FAQ) -->
+    <!-- FAQ accordion with 3+ items -->
+  </main>
+  <aside class="sidebar">
+    <!-- Blue CTA card: "Book Free Call" button -->
+    <!-- Quick facts card with teal dots -->
+  </aside>
 </div>
 
-<!-- FAQ Handler Script -->
+<!-- 6-FIELD CONTACT FORM (Netlify) -->
+<section style="background: var(--off-white); padding: 48px 24px; margin: 0;">
+  <div style="max-width: 600px; margin: 0 auto;">
+    <form name="[slug]-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+      <input type="hidden" name="form-name" value="[slug]-enquiry">
+      <p style="display:none"><label><input name="bot-field"></label></p>
+      <div><label>Full name *</label><input type="text" name="full_name" required></div>
+      <div><label>Email *</label><input type="email" name="email" required></div>
+      <div><label>Phone *</label><input type="tel" name="phone" required></div>
+      <div><label>Loan type</label><input type="text" name="loan_type"></div>
+      <div><label>Loan amount</label><input type="text" name="loan_amount"></div>
+      <div><label>Additional questions</label><input type="text" name="notes"></div>
+      <button type="submit">Send Enquiry</button>
+      <p style="font-size:12px; color: var(--text-light); margin-top: 12px; text-align: center;">
+        We respond within 24 hours. Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence No. 391237)
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- FINAL CTA BAND (Blue, Book Free Call + Chat on WhatsApp buttons) -->
+<section class="closing-cta">
+  <div class="closing-cta-inner">
+    <div class="closing-cta-eyebrow">Ready to Get Approved</div>
+    <h2>[CTA Headline]</h2>
+    <p>[CTA Description]</p>
+    <div class="closing-cta-buttons">
+      <a href="https://digitalfinancesolutions.com.au/contact-us" class="btn-white-solid">Book Free Call</a>
+      <a href="https://wa.me/610419891983?text=Hi, I'd like to get quick mortgage advice about my mortgage options. Can we chat?" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ ACCORDION JAVASCRIPT -->
 <script>
 document.querySelectorAll('.faq-q').forEach(q => {
   q.addEventListener('click', () => {
@@ -92,7 +180,7 @@ document.querySelectorAll('.faq-q').forEach(q => {
 });
 </script>
 
-<!-- FOOTER LOADER (MANDATORY) -->
+<!-- FOOTER LOADER (Mandatory) -->
 <script src="https://corryc.github.io/dfs-assets/dfs-footer-loader.js"></script>
 
 </body>
@@ -124,44 +212,95 @@ Include three schema types in `<script type="application/ld+json">`:
 - **FAQPage:** mainEntity array with questions + answers
 - **BreadcrumbList:** Home → Blog → This Page
 
-### 6. Forms (Two Required)
+### 6. Contact Form (6 Fields — Netlify + Honeypot)
 
-**Hero Form (3 fields):**
-- Name, Email, Phone (or similar quick capture)
+**Required Fields (In Order):**
+1. Full name (text, required)
+2. Email (email, required)
+3. Phone (tel, required)
+4. Loan type/category (text)
+5. Loan amount (text)
+6. Additional questions/notes (text)
 
-**Full Form (6 fields):**
-- Name, Email, Phone, Loan Type (select), Loan Amount, Goal/Challenge
-- Include AFSL credit representative number in fine print
+**Form Attributes:**
+- `method="POST" data-netlify="true" netlify-honeypot="bot-field"`
+- `action="/thank-you"`
+- Include hidden `form-name` input
+- Include hidden honeypot field (display: none)
 
-### 7. Compliance (Mandatory)
+**Footer Line (EXACT TEXT):**
+```
+Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence No. 391237)
+```
 
-**Language:**
-- All benefit claims qualified: "may", "could", "subject to eligibility"
-- Never absolute statements (no "guaranteed", "certain", "avoid all LMI")
+### 7. Compliance (ASIC RG 234 — Mandatory)
 
-**Footer compliance note:**
-- General advice disclaimer
-- Credit Representative Number 532405 of Beagle Pty Ltd (AFSL 391237)
+**Qualified Language (Required):**
+- "may be eligible", "could", "might", "subject to eligibility", "could help"
+- Example: "You **may** be eligible to avoid LMI" ✅  NOT "Avoid LMI" ❌
+
+**Banned Phrases (NEVER use):**
+- ❌ "guaranteed" / "guarantees" / "guarantee approval"
+- ❌ "certain" / "certainty"
+- ❌ "always" / "never" (absolute statements)
+- ❌ "avoid all LMI" (unqualified)
+- ❌ "no fees"
+- ❌ "best rates"
+- ❌ "fastest approval"
+- ❌ Any specific interest rates or percentage claims
+
+**Required Compliance Lines:**
+- Phone: `0419 891 983` (or `tel:0419891983`)
+- AFSL line (exact): `Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence No. 391237)`
+- General advice disclaimer: `The information in this article is general in nature and does not constitute financial or credit advice.`
 
 ---
 
 ## Pre-Publication Checklist
 
-### 8. Verification
+### 8. Verification Checklist
 
-- [ ] Nav loader script present in `<head>`
-- [ ] Footer loader script present before `</body>` (NOT hardcoded footer)
-- [ ] Canonical URL correct (non-www format)
+**Technical:**
+- [ ] Nav loader in `<head>`: `<script src="https://corryc.github.io/dfs-assets/dfs-nav-loader.js"></script>`
+- [ ] Footer loader before `</body>`: `<script src="https://corryc.github.io/dfs-assets/dfs-footer-loader.js"></script>`
+- [ ] NO hardcoded nav/footer HTML
+- [ ] Canonical URL non-www: `https://digitalfinancesolutions.com.au/[slug]`
 - [ ] Meta description 150-160 chars, includes keyword
-- [ ] All forms submit-able (no validation errors)
-- [ ] FAQ accordion opens/closes smoothly
-- [ ] All CTA buttons link to correct targets
-- [ ] Schema markup valid (use Google's structured data tester)
-- [ ] Compliance disclaimers present
-- [ ] AFSL number on form visible
-- [ ] **Metadata SVG icons render correctly** (clock, document, calendar — NOT black circles)
-  - MUST include CSS rule: `.blog-meta-item svg { width: 15px; height: 15px; stroke: rgba(255,255,255,0.4); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }`
-- [ ] Mobile responsive (test at 375px, 768px, 1280px)
+- [ ] OG tags present (title + description)
+
+**Forms & Interaction:**
+- [ ] 6-field contact form all fields working
+- [ ] Form honeypot protection: `netlify-honeypot="bot-field"`
+- [ ] Form action: `/thank-you`
+- [ ] FAQ accordion opens/closes smoothly (with animation)
+- [ ] FAQ arrow rotates on open
+
+**Design & Styling:**
+- [ ] **SVG metadata icons render correctly** (clock, document, calendar — NOT black circles/blocks)
+  - MUST have: `.blog-meta-item svg { width: 15px; height: 15px; stroke: rgba(255,255,255,0.4); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }`
+- [ ] All buttons have correct styles and hover effects
+- [ ] WhatsApp button is #25d366 green, not blue
+- [ ] Internal link block present (between content and FAQ)
+- [ ] Mobile responsive: test at 375px, 768px, 1280px
+  - Check sidebar moves below article on mobile
+  - Check buttons stack on mobile
+
+**Schema & SEO:**
+- [ ] Schema valid: test with Google's structured data tester
+- [ ] Article schema has all fields
+- [ ] FAQPage schema matches accordion questions
+- [ ] BreadcrumbList has 3 items
+
+**Compliance:**
+- [ ] All benefit claims qualified ("may", "could", "subject to")
+- [ ] No banned phrases (search for: "guaranteed", "certain", "avoid all")
+- [ ] Phone number correct: `0419 891 983`
+- [ ] AFSL line exact: "Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence No. 391237)"
+- [ ] General advice disclaimer present
+
+**Buttons & CTAs:**
+- [ ] "Book Free Call" button links to: `https://digitalfinancesolutions.com.au/contact-us`
+- [ ] "Chat on WhatsApp" button links to: `https://wa.me/610419891983?text=Hi, I'd like to get quick mortgage advice about my mortgage options. Can we chat?`
 
 ### 9. Frontend-Design QA
 
@@ -205,16 +344,18 @@ Run `/dfs-ad-compliance` (if available) or manual check:
 
 ---
 
-## Key Rules (Non-negotiable)
+## Key Rules (Non-negotiable — Locked Template)
 
-1. **No hardcoded nav/footer.** Always use loaders (dfs-nav-loader.js + dfs-footer-loader.js)
-2. **Canonical URLs non-www.** All canonicals: `https://digitalfinancesolutions.com.au/[slug]` (no www)
-3. **Compliance first.** Qualified language, AFSL visible, disclaimer present
-4. **Frontend-design always.** Distinctive aesthetic direction, not generic
-5. **Schema required.** Article + FAQPage + BreadcrumbList on every post
-6. **Two forms minimum.** Hero form (3-field) + Full form (6-field)
-7. **SVG metadata icon styling required.** Hero metadata icons MUST have `.blog-meta-item svg` CSS rule (see Verification checklist)
-8. **Testing before publish.** Mobile responsive, forms work, loaders load, schema valid
+1. **NO CUSTOM DESIGN.** All blogs use IDENTICAL locked template
+2. **NO hardcoded nav/footer.** Always use loaders (dfs-nav-loader.js + dfs-footer-loader.js)
+3. **Canonical URLs non-www.** `https://digitalfinancesolutions.com.au/[slug]`
+4. **SVG metadata icon styling MANDATORY.** Hero metadata MUST have CSS: `.blog-meta-item svg { width: 15px; height: 15px; stroke: rgba(255,255,255,0.4); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }`
+5. **Form always 6 fields.** name, email, phone, loan_type, loan_amount, notes (with Netlify + honeypot)
+6. **Schema required.** Article + FAQPage + BreadcrumbList (3 schema types)
+7. **Compliance ASIC RG 234.** Qualified language, no banned phrases, AFSL + disclaimer visible
+8. **Mobile responsive.** Test at 375px, 768px, 1280px with media queries
+9. **Buttons exact.** "Book Free Call" (.btn-white-solid) + "Chat on WhatsApp" (.btn-whatsapp #25d366)
+10. **Testing before publish.** Forms work, loaders load, schema valid, SVG icons render correctly
 
 ---
 
