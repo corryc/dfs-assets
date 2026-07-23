@@ -1,9 +1,55 @@
 # DFS Work Log
 
 **Last Updated:** 2026-07-24
-**Session:** Title/meta SEO fix - Boronia, Heathmont, trust page
+**Session:** Full suburb page audit - Ringwood fix + dead page redirect recovery
 
 ---
+
+## 2026-07-24 (3) — Suburb Page Audit: Ringwood Fix + Dead Page Redirect
+
+### Audit scope
+All 6 canonical suburb pages (Boronia, Heathmont, Bayswater, Bayswater North, Wantirna,
+Ringwood) checked against root/live files for title (target 50-60 chars) and meta
+(target 155-160 chars).
+
+### Findings
+- Boronia, Heathmont: already fixed earlier this session
+- Bayswater, Bayswater North: title/meta already fine. Real issue is cannibalization
+  (deferred by decision - will revisit once a clear single-page winner emerges, then
+  add a redirect from the loser to the winner)
+- Wantirna: fine, no action
+- Ringwood: title fine, meta was 97 chars and generic. BUT position 25-40 for its
+  primary terms (vs pos 10-12 for Boronia/Heathmont) - this is a ranking/authority gap,
+  not primarily a CTR gap. Fixed the meta anyway (low cost) but flagged that it won't
+  move clicks much until the page ranks closer to page 1.
+
+### Critical bug found: dead page still indexed
+`first-home-buyers-in-bayswater-north` - confirmed via GSC URL Inspection tool:
+coverageState "Not found (404)", last crawled 2026-07-19, Google's crawler still
+references it via sitemap.xml (meaning it was in the sitemap at some point, indexed,
+then deleted from the repo with no redirect). Was showing 973 impressions/90 days,
+0 clicks, position 25.8 - real search visibility being lost to a dead link instead of
+going to the live mortgage-broker-bayswater-north page.
+
+### Changes pushed
+1. mortgage-broker-ringwood.html: meta broadened from 97 to 153 chars. Compliance:
+   COMPLIANT. Commit: `1b43b57`
+2. _redirects: added 301 from /first-home-buyers-in-bayswater-north to
+   /mortgage-broker-bayswater-north. Commit: `0e704fc`
+
+### Deployment verification
+- Ringwood deploy `6a629a92`: ready, 1 file uploaded, 20 redirects processed, no errors
+- Redirect deploy `6a629ac1`: ready, 21 redirects processed (confirms new rule
+  registered), no errors
+
+### Deferred (explicit decision, not an oversight)
+- Bayswater / Bayswater North cannibalization consolidation - waiting for a clear
+  single-page winner before redirecting the loser
+- Ringwood ranking authority work (content depth, internal links) - needed before
+  further title/meta work will show real impact
+
+---
+
 
 ## 2026-07-24 (2) — Title/Meta Push: Boronia, Heathmont, Trust Page
 
