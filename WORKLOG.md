@@ -1,9 +1,39 @@
 # DFS Work Log
 
-**Last Updated:** 2026-07-11 23:59
-**Session:** Critical GSC fixes + Blog standardisation + Documentation
+**Last Updated:** 2026-07-24
+**Session:** Repo cleanup - archived non-deployed duplicate files
 
 ---
+
+## 2026-07-24 — Repo Cleanup: Archived Non-Deployed Duplicates
+
+### Problem
+- `posts/landing-pages/live/` folder contained 14 HTML files with the same names as root-level pages
+- Despite the "live" folder name, Netlify only deploys from repo root (confirmed via deploy log)
+- These 14 duplicates had diverged from root (different titles/meta in several cases) and were
+  never part of any tracked SEO commit
+
+### Solution
+- Archived all 14 files to `posts/landing-pages/archive/` with a `2026-07-24-NOT-DEPLOYED-` prefix
+- Deleted old `posts/landing-pages/live/` paths
+- Verified safe first: no sitemap.xml references, no netlify.toml override, one `_redirects` rule
+  touches this path (a 301 FROM the old URL, unaffected by file removal)
+- Commit: `677b16e`
+
+### Files archived (14)
+mortgage-broker-boronia, mortgage-broker-heathmont, mortgage-broker-bayswater,
+mortgage-broker-bayswater-north, mortgage-broker-wantirna, mortgage-broker-ringwood,
+mortgage-broker-vs-bank-ringwood, no-lmi-home-loan-doctors-melbourne,
+self-employed-home-loan-eastern-suburbs, self-employed-under-2-years-home-loan,
+first-home-buyer-guarantee-melbourne, 2026-budget-trust-cgt-changes,
+refinance-home-loan-melbourne, home-loan-health-check
+
+### Status
+- Root-level files remain the sole live source of truth for all 14 pages
+- `posts/landing-pages/live/` folder no longer exists in the tree
+
+---
+
 
 ## 2026-07-11 — Complete Session Summary
 
