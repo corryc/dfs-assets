@@ -27,6 +27,12 @@ https://www.digitalfinancesolutions.com.au/*  https://digitalfinancesolutions.co
 
 /posts/landing-pages/live/first-home-buyer-guarantee-melbourne   /first-home-buyer-guarantee-melbourne   301!
 
+# ========== DEAD PAGE RECOVERY: deleted page still indexed and receiving impressions (found 2026-07-24) ==========
+# GSC URL Inspection confirmed 404, but Google still shows it in results (973 impressions/90 days, 0 clicks).
+# Recovering that visibility onto the real live suburb page instead of losing it.
+
+/first-home-buyers-in-bayswater-north                            /mortgage-broker-bayswater-north                 301!
+
 # ========== CATCH-ALL: All future blogs ==========
 /posts/blog/live/:slug                                           /:slug                                           200
 
