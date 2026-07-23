@@ -1,9 +1,51 @@
 # DFS Work Log
 
 **Last Updated:** 2026-07-24
-**Session:** Repo cleanup - archived non-deployed duplicate files
+**Session:** Title/meta SEO fix - Boronia, Heathmont, trust page
 
 ---
+
+## 2026-07-24 (2) — Title/Meta Push: Boronia, Heathmont, Trust Page
+
+### Context
+GSC 90-day pull showed 3 pages ranking pos 8-12 with real search volume but zero clicks.
+Root cause diagnosed as title/meta mismatch, not ranking or cannibalization (those were ruled
+out separately per-page). See session for full GSC analysis.
+
+### Changes pushed
+- mortgage-broker-boronia.html: title broadened from first-home-buyer framing to generic
+  home loans/refinancing/investment framing (page had never had a title/meta pass)
+- mortgage-broker-heathmont.html: title re-optimized. Note: July 6 T011 audit already touched
+  this page and projected "+5.3 positions, +4x CTR" - actual result was 0 clicks/90 days at
+  pos 11. This is a second, more targeted attempt based on real query data.
+- buying-property-through-a-trust.html: title rewritten to question-match format for the
+  specific query "can a trust borrow money to buy property" (pos 8.1, 258 impr, 0 clicks)
+
+### Compliance
+- All three passed /dfs-ad-compliance check: COMPLIANT (no restricted terms, no unverifiable
+  claims, benefit/risk balance intact on trust page's "with conditions" framing)
+
+### Deployment verification
+- Commit: `6514808`
+- Netlify deploy `6a62973bfbef1d00084d5ba6`: state=ready, 3 files uploaded, 20 redirect
+  rules processed without errors, no header/function issues
+- Cache-bust comments refreshed on all 3 files (Boronia and trust already had one from a
+  prior session; added one to Heathmont, which didn't have one)
+- Live fetch verification blocked by robots.txt (expected, not a bug) - relied on Netlify
+  deploy log + GitHub commit diff instead
+
+### KB note
+Wiki/technical/hosting-and-publishing.md is stale on the landing-pages URL pattern (claims
+posts/landing-pages/live/ is served live; it is not - confirmed root-only via deploy log).
+Doc also self-flags as diverged from a second local KB copy. Needs reconciliation - not
+done this session, flagging for next KB compile pass.
+
+### Next check-in
+Revisit GSC for these 3 queries in 2-3 weeks. Treat clicks/CTR lift estimates given this
+session as directional, not guaranteed - T011's own prior projection missed badly.
+
+---
+
 
 ## 2026-07-24 — Repo Cleanup: Archived Non-Deployed Duplicates
 
