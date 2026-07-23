@@ -1,8 +1,10 @@
 # DFS Blog Page Creation Process (Standardised)
 
 **Status:** Established 2026-07-11
-**Last Updated:** 2026-07-11
+**Last Updated:** 2026-07-23 (SVG icon styling fix added)
 **Purpose:** Ensure all new blog pages meet DFS quality, compliance, and design standards
+
+⚠️ **CRITICAL UPDATE (2026-07-23):** Metadata SVG icons require explicit CSS styling. See Verification checklist below.
 
 ---
 
@@ -157,6 +159,8 @@ Include three schema types in `<script type="application/ld+json">`:
 - [ ] Schema markup valid (use Google's structured data tester)
 - [ ] Compliance disclaimers present
 - [ ] AFSL number on form visible
+- [ ] **Metadata SVG icons render correctly** (clock, document, calendar — NOT black circles)
+  - MUST include CSS rule: `.blog-meta-item svg { width: 15px; height: 15px; stroke: rgba(255,255,255,0.4); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }`
 - [ ] Mobile responsive (test at 375px, 768px, 1280px)
 
 ### 9. Frontend-Design QA
@@ -209,7 +213,8 @@ Run `/dfs-ad-compliance` (if available) or manual check:
 4. **Frontend-design always.** Distinctive aesthetic direction, not generic
 5. **Schema required.** Article + FAQPage + BreadcrumbList on every post
 6. **Two forms minimum.** Hero form (3-field) + Full form (6-field)
-7. **Testing before publish.** Mobile responsive, forms work, loaders load, schema valid
+7. **SVG metadata icon styling required.** Hero metadata icons MUST have `.blog-meta-item svg` CSS rule (see Verification checklist)
+8. **Testing before publish.** Mobile responsive, forms work, loaders load, schema valid
 
 ---
 
