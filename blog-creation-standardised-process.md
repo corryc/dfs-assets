@@ -311,14 +311,19 @@ Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence
 - [ ] Visual depth present (gradients, shadows, layered elements)
 - [ ] Design feels intentional, not generic
 
-### 10. Compliance Audit
+### 10. Compliance Audit (MANDATORY — Before Any Publish)
+
+**ALWAYS run compliance check before publishing. Every time. No exceptions.**
 
 Run `/dfs-ad-compliance` (if available) or manual check:
-- All benefit claims qualified
-- No banned phrases
-- Contact phone correct: 0419 891 983
-- AFSL line exact: "Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence No. 391237)"
-- General advice disclaimer included
+- [ ] All benefit claims qualified: "may", "could", "might", "subject to eligibility"
+- [ ] No banned phrases: guaranteed, certain, avoid all, no fees, best rates, fastest, only
+- [ ] No unqualified "certainty" language (use "clarity" or "transparency" instead)
+- [ ] Contact phone correct: `0419 891 983`
+- [ ] AFSL line exact: `Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence No. 391237)`
+- [ ] General advice disclaimer: `The information in this article is general in nature and does not constitute financial or credit advice.`
+
+**If any issues found:** Fix, re-audit, then proceed to publish. Never publish without compliance pass.
 
 ---
 

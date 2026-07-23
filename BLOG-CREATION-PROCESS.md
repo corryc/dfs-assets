@@ -363,6 +363,20 @@ Include three schema types in `<script type="application/ld+json">`:
 
 ## Pre-Publication Checklist
 
+### ⚠️ COMPLIANCE AUDIT (MANDATORY — ALWAYS FIRST)
+
+**NEVER publish without compliance pass. This is non-negotiable.**
+
+Before any other verification, run manual compliance check:
+- [ ] All benefit claims qualified: "may", "could", "might", "subject to eligibility"
+- [ ] NO banned phrases: "guaranteed", "certain", "avoid all", "no fees", "best rates", "fastest"
+- [ ] NO unqualified "certainty" (use "clarity" or "transparency" for product features)
+- [ ] Phone: `0419 891 983` (exact format)
+- [ ] AFSL line exact: `Credit Representative Number 532405 of Beagle Pty Ltd (Australian Credit Licence No. 391237)`
+- [ ] General advice disclaimer present: "The information in this article is general in nature and does not constitute financial or credit advice."
+
+**Process:** Find violations → Fix in HTML → Re-audit → Only then publish
+
 ### Technical Verification
 - [ ] Nav loader script present in `<head>`
 - [ ] Footer loader script present before `</body>`
