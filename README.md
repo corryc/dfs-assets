@@ -1,18 +1,14 @@
-IyBkZnMtYXNzZXRzCkRGUyBEaWdpdGFsIEZpbmFuY2UgU29sdXRpb25zIOKA
-lCBzaGFyZWQgQ1NTIGFuZCBhc3NldHMgZm9yIGxhbmRpbmcgcGFnZXMKCiMj
-IEJsb2cgUGFnZSBDcmVhdGlvbgoKU2VlICoqYGJsb2ctY3JlYXRpb24tc3Rh
-bmRhcmRpc2VkLXByb2Nlc3MubWQqKiBmb3IgdGhlIHN0YW5kYXJkaXNlZCB3
-b3JrZmxvdyBmb3IgY3JlYXRpbmcgbmV3IGJsb2cgcGFnZXMuCgojIyMgTGF0
-ZXN0IEJsb2cgUGFnZXMgKDIwMjYtMDctMTEpCi0g4pyFIFtQcmUtQXBwcm92
-YWwgV29ydGggdGhlIEhhc3NsZV0oaHR0cHM6Ly9kaWdpdGFsZmluYW5jZXNv
-bHV0aW9ucy5jb20uYXUvcHJlLWFwcHJvdmFsLXdvcnRoLXRoZS1oYXNzbGUp
-IOKAlCBLZXl3b3JkczogInByZSBhcHByb3ZhbCBob21lIGxvYW4iICgxLDkw
-MC9tbywgMzAlIEtEKQotIOKchSBbSW1wcm92ZSBZb3VyIEhvbWUgTG9hbiBB
-cHByb3ZhbCBDaGFuY2VzXShodHRwczovL2RpZ2l0YWxmaW5hbmNlc29sdXRp
-b25zLmNvbS5hdS9pbXByb3ZlLWxvYW4tYXBwcm92YWwtY2hhbmNlcy1tZWxi
-b3VybmUpIOKAlCBLZXl3b3JkczogImhvbWUgbG9hbiBhcHByb3ZhbCIgY2x1
-c3RlciAoMjksOTIwL21vLCAzNCUgYXZnIEtEKQoKIyMjIERvY3VtZW50YXRp
-b24KLSAqKlByb2Nlc3MgR3VpZGU6KiogW2BibG9nLWNyZWF0aW9uLXN0YW5k
-YXJkaXNlZC1wcm9jZXNzLm1kYF0oYmxvZy1jcmVhdGlvbi1zdGFuZGFyZGlz
-ZWQtcHJvY2Vzcy5tZCkKLSAqKldvcmsgTG9nOioqIFtgV09SS0xPRy5tZGBd
-KFdPUktMT0cubWQpCg==
+# dfs-assets
+DFS Digital Finance Solutions — shared CSS and assets for landing pages
+
+## Blog Page Creation
+
+See **`blog-creation-standardised-process.md`** for the standardised workflow for creating new blog pages.
+
+### Latest Blog Pages (2026-07-11)
+- ✅ [Pre-Approval Worth the Hassle](https://digitalfinancesolutions.com.au/pre-approval-worth-the-hassle) — Keywords: "pre approval home loan" (1,900/mo, 30% KD)
+- ✅ [Improve Your Home Loan Approval Chances](https://digitalfinancesolutions.com.au/improve-loan-approval-chances-melbourne) — Keywords: "home loan approval" cluster (29,920/mo, 34% avg KD)
+
+### Documentation
+- **Process Guide:** [`blog-creation-standardised-process.md`](blog-creation-standardised-process.md)
+- **Work Log:** [`WORKLOG.md`](WORKLOG.md)
